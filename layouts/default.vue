@@ -1,6 +1,9 @@
 <template>
-<div>
-Header
+<TheHeader />
+<p>Default layout</p>
 <slot />
-</div>
 </template>
+
+<script setup lang="ts">
+import TheHeader from "@/components/header/TheHeader.vue"
+</script>
