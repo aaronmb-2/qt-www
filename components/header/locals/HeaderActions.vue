@@ -1,15 +1,17 @@
 <template>
     <p>Theme Selector</p>
   <div class="hidden md:block">
-    <HeaderLink text="Sign in" to="/sign-in" />
+    <BaseButton :button-theme="themeButtonService.getThemeButtonById(1)">
+      <NuxtLink to="/sign-in">Sign in</NuxtLink>
+    </BaseButton>
   </div>
-  <BaseButton :button-theme="themeBtnService.getThemeButtonById(1)">
+  <BaseButton :button-theme="themeButtonService.getThemeButtonById(1)">
     <span> Get started <span class="hidden lg:inline">today</span> </span>
   </BaseButton>
 </template>
 
 <script setup lang="ts">
-import HeaderLink from "./HeaderLink.vue"
-import BaseButton from "./../../common/BaseButton.vue"
-import { themeBtnService } from "~~/services/ThemeBtnService";
+import { themeButtonService } from "~/services/theme/ThemeButtonService";
+
+import BaseButton from "./../../base/BaseButton.vue"
 </script>

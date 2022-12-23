@@ -1,4 +1,4 @@
-import { IThemeButton } from "~/models/IThemeButton";
+import { IThemeButton } from "~/models/theme/IThemeButton";
 
 export interface IThemeButtonService {
     getThemeButtonById(id: number): IThemeButton;

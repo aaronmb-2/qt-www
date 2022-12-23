@@ -7,11 +7,15 @@
                     <HeaderLogo />
                     <!-- Header Links (middle)-->
                     <div class="hidden md:flex md:gap-x-6">
-                        <HeaderLink
-                            v-for="link in links" 
-                            :key="link.text" 
-                            :text="link.text" 
-                            :to="link.to" />
+                        <HeaderLinks :links="links"/>
+                        <!-- <BaseButton 
+                            :button-theme="themeButtonService.getThemeButtonById(1)" 
+                            v-for="link in links">
+                            <NuxtLink 
+                                :to="link.to">
+                                {{ link.text }}
+                            </NuxtLink>
+                        </BaseButton> -->
                     </div>
                 </div>
                 <!-- Header Actions (right)-->
@@ -24,12 +28,15 @@
 </template>
 
 <script setup lang="ts">
+import { PropsHeaderLinks } from "~/types/PropsHeaderLinks";
+
 import HeaderContainer from "./locals/HeaderContainer.vue";
 import HeaderLogo from "./locals/HeaderLogo.vue"
 import HeaderActions from "./locals/HeaderActions.vue"
-import HeaderLink from "./locals/HeaderLink.vue"
+import HeaderLinks from "./locals/HeaderLinks.vue"
 
-const links = [
+
+const links: PropsHeaderLinks[] = [
     { text: 'Features', to: '/features' },
     { text: 'About', to: '/about' },
     { text: 'Pricing', to: '/pricing' },

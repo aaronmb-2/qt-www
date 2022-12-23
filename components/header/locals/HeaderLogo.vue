@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import BaseLogoTextLight from "./../../common/BaseLogoTextLight.vue"
+import BaseLogoTextLight from "./../../base/BaseLogoTextLight.vue"
 </script>
