@@ -9,6 +9,14 @@ import { IThemeButtonService } from "./IThemeButtonService";
 
 
 export class ThemeButtonService implements IThemeButtonService {
+    /**
+     * Class that holds all the logic for creating and maintaining TailwindCSS properties for styling a button.
+     *
+     * @remarks
+     * This class is a so-called 'service', which (in this case), provides styling for buttons.
+     * The ThemeButtonServices implements the IThemeButtonService.
+     *
+     */
     static themes = [
         new ThemeButton({
             id: 1,
