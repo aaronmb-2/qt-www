@@ -1,5 +1,5 @@
 <template>
-    <button :class="buttonTheme.getTailwindClass()">
+    <button :class="p.buttonTheme.getTailwindClass()">
         <slot></slot>
     </button>
 </template>
@@ -23,5 +23,7 @@ interface Props {
 }
 
 const p = defineProps<Props>();
+// inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900
+// inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900
 console.log(p.buttonTheme.getTailwindClass())
 </script>

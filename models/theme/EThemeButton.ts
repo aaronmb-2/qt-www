@@ -53,8 +53,8 @@ export enum ButtonColor {
      * @param transparent - no border & white background, on hover shows light grey background, text color is black.
      * @param white - grey border & white background, on hover tthe border turns darker grey, text color is black.
      * @param black - black color, on hover this turns into grey, text color is white
-     * @param midnightBlue - midnight blue color, on hover turns into crayonBlue, text color is white.
-     * @param crayonBlue - crayon blue color, on hover turns into midnight blue, text color is white.
+     * @param mblue - midnight blue color, on hover turns into crayonBlue, text color is white.
+     * @param cblue - crayon blue color, on hover turns into midnight blue, text color is white.
      * @param ruby - ruby color, on hover turns into light pink, text color is white
      *
      */
@@ -62,5 +62,6 @@ export enum ButtonColor {
     white = "bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white",
     black = "bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white",
     pink = "",
-    blue = "bg-blue-600 text-indigo-700 hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600",
+    mblue = "bg-blue-600 text-indigo-700 hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600",
+    cblue = "bg-blue-600 text-indigo-700 hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600",
 }

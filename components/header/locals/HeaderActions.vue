@@ -5,7 +5,7 @@
       <NuxtLink to="/sign-in">Sign in</NuxtLink>
     </BaseButton>
   </div>
-  <BaseButton :button-theme="themeButtonService.getThemeButtonById(1)">
+  <BaseButton :button-theme="themeButtonService.getThemeButtonById(2)">
     <span> Get started <span class="hidden lg:inline">today</span> </span>
   </BaseButton>
 </template>

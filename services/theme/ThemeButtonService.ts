@@ -24,6 +24,12 @@ export class ThemeButtonService implements IThemeButtonService {
             size: ButtonSize.xxs,
             color: ButtonColor.transparent,
         }),
+        new ThemeButton({
+            id: 2,
+            rounding: ButtonRounding.full,
+            size: ButtonSize.m,
+            color: ButtonColor.mblue,
+        }),
     ]
 
     @observable
@@ -35,9 +41,8 @@ export class ThemeButtonService implements IThemeButtonService {
     // }
 
     getThemeButtonById(id: number): IThemeButton {
-        const themeButton = ThemeButtonService.themes.find((theme) => {
-            theme.id === id;
-        })
+        const themeButton = ThemeButtonService.themes.find((e) => e.id == id);
+
         if (!themeButton) {
             return ThemeButtonService.themes[0];
         }
