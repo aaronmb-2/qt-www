@@ -41,11 +41,12 @@ export class ThemeButtonService implements IThemeButtonService {
     // }
 
     getThemeButtonById(id: number): IThemeButton {
-        const themeButton = ThemeButtonService.themes.find((e) => e.id == id);
+        const themeButton = ThemeButtonService.themes.find((button) => button.id == id);
 
         if (!themeButton) {
             return ThemeButtonService.themes[0];
         }
+        
         return themeButton;
     }
 }
