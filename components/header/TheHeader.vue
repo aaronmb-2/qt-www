@@ -8,14 +8,6 @@
                     <!-- Header Links (middle)-->
                     <div class="hidden md:flex md:gap-x-6">
                         <HeaderLinks :links="links"/>
-                        <!-- <BaseButton 
-                            :button-theme="themeButtonService.getThemeButtonById(1)" 
-                            v-for="link in links">
-                            <NuxtLink 
-                                :to="link.to">
-                                {{ link.text }}
-                            </NuxtLink>
-                        </BaseButton> -->
                     </div>
                 </div>
                 <!-- Header Actions (right)-->
