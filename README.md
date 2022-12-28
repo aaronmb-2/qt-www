@@ -162,10 +162,19 @@ On each webpage it is possible to add so called Meta-tags. This metadata is not 
 
 The first method is by providing the Meta-tags inside of the [nuxt.config.ts](https://github.com/QuantTrade-io/qt-www/blob/dev/), this makes sure that each page at least has these minimum Meta-tags added.
 
-The second method is by using the [useHead composable function]([https://nuxt.com/docs/migration/meta](https://nuxt.com/docs/getting-started/seo-meta#composable-usehead). The way we've implemented this, is via a [global middleware](https://github.com/QuantTrade-io/qt-www/tree/dev/middleware). Via this middleware, we try to override some of the Meta-tags in order to make them page specific. If there are some really specific usecases for some pages, we could descide to override the useHead completely within the script setup.
+The second method is by using the [useHead composable function]([https://nuxt.com/docs/migration/meta](https://nuxt.com/docs/getting-started/seo-meta#composable-usehead). The way we've implemented this, is via a [global middleware](https://github.com/QuantTrade-io/qt-www/blob/dev/middleware/seo.global.ts). Via this middleware, we try to override some of the Meta-tags in order to make them page specific. If there are some really specific usecases for some pages, we could descide to override the useHead completely within the script setup.
 
 ##### Sitemap.xml
+An XML sitemap is a file that lists a website’s essential pages, making sure Google can find and crawl them all. It also helps search engines understand your website structure. You want Google to crawl every important page of your website. But sometimes, pages end up without internal links pointing to them, making them hard to find. A sitemap can help speed up content discovery.
+
+In order to create a certain sitemap, we've used [Nuxt 3 sitemap module](https://github.com/funkenstudio/sitemap-module-nuxt-3). By running the [build command](https://github.com/QuantTrade-io/qt-www#build-for-production), the `sitemap.xml` file is automatically added to the output, which in his turn will be added during the deployment.
 
 ##### Robots.txt
+A robots.txt file tells search engine crawlers which URLs the crawler can access on your site. This is used mainly to avoid overloading your site with requests.
+
+In order to create a certain robots.txt file, we've used [Nuxt 3 robots module](https://github.com/nuxt-community/robots-module). By running the [build command](https://github.com/QuantTrade-io/qt-www#build-for-production), the `robots.txt` file is automatically added to the output, which in his turn will be added during the deployment.
 
 ##### Json-ld
+JSON-LD annotates elements on a page, structuring the data, which can then be used by search engines to disambiguate elements and establish facts surrounding entities, which is then associated with creating a more organized, better web overall. The JSON-LD elements are part of the Header tags in the HTML code, by inspecting the webpage you should be able to find a `<script type="application/ld+json">` tag.
+
+In order to implement this on a Nuxt project, we've used [Nuxt jsonld](https://github.com/ymmooot/nuxt-jsonld). Since there is too much to tell about, how it works and what is does. It is probably much easier to link to [an implementation](https://github.com/QuantTrade-io/qt-www/blob/dev/app.vue) of it and some extra external links that explain how it works.
