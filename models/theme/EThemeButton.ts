@@ -59,9 +59,9 @@ export enum ButtonColor {
      *
      */
     transparent = "text-slate-700 hover:bg-slate-100 hover:text-slate-900",
-    white = "bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white",
-    black = "bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white",
+    white = "",
+    black = "",
     pink = "",
-    mblue = "bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600",
-    cblue = "bg-blue-600 text-indigo-700 hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600",
+    mblue = "bg-blue-900 text-white hover:text-slate-100 hover:bg-blue-600 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600",
+    cblue = "",
 }
