@@ -77,9 +77,9 @@ export default defineNuxtConfig({
     // https://github.com/ymmooot/nuxt-jsonld
     'nuxt-jsonld',
     // https://github.com/funkenstudio/sitemap-module-nuxt-3
-    '@nuxtjs/robots',
-    // https://github.com/nuxt-community/robots-module
     '@funken-studio/sitemap-nuxt-3',
+    // https://github.com/nuxt-community/robots-module
+    '@nuxtjs/robots',
   ],
   // config for sitemap-module
   sitemap: {
