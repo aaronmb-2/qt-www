@@ -54,7 +54,7 @@ But, as always, feel free to make any type of contribution that suits your needs
 
 #### License
 
-Every contribution accepted is licensed under [MIT](https://opensource.org/licenses/MIT) or any later version.
+Every contribution accepted is licensed under [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) or any later version.
 You must be careful to not include any code that can not be licensed under this license.
 
 The idea behind this license, is that all the repositories created and maintained by QuantTrade are free for personal usage.
