@@ -155,4 +155,17 @@ In additin to Mobx, we've also introduced [Mobx Persist Store](https://github.co
 For more information and some examples with explanation, [Services README.md](https://github.com/QuantTrade-io/qt-www/tree/dev/services).
 
 #### SEO
-https://www.qarbon.it/blog/seo-optimization-for-nuxt-js-the-complete-guide
+In order to perform better on search results, there are plenty of 'methods' that can be implemented. In [the SEO optimization for Nuxt guide](https://www.qarbon.it/blog/seo-optimization-for-nuxt-js-the-complete-guide) there are a lot of suggestions made, some of them are implemented and explained down below.
+
+##### Meta tags
+On each webpage it is possible to add so called Meta-tags. This metadata is not shown on the page itself, but it used by browsers, search engines and other webservices. In the [official Nuxt documentation](https://nuxt.com/docs/migration/meta) are some ways mentioned to manage these Meta-tags, where we would like to use two of the options provided.
+
+The first method is by providing the Meta-tags inside of the [nuxt.config.ts](https://github.com/QuantTrade-io/qt-www/blob/dev/), this makes sure that each page at least has these minimum Meta-tags added.
+
+The second method is by using the [useHead composable function]([https://nuxt.com/docs/migration/meta](https://nuxt.com/docs/getting-started/seo-meta#composable-usehead). The way we've implemented this, is via a [global middleware](https://github.com/QuantTrade-io/qt-www/tree/dev/middleware). Via this middleware, we try to override some of the Meta-tags in order to make them page specific. If there are some really specific usecases for some pages, we could descide to override the useHead completely within the script setup.
+
+##### Sitemap.xml
+
+##### Robots.txt
+
+##### Json-ld
