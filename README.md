@@ -21,6 +21,7 @@ QuantTrade is coming to the web!
     + [Models](#models)
     + [Types](#types)
     + [Services](#services)
+    + [SEO](#seo)
 
 ## Requirements
 Running qt-www requires the installation of Node (we currently run 18.12.1 LTS).
@@ -153,3 +154,5 @@ In additin to Mobx, we've also introduced [Mobx Persist Store](https://github.co
 
 For more information and some examples with explanation, [Services README.md](https://github.com/QuantTrade-io/qt-www/tree/dev/services).
 
+#### SEO
+https://www.qarbon.it/blog/seo-optimization-for-nuxt-js-the-complete-guide
