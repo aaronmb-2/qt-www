@@ -13,6 +13,7 @@ QuantTrade is coming to the web!
 - [Getting started](#getting-started)
     + [Clone the repository](#clone-the-repository)
     + [Install the dependencies](#install-the-dependencies)
+    + [Configure the .env file](#configure-the-env-file)
 - [Project deepdive](#project-deepdive)
     + [Components](#components)
     + [Models](#models)
@@ -80,6 +81,13 @@ If you're creating a new branch, and trying to implement something, we would lov
 
 ``` bash
 $ npm install
+```
+
+### Configure the .env file
+The .sample.env should be sufficient enough for running the development environment.
+
+``` bash
+$ copy .sample.env .env
 ```
 
 ### Start the development server
