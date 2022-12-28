@@ -14,6 +14,8 @@ QuantTrade is coming to the web!
     + [Clone the repository](#clone-the-repository)
     + [Install the dependencies](#install-the-dependencies)
     + [Configure the .env file](#configure-the-env-file)
+    + [Start the development server](#start-the-development-server)
+    + [Build for production](#build-for-production)
 - [Project deepdive](#project-deepdive)
     + [Components](#components)
     + [Models](#models)
@@ -31,7 +33,7 @@ The project is a [Nuxt3](https://nuxt.com/) application.
 Which is heavily based on [Vue3](https://vuejs.org/).
 
 In order to make the development a smooth experience, we would like to keep styling conventions a life.
-Therefore we've introduced the usage of a couple of rules from the [style-guide] (https://vuejs.org/style-guide/).
+Therefore we've introduced the usage of a couple of rules from the [style-guide](https://vuejs.org/style-guide/).
  
 It's dependent on multiple different backends which can be found in the other repos (which yet have to made. lol).
 
@@ -92,9 +94,14 @@ $ copy .sample.env .env
 
 ### Start the development server
 
-
 ``` bash
 $ npm run dev
+```
+
+### Build for production
+
+``` bash
+$ npx nuxi generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt3 doc's](https://nuxt.com/).
