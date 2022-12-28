@@ -5,12 +5,15 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // secret: process.env.SECRET,
     public: {
-      baseUrl: process.env.BASE_URL
+      environment: process.env.BASE_URL,
+      baseUrl: process.env.BASE_URL,
+      mainUrl: process.env.BASE_URL,
     }
   },
   app: {
     /*
     ** Headers of the page
+    ** Setting correct values should help SEO results
     */
     head: {
       charset: 'utf-8',
@@ -25,7 +28,8 @@ export default defineNuxtConfig({
         { name: "theme-color", content: "#ffffff" },
         { name: "msapplication-TileColor", content: "#da532c" },
 
-        // open graph 
+        // open graph
+        // https://masteringnuxt.com/blog/setting-up-nuxt-for-social-cards-and-meta-tags-to-improve-seo
         { hid: 'og:type', property: 'og:type', content: 'website' },
         { hid: 'og:title', property: 'og:title', content: "QuantTrade" },
         { hid: 'og:url', property: 'og:url', content: process.env.BASE_URL },
@@ -38,6 +42,7 @@ export default defineNuxtConfig({
         { hid: 'twitter:description', name: 'twitter:description', content: "Algorithmic trading solution for individuals" },
         { hid: "twitter:image", name: "twitter:image", content: process.env.BASE_URL + "/qt-logo.png"},
       ],
+      // Setting favicons and other logos
       link: [
         {
           rel: "apple-touch-icon",
@@ -69,10 +74,21 @@ export default defineNuxtConfig({
     }
   },
   modules: [
+    // https://github.com/ymmooot/nuxt-jsonld
+    'nuxt-jsonld',
+    // https://github.com/funkenstudio/sitemap-module-nuxt-3
+    '@nuxtjs/robots',
+    // https://github.com/nuxt-community/robots-module
     '@funken-studio/sitemap-nuxt-3',
   ],
+  // config for sitemap-module
   sitemap: {
-    hostname: 'https://example.com', 
+    hostname: process.env.MAIN_URL, 
+  },
+  // config for robots-module
+  robots: {
+    UserAgent: "*",
+    Disallow: "",
   },
   css: ["~/assets/css/main.css"],
   postcss: {
