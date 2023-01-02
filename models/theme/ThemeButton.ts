@@ -6,7 +6,7 @@ import { ButtonColor, ButtonRounding, ButtonSize } from "./EThemeButton";
 
 export class ThemeButton extends BaseData<ThemeButton> implements IThemeButton {
     /**
-     * Class that acts like a object, which contains styling semantics for a button.
+     * Class that acts like an object, which contains styling semantics for a button.
      *
      * @remarks
      * This class is a so-called 'model', which purpose is to represent the button styling withing the application.
