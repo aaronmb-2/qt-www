@@ -1,12 +1,15 @@
 import { BasicColorSchema } from "@vueuse/core"
+
 import { FunctionalComponent, HTMLAttributes, VNodeProps } from "nuxt/dist/app/compat/capi"
-import { TypeBaseSwitchItem } from "~~/types/TypeBaseSwitchItem";
+
+import { TypeBaseSwitchItem } from "~/types/TypeBaseSwitchItem";
+
 import { IBaseSwitchItem } from "./IBaseSwitchItem"
 
 
 export class BaseSwitchItem implements IBaseSwitchItem {
     /**
-     * Class that acts like a object, which contains information for rendering a Switch component.
+     * Class that acts like an object, which contains information for rendering a Switch component.
      *
      * @remarks
      * This class is a so-called 'model', which purpose is to represent data that is expected (or can be used) for rendering a Switch component.

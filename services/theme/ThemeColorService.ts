@@ -1,11 +1,13 @@
-import { BasicColorSchema } from "@vueuse/core";
 import { action } from "mobx";
+
+import { BasicColorSchema, useColorMode } from "@vueuse/core";
 import { ComputerDesktopIcon, SunIcon, MoonIcon } from '@heroicons/vue/20/solid'
 
 import { BaseSwitchItem } from "~/models/base/BaseSwitchItem";
-import { useColorMode } from '@vueuse/core'
+import { IBaseSwitchItem } from "~/models/base/IBaseSwitchItem";
+
 import { IThemeColorService } from "./IThemeColorService";
-import { IBaseSwitchItem } from "~~/models/base/IBaseSwitchItem";
+
 
 export class ThemeColorService implements IThemeColorService{
     /**
