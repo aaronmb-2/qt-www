@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <!-- Header Actions (right)-->
-                <div class="flex items-center gap-x-5 md:gap-x-8">
+                <div class="flex items-center gap-x-5 md:gap-x-2 lg:gap-x-4">
                     <HeaderActions />
                 </div>
             </nav>
@@ -29,8 +29,9 @@ import HeaderLinks from "./locals/HeaderLinks.vue"
 
 
 const links: PropsHeaderLinks[] = [
-    { text: 'Features', to: '/features' },
-    { text: 'About', to: '/about' },
-    { text: 'Pricing', to: '/pricing' },
+    // Text comes from Translations
+    { text: 'global.header.links.features', to: '/features' },
+    { text: 'global.header.links.about', to: '/about' },
+    { text: 'global.header.links.pricing', to: '/pricing' },
 ]
 </script>

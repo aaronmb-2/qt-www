@@ -1,0 +1,36 @@
+{
+    "global": {
+        "header": {
+            "links": {
+                "features": "Functionaliteit",
+                "about": "Over",
+                "pricing": "Prijs",
+                "theme_selector": "Thema selecteren",
+                "login": "Log in",
+                "get_started": "Aan de slag"
+            }
+        },
+        "footer": {
+
+        }
+    },
+    "home": {
+        "home": "Thuis"
+    },
+    "features": {
+        "features": "Functionaliteit"
+    },
+    "about": {
+        "about": "Over"
+    },
+    "pricing": {
+        "pricing": "Prijs"
+    },
+    "login": {
+        "login": "Log in"
+    },
+    "register": {
+        "get_started": "Aan de slag"
+    },
+    "welcome": "Welkom"
+}

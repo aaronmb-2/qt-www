@@ -74,6 +74,10 @@ export default defineNuxtConfig({
     }
   },
   modules: [
+    // https://vueuse.org/
+    '@vueuse/nuxt',
+    // https://github.com/nuxt-modules/i18n
+    '@nuxtjs/i18n',
     // https://github.com/ymmooot/nuxt-jsonld
     'nuxt-jsonld',
     // https://github.com/funkenstudio/sitemap-module-nuxt-3
@@ -81,6 +85,49 @@ export default defineNuxtConfig({
     // https://github.com/nuxt-community/robots-module
     '@nuxtjs/robots',
   ],
+  // config for i18n
+  i18n: {
+    baseUrl: process.env.MAIN_URL,
+    locales: [
+      {
+        code: "nl",
+        iso: "nl-NL",
+        file: "nl.json",
+        name: "Dutch"
+      },
+      {
+        code: "en",
+        iso: "en-US",
+        file: "en.json",
+        name: "English"
+      },
+    ],
+    lazy: true,
+    langDir: 'public/i18n/',
+    defaultLocale: 'en',
+    strategy: 'prefix',
+    // Enable browser language detection to automatically redirect user
+    // to their preferred language as they visit your app for the first time
+    detectBrowserLanguage: {
+      // If enabled, a cookie is set once a user has been redirected to his
+      // preferred language to prevent subsequent redirections
+      // Set to false to redirect every time
+      useCookie: true,
+      // Cookie name
+      cookieKey: 'i18n',
+      // the language detection is only attempted when the user visits the root path (/) of the site.
+      redirectOn: 'root',
+      // Set to always redirect to value stored in the cookie, not just once
+      alwaysRedirect: false,
+      // If no locale for the browsers locale is a match, use this one as a fallback
+      fallbackLocale: "en",
+    },
+    // add `vueI18n` option to `@nuxtjs/i18n` module options
+    vueI18n: {
+      legacy: false,
+      locale: 'en',
+    }
+  },
   // config for sitemap-module
   sitemap: {
     hostname: process.env.MAIN_URL, 
