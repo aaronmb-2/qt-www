@@ -1,6 +1,9 @@
 import { BasicColorSchema } from "@vueuse/core"
+
 import { FunctionalComponent, HTMLAttributes, VNodeProps } from "nuxt/dist/app/compat/capi"
-import { TypeBaseSwitchItem } from "~~/types/TypeBaseSwitchItem";
+
+import { TypeBaseSwitchItem } from "~/types/TypeBaseSwitchItem";
+
 import { IBaseSwitchItem } from "./IBaseSwitchItem"
 
 
