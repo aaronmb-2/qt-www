@@ -1,0 +1,36 @@
+{
+    "global": {
+        "header": {
+            "links": {
+                "features": "Features",
+                "about": "About",
+                "pricing": "Pricing",
+                "theme_selector": "Theme Selector",
+                "login": "Login",
+                "get_started": "Get Started"
+            }
+        },
+        "footer": {
+
+        }
+    },
+    "home": {
+        "home": "Home"
+    },
+    "features": {
+        "features": "Features"
+    },
+    "about": {
+        "about": "About"
+    },
+    "pricing": {
+        "pricing": "Pricing"
+    },
+    "login": {
+        "login": "login"
+    },
+    "register": {
+        "get_started": "Get Started"
+    },
+    "welcome": "welcome"
+}

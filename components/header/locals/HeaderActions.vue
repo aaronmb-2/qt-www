@@ -1,17 +1,27 @@
 <template>
-    <p>Theme Selector</p>
+  <!-- Header Theme && Language switch -->
+  <SwitchThemeColor />
+  <SwitchLanguage />
   <div class="hidden md:block">
-    <BaseButton :button-theme="themeButtonService.getThemeButtonById(1)">
-      <NuxtLink to="/sign-in">Sign in</NuxtLink>
-    </BaseButton>
+    <!-- Header Login button -->
+    <NuxtLink :to="localePath('/auth/login')">
+      <BaseButton :button-theme="themeButtonService.getThemeButtonById(1)">
+        {{ $t('global.header.links.login') }}
+      </BaseButton>
+    </NuxtLink>
   </div>
-  <BaseButton :button-theme="themeButtonService.getThemeButtonById(2)">
-    <span> Get started <span class="hidden lg:inline">today</span> </span>
-  </BaseButton>
+  <!-- Header Get started button -->
+  <NuxtLink :to="localePath('/auth/register')">
+    <BaseButton :button-theme="themeButtonService.getThemeButtonById(2)">
+      <span>{{ $t('global.header.links.get_started') }}</span>
+    </BaseButton>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
 import { themeButtonService } from "~/services/theme/ThemeButtonService";
 
 import BaseButton from "./../../base/BaseButton.vue"
+
+const localePath = useLocalePath()
 </script>

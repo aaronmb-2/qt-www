@@ -1,7 +1,7 @@
 <template>
 <TheHeader />
 <p>Default layout</p>
-<slot />
+<slot></slot>
 </template>
 
 <script setup lang="ts">
