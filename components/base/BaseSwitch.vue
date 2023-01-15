@@ -1,26 +1,26 @@
 <template>
     <Listbox :v-model="itemCurrent">
       <div class="relative">
-        <BaseButton :button-theme="themeButtonService.getThemeButtonById(1)">
-          <ListboxButton class="flex">
-            <component 
-              v-if="itemCurrent.icon" 
+          <ListboxButton>
+          <BaseButton class="flex" :button-theme="themeButtonService.getThemeButtonById(1)">
+            <component
+              v-if="itemCurrent.icon"
               :is="itemCurrent.icon"
-             class="h-5 w-5 text-gray-400"
+             class="h-5 w-5"
             />
             <span v-else class="block truncate">
                 {{ itemCurrent.name }}
             </span>
-            <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+            <ChevronUpDownIcon class="h-5 w-5" aria-hidden="true" />
+            </BaseButton>
           </ListboxButton>
-        </BaseButton>
-  
-        <transition 
-          leave-active-class="transition duration-100 ease-in" 
+
+        <transition
+          leave-active-class="transition duration-100 ease-in"
           leave-from-class="opacity-100"
           leave-to-class="opacity-0">
           <ListboxOptions
-            class="absolute left-1/2 -translate-x-1/2 mt-1 max-h-60 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+            class="absolute left-1/2 -translate-x-1/2 mt-1 max-h-60 overflow-auto rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
           >
             <ListboxOption
               v-slot="{ active }"
@@ -30,11 +30,11 @@
               class="w-32 py-2 px-2"
               @click="$emit('itemClicked', item)"
             >
-              
+
               <li
                 :class="[
                   active ? 'bg-pink-100 text-pink-900 rounded-md' : 'text-gray-900',
-                  'relative cursor-default select-none py-2 pl-10 pr-4 min-w-20',
+                  'cursor-pointer relative select-none py-2 pl-10 pr-4 min-w-20',
                 ]"
               >
                 <span
@@ -43,8 +43,8 @@
                     'block truncate flex justify-center',
                   ]"
                   >
-                  <component 
-                  v-show="item.icon" 
+                  <component
+                  v-show="item.icon"
                   :is="item.icon"
                   class="h-5 w-5 mr-2"
                   />
@@ -64,7 +64,7 @@
       </div>
     </Listbox>
 </template>
-  
+
 <script setup lang="ts">
 import {
     Listbox,

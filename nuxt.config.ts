@@ -35,7 +35,7 @@ export default defineNuxtConfig({
         { hid: 'og:url', property: 'og:url', content: process.env.BASE_URL },
         { hid: 'og:description', property: 'og:description', content: "Algorithmic trading solution for individuals" },
         { hid: 'og:image', property: 'og:image', content: process.env.BASE_URL + "/qt-logo.png"},
-        
+
         // twitter card
         { hid: "twitter:title", name: "twitter:title", content: "QuantTrade" },
         { hid: "twitter:url", name: "twitter:url", content: process.env.BASE_URL },
@@ -49,9 +49,9 @@ export default defineNuxtConfig({
           sizes: "180x180",
           href: "/apple-touch-icon.png"
         },
-        { rel: 'icon', 
-          type: 'image/x-icon', 
-          href: '/favicon.ico' 
+        { rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico'
         },
         {
           rel: "icon",
@@ -130,13 +130,14 @@ export default defineNuxtConfig({
   },
   // config for sitemap-module
   sitemap: {
-    hostname: process.env.MAIN_URL, 
+    hostname: process.env.MAIN_URL,
   },
   // config for robots-module
   robots: {
     UserAgent: "*",
     Disallow: "",
   },
+  buildModules: ['mobx-vue-lite/nuxt'],
   css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {

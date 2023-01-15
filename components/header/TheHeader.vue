@@ -27,7 +27,6 @@ import HeaderLogo from "./locals/HeaderLogo.vue"
 import HeaderActions from "./locals/HeaderActions.vue"
 import HeaderLinks from "./locals/HeaderLinks.vue"
 
-
 const links: PropsHeaderLinks[] = [
     // Text comes from Translations
     { text: 'global.header.links.features', to: '/features' },
