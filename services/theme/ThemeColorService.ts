@@ -1,4 +1,4 @@
-import { action } from "mobx";
+import { action, observable } from "mobx";
 
 import { BasicColorSchema, useColorMode } from "@vueuse/core";
 import { ComputerDesktopIcon, SunIcon, MoonIcon } from '@heroicons/vue/20/solid'
@@ -9,7 +9,7 @@ import { IBaseSwitchItem } from "~/models/base/IBaseSwitchItem";
 import { IThemeColorService } from "./IThemeColorService";
 
 
-export class ThemeColorService implements IThemeColorService{
+export class ThemeColorService implements IThemeColorService {
     /**
      * Class that holds all the logic for getting and setting the theme (light/dark/auto)..
      *
@@ -39,7 +39,7 @@ export class ThemeColorService implements IThemeColorService{
             mode: "auto",
         }),
     ]
-    
+
     mode = useColorMode({
         emitAuto: true,
     })
