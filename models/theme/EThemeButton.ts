@@ -58,10 +58,10 @@ export enum ButtonColor {
      * @param ruby - ruby color, on hover turns into light pink, text color is white
      *
      */
-    transparent = "text-slate-700 hover:bg-slate-100 hover:text-blue-900",
+    transparent = "text-slate-700 hover:bg-slate-200 hover:text-blue-900 dark:text-slate-200 dark:hover:bg-slate-600",
     white = "",
     black = "",
     pink = "",
-    mblue = "bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-900 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600",
+    mblue = "bg-blue-900 text-white hover:text-slate-100 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-900 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600",
     cblue = "",
 }

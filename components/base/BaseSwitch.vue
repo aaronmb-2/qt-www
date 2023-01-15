@@ -20,7 +20,7 @@
           leave-from-class="opacity-100"
           leave-to-class="opacity-0">
           <ListboxOptions
-            class="absolute left-1/2 -translate-x-1/2 mt-1 max-h-60 overflow-auto rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+            class="absolute left-1/2 -translate-x-1/2 mt-1 max-h-60 overflow-auto rounded-md bg-white py-1 drop-shadow-2xl shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
           >
             <ListboxOption
               v-slot="{ active }"
