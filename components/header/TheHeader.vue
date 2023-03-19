@@ -22,7 +22,6 @@ const links: PropsHeaderLinks[] = [
     { text: 'global.header.links.features', to: '/features' },
     { text: 'global.header.links.about', to: '/about' },
     { text: 'global.header.links.pricing', to: '/pricing' },
-    { text: 'global.header.links.pricing', to: '/pricing' },
 ]
 
 // const links: PropsHeaderActions[] = [
