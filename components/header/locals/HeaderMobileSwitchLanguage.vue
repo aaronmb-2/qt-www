@@ -1,0 +1,32 @@
+<template>
+    <button class="flex justify-between ml-2 mt-2" @click="$emit('toggleSwitchLanguage')">
+        <ChevronLeftIcon class="h-5 w-5 mt-1" aria-hidden="true" />
+    </button>
+    <BaseLine />
+    <div class="flex flex-col">
+        <button 
+            @click="setLanguage(locale)"
+            v-for="locale in locales" 
+            :key="locale.name" 
+            :value="locale"
+            :class="[locale.name === currentLocale.name ? 'bg-pink-100 text-pink-900' : 'text-slate-700 dark:text-slate-300', 'pl-4 my-1 py-1 cursor-pointer relative select-none hover:bg-slate-300 hover:dark:bg-slate-500 rounded-md']">
+            {{ locale.name }}
+        </button>
+    </div>
+</template>
+
+<script setup lang="ts">
+import { ChevronLeftIcon } from '@heroicons/vue/20/solid'
+import { IBaseSwitchItem } from "~/models/base/IBaseSwitchItem";
+
+const { locale, locales }: { locale: any, locales: any} = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+
+function setLanguage(localeCode: IBaseSwitchItem) {
+  return navigateTo(switchLocalePath(localeCode.code))
+}
+
+const currentLocale = computed(() => {
+  return (locales.value).find(i => i.code === locale.value)
+})
+</script>

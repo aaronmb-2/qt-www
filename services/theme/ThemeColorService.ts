@@ -24,17 +24,17 @@ export class ThemeColorService implements IThemeColorService {
         // 1: use the setTheme method, the mode can only be changed with this type of argument
         // 2: filter with getItem, the values compared should be of the same type
         new BaseSwitchItem({
-            name: "light",
+            name: "Light",
             icon: SunIcon,
             mode: "light",
         }),
         new BaseSwitchItem({
-            name: "dark",
+            name: "Dark",
             icon: MoonIcon,
             mode: "dark",
         }),
         new BaseSwitchItem({
-            name: "auto",
+            name: "Auto",
             icon: ComputerDesktopIcon,
             mode: "auto",
         }),
