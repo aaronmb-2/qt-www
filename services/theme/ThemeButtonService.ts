@@ -30,6 +30,36 @@ export class ThemeButtonService implements IThemeButtonService {
             size: ButtonSize.m,
             color: ButtonColor.mblue,
         }),
+        new ThemeButton({
+            id: 3,
+            rounding: ButtonRounding.full,
+            size: ButtonSize.xxs,
+            color: ButtonColor.mblue,
+        }),
+        new ThemeButton({
+            id: 4,
+            rounding: ButtonRounding.half,
+            size: ButtonSize.m,
+            color: ButtonColor.transparent,
+        }),
+        new ThemeButton({
+            id: 5,
+            rounding: ButtonRounding.half,
+            size: ButtonSize.m,
+            color: ButtonColor.mblue,
+        }),
+        new ThemeButton({
+            id: 6,
+            rounding: ButtonRounding.half,
+            size: ButtonSize.full,
+            color: ButtonColor.mblue,
+        }),
+        new ThemeButton({
+            id: 7,
+            rounding: ButtonRounding.half,
+            size: ButtonSize.full,
+            color: ButtonColor.border,
+        }),
     ]
 
     @observable
@@ -46,7 +76,7 @@ export class ThemeButtonService implements IThemeButtonService {
         if (!themeButton) {
             return ThemeButtonService.themes[0];
         }
-        
+
         return themeButton;
     }
 }

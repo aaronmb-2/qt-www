@@ -33,13 +33,14 @@ export enum ButtonSize {
      * @param cirkel - padding on all 4 sides are equalt which makes this button theme a cirkel
      *
      */
-    xxs = "py-1 px-2 text-sm",
+    xxs = "py-1 px-2 text-xs",
     xs = "px-2.5 py-1.5 text-xs",
     s = "px-3 py-2 text-sm",
     m = "px-4 py-2 text-sm",
     l = "px-4 py-2 text-base",
     xl = "px-6 py-3 text-base",
-    cirkel = "p-2 text-sm"
+    cirkel = "p-2 text-sm",
+    full = "w-full p-2",
 }
 
 export enum ButtonColor {
@@ -58,10 +59,11 @@ export enum ButtonColor {
      * @param ruby - ruby color, on hover turns into light pink, text color is white
      *
      */
-    transparent = "text-slate-700 hover:bg-slate-200 hover:text-blue-900 dark:text-slate-200 dark:hover:bg-slate-600",
+    transparent = "text-slate-700 hover:bg-slate-300 hover:text-slate-700 dark:text-slate-300 dark:hover:bg-slate-500",
+    border = "border-2 text-blue-700 border-blue-700 hover:text-pink-300 hover:border-pink-300",
     white = "",
     black = "",
-    pink = "",
-    mblue = "bg-blue-900 text-white hover:text-slate-100 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-900 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600",
+    pink = "bg-pink-700 hover:bg-pink-500 text-white dark:bg-pink-700 dark:hover:bg-pink-900 dark:text-slate-100",
+    mblue = "bg-blue-900 text-white hover:text-slate-100 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-900 focus-visible:outline-blue-700",
     cblue = "",
 }

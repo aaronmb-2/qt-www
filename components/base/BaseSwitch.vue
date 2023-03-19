@@ -1,6 +1,6 @@
 <template>
-    <Listbox :v-model="itemCurrent">
-      <div class="relative">
+    <Listbox :v-model="itemCurrent" class="relative">
+      <div>
           <ListboxButton>
           <BaseButton class="flex" :button-theme="themeButtonService.getThemeButtonById(1)">
             <component
@@ -8,7 +8,7 @@
               :is="itemCurrent.icon"
              class="h-5 w-5"
             />
-            <span v-else class="block truncate">
+            <span v-else class="block truncate align-middle mt-0.5">
                 {{ itemCurrent.name }}
             </span>
             <ChevronUpDownIcon class="h-5 w-5" aria-hidden="true" />
@@ -20,7 +20,7 @@
           leave-from-class="opacity-100"
           leave-to-class="opacity-0">
           <ListboxOptions
-            class="absolute left-1/2 -translate-x-1/2 mt-1 max-h-60 overflow-auto rounded-md bg-white py-1 drop-shadow-2xl shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+            class="dark:bg-slate-700 absolute left-1/2 -translate-x-1/2 mt-1 max-h-60 overflow-auto rounded-md bg-white py-1 drop-shadow-2xl shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
           >
             <ListboxOption
               v-slot="{ active }"
@@ -33,8 +33,8 @@
 
               <li
                 :class="[
-                  active ? 'bg-pink-100 text-pink-900 rounded-md' : 'text-gray-900',
-                  'cursor-pointer relative select-none py-2 pl-10 pr-4 min-w-20',
+                  item.name === itemCurrent.name ? 'bg-pink-100 text-pink-900 rounded-md' : 'text-slate-700 dark:text-slate-300',
+                  'cursor-pointer relative select-none py-2 pl-10 min-w-20 hover:bg-slate-300 hover:dark:bg-slate-500 rounded-md',
                 ]"
               >
                 <span
