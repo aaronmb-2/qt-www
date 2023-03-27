@@ -8,13 +8,13 @@
 
 <script setup lang="ts">
 import { themeButtonService } from "~/services/theme/ThemeButtonService";
-import { PropsHeaderLinks } from "~/types/PropsHeaderLinks";
+import { PropsHeaderLink } from "~/types/PropsHeaderLink";
 import BaseButton from "../../base/BaseButton.vue"
 
 const localePath = useLocalePath()
 
 interface Props {
-  links: PropsHeaderLinks[];
+  links: PropsHeaderLink[];
 }
 
 defineProps<Props>();

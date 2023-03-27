@@ -48,7 +48,7 @@ import { Bars3Icon } from '@heroicons/vue/20/solid'
 
 import { ref } from 'vue'
 
-import { PropsHeaderLinks } from "~/types/PropsHeaderLinks";
+import { PropsHeaderLink } from "~/types/PropsHeaderLink";
 
 import HeaderMobileSwitchLanguage from "./HeaderMobileSwitchLanguage.vue"
 import HeaderMobileSwitchTheme from "./HeaderMobileSwitchTheme.vue"
@@ -56,7 +56,7 @@ import HeaderMobileLinks from "./HeaderMobileLinks.vue"
 import HeaderMobileActions from "./HeaderMobileActions.vue"
 
 interface Props {
-  links: PropsHeaderLinks[];
+  links: PropsHeaderLink[];
 }
 
 defineProps<Props>();

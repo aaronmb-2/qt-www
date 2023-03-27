@@ -12,7 +12,7 @@
         <!-- Header Get started button -->
         <NuxtLink :to="localePath('/auth/register')">
             <BaseButton :button-theme="themeButtonService.getThemeButtonById(2)">
-                <span>{{ $t('global.header.links.get_started') }}</span>
+                <span>{{ $t('global.get_started') }}</span>
             </BaseButton>
         </NuxtLink>
     </div>

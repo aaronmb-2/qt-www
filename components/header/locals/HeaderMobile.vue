@@ -8,7 +8,7 @@
             <!-- Header Get started button -->
             <NuxtLink :to="localePath('/auth/register')">
                 <BaseButton :button-theme="themeButtonService.getThemeButtonById(3)">
-                    <span>{{ $t('global.header.links.get_started') }}</span>
+                    <span>{{ $t('global.get_started') }}</span>
                 </BaseButton>
             </NuxtLink>
             <!-- Mobile header Dropdown -->
@@ -18,14 +18,14 @@
 </template>
 
 <script setup lang="ts">
-import { PropsHeaderLinks } from "~/types/PropsHeaderLinks";
+import { PropsHeaderLink } from "~/types/PropsHeaderLink";
 import { themeButtonService } from "~/services/theme/ThemeButtonService";
 import HeaderMobileLogo from "./HeaderMobileLogo.vue"
 
 const localePath = useLocalePath()
 
 interface Props {
-    links: PropsHeaderLinks[];
+    links: PropsHeaderLink[];
 }
 
 defineProps<Props>();
