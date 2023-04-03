@@ -1,5 +1,7 @@
 {
     "global": {
+        "get_started": "Get Started",
+        "learn_more": "Learn more",
         "header": {
             "links": {
                 "features": "Features",
@@ -7,30 +9,248 @@
                 "pricing": "Pricing",
                 "theme_selector": "Theme Selector",
                 "login": "Login",
-                "get_started": "Get Started"
+                "switch_language": "Switch language",
+                "switch_theme": "Switch theme"
             }
         },
         "footer": {
-
+            "links": {
+                "home": "Home",
+                "features": "Features",
+                "about": "About",
+                "pricing": "Pricing",
+                "theme_selector": "Theme Selector",
+                "login": "Login",
+                "register": "Register",
+                "switch_language": "Switch language",
+                "switch_theme": "Switch theme"
+            }
         }
     },
     "home": {
-        "home": "Home"
+        "home": "Home",
+        "hero_leading_text": "World leader in cross-platform stocks, currencies en crypto's trading",
+        "hero_helper_text": "Having multiple acccounts accross different brokers, can be hard to manage. We deliver a single platform for running and managin your quantitative trading strategies on those acccounts, accross different brokers.",
+        "brokers_connected": "Connected with Worlds most famous trading platforms.",
+        "image_leading_text": "Run your strategy with confidence in the Cloud",
+        "image_helper_text": "Create, backtest and run your Quantitative Trading strategy through our Cloud solution. You come up with an idea, we help you with the rest!",
+        "cta_text": "Ready to dive in?",
+        "faq": {
+            "1": {
+                "q": "What is the idea behind QuantTrade?",
+                "a": "The idea behind QuantTrade is that individual traders have the opportunity and access to powerful trading models. The models vary from mean-reverting pair trading to active portfolio management, which can be fully adapted to your wishes. Still unsure? Then use our built-in backtesting solution, with which you can test your strategy on historical data. If that is still not convincing enough for you, there is always the option to use our optimizer software, this uses Machine Learning and historical data to find the perfect parameters for your strategy, so that the profit is maximized against the risk."
+            },
+            "2": {
+                "q": "How can I use QuantTrade?",
+                "a": "QuantTrade is currently only available for the browser, but will also appear in the App stores as soon as possible. This way you always and everywhere have access to your account(s) and the trading methods you have running."
+            },
+            "3": {
+                "q": "How do I connect to my broker?",
+                "a": "Most brokers we work with offer a so-called API Token, this is a token that you can request from your broker, which gives you access to (almost) all options that your broker also provides. We need this API Token to perform the actions you normally perform via your broker. We have a manual for every broker that shows how this API Token can be generated. Unfortunately, not all brokers issue an API Token, in which case there is not much else to do than to use username/password."
+            },
+            "4": {
+                "q": "What about the safety of my account(s)?",
+                "a": "Of course it is exciting to use API Tokens or to provide your username/password, so it is of great importance that this is handled very carefully. All data we have/receive is stored discreetly according to all standards and values required for password storage, only better. The data is encrypted before it is sent to us, so the data will already be safely moved over the internet, when it arrives at us, it will be encrypted again and then stored in the database. The database itself is then also fully encrypted and is completely closed off from the public internet, so the data will not be visible to anyone. If you have any questions or concerns about this, please feel free to contact our support department to ask additional questions."
+            },
+            "5": {
+                "q": "How can I create my own trading strategy?",
+                "a": "QuantTrade provides three unique ways to create your own strategy, the first is by using the pre-built templates. These are strategies that are often known among existing traders, which we have worked out down to the last detail. You apply the strategy to a stock you want, with the parameters as you want them. The second option is our Workflow, this is a visual editor where you can assemble all the steps that need to be completed yourself, this does not require any programming knowledge, but gives you full control over how a strategy should work. Finally, we offer the code editor in the browser, which gives you that last bit of control over your idea & strategy and allows you to push our platform to the limit with possibilities."
+            },
+            "6": {
+                "q": "How does the backtesting work?",
+                "a": "We offer a so-called backtesting software, in which the strategy stops as if you want to use it live, and is then tested on historical data. This allows you to check whether what you would like to do has already been profitable data. Of course, past performance is no guarantee for the future, but it will still be a big factor in determining whether or not a strategy could work. In addition, we are working very hard to offer the possibility to run strategies in Sandbox mode, which means that the strategy is reflected against real, live data, but the orders will not be officially executed."
+            },
+            "7": {
+                "q": "What if I want to stop or restart a certain trading strategy?",
+                "a": "Strategies can be turned on or off at any time. In the case of stopping a strategy, there is the possibility that there are orders ready to buy or sell shares, you will be notified immediately with the option to cancel these orders as well. Strategies that you have developed belong to your account, so it is always possible to turn a strategy back on or adjust it to new insights."
+            },
+            "8": {
+                "q": "What if I want to stop using QuantTrade?",
+                "a": "Too bad you have to look here, and we are of course very curious about your reasons for stopping. If the time has come, you can stop your account with several options. The first is a complete delete, which means that all open orders from us will be stopped first, then the strategies will be stopped, then your account will be deleted from QuantTrade (all data is deleted). The second option is a soft delete, where you have the option to choose that some data will remain on the platform. This option will cost you $1 per month for the storage cost of this data, giving you the option to keep/delete the following for potential future use; strategies, backtests, optimizations, API Tokens and username & password(s)."
+            }
+        }
     },
     "features": {
-        "features": "Features"
+        "cto": {
+            "title_first": "Boost your trading,",
+            "title_second": "Start using QuantTrade today."
+        },
+        "strategies": {
+            "pre_title": "All-in-one",
+            "title": "Everythin you need in one place",
+            "help_text": "No matter if you want to make changes to an exisiting strategy, create a new one from scratch or want to start reusing and old one. The posibilities are unlimited at QuantTrade."
+        },
+        "features": {
+            "1": {
+                "title": "Pre-built Strategies",
+                "text": "With a lot of pre-built strategies, you should be good to go within a couple of clicks."
+            },
+            "2": {
+                "title": "Backtesting",
+                "text": "Not sure about your ideas? Backtest, backtest & backtest untill you feel comfortable."
+            },
+            "3": {
+                "title": "Optimizer",
+                "text": "With the optimizer, you are able to really push your strategy to its limits of what is capable."
+            },
+            "4": {
+                "title": "Security",
+                "text": "Security comes first within QuantTrade, we work with very confidetial and sensitive data, which comes with a high responsibility."
+            },
+            "5": {
+                "title": "Brokers",
+                "text": "We do our very best to connect and integrate with as much brokers as possible, don't see yours? Please let us know and we'll do our best."
+            },
+            "6": {
+                "title": "Workflow",
+                "text": "Not fully satisfied with the pre-built strategies? Don't worry, you're able to make tweaks and adjustements excactly in the way you want without any programming knowledge with our Workflow editor."
+            },
+            "7": {
+                "title": "Code Editor",
+                "text": "You know how to program, and you really want to push our platform to it's limits? We got you covered with a built-in code editor that gives you all the freedom there is."
+            },
+            "8": {
+                "title": "Community",
+                "text": "Currently we are working on the creation of a community section on our platform, where you can share trades, ideas and strategies with other like-minded individuals."
+            }
+        },
+        "hero": {
+            "pre_title": "Everything you need",
+            "title": "All-in-one platform",
+            "help_text": "A Trading Platform that is created for the Trader itself, that wants to push the limits of what is possible in the financial markets."
+        },
+        "learn": {
+            "title": "What is...",
+            "help_text": "Don't worry if all those fancy concepts don't mean anything to you, we'll do our best to share all the knowledge we have with weekly Articles and Videos.",
+            "learn": {
+                "1": {
+                    "title": "Backtesting",
+                    "text": "Backtesting is a way to measure the performance of your strategy against a set of historical data. So a kind of simulator is used to see how your strategy would have worked in the past, of course this offers no guarantees for the future, but it does give a good picture of the risk profile and the possible potential."
+                },
+                "2": {
+                    "title": "Source Code",
+                    "text": "QuantTrade is software that is written with code, this code is stored in a central location. Normally, this code is protected by large companies, since the code is their revenue model. This is slightly different with us, because we believe that users should be able to see at all times what is being done with their orders, which means that all code written to make QuantTrade work can be viewed online."
+                },
+                "3": {
+                    "title": "Optimalisation",
+                    "text": "While Backtesting looks at historical data to measure your strategy, Optimization uses historical data to optimize the parameters of your strategy. The historical data is analyzed using Machine Learning and the computer can determine whether the parameters of your strategy are optimal or whether they could use a small adjustment."
+                },
+                "4": {
+                    "title": "Quantitative Trading",
+                    "text": "Quantitative Trading, this in a kind of umbrella term for algorithmic and automatic trading on financial markets. It's all about mathematical or static models that are flooded with (historical) data."
+                },
+                "5": {
+                    "title": "Mean Reverting strategy",
+                    "text": "If you are not completely sure of your case, there is always the option of Paper Trading. This is a way of acting in which the buy and sell orders are not officially sent, but take place fictitiously. This gives you insight into how a certain strategy would perform now."
+                },
+                "6": {
+                    "title": "Momentum strategy",
+                    "text": "Sometimes it is useful to have a little more control over when exactly you want to buy or sell. By means of the Workflow, without any programming knowledge, a structure can be set up that indicates when and which steps must be performed (or not)."
+                }
+            }
+        },
+        "strategy": {
+            "1": {
+                "title": "Cloud Based",
+                "text": "All code and software runs entirely in the Cloud, so it will be available anytime, anywhere."
+            },
+            "2": {
+                "title": "Safety",
+                "text": "The data we work with is confidential, so safety is paramount."
+            },
+            "3": {
+                "title": "Re-use",
+                "text": "Same strategy, but slightly different? Reuse it however you want."
+            },
+            "4": {
+                "title": "Personal",
+                "text": "All strategies can be adapted to personal needs and insights. Do you want it all just a little different? No point."
+            }
+        }
     },
     "about": {
-        "about": "About"
+        "header": {
+            "title": "We love Traders",
+            "text": "Traders in the financial markets are unique, they all see a bit of inefficiency in the market that they take advantage of."
+        },
+        "content": {
+            "1": "As an individual trader it can sometimes be difficult to operate profitably. Many of the common strategies explained on the internet are nothing more than a simple moving average crossover.",
+            "2": "To be able to compete with the larger parties, you should have a good knowledge of software development and the financial markets. To eventually combine these two together into profitable strategies requires an enormous amount of time and effort.",
+            "3": "QuantTrade arose from that idea, helping the individual on the financial market, by means of Quantitative trading models, which are partly pre-programmed.",
+            "4": "Yet everything can be fully configured according to personal insight and needs, so that a strategy is actually unique and only yours. You have the ideas, we help you set up & implement them.",
+            "5": "Because trust is extremely important here, we have chosen to make public all the code that was written to make QuantTrade what it is today.",
+            "6": "So it is for everyone (with some programming skills) to see what happens with your strategy or order. With the idea that if something happens that is not right, this can be reported at all times. Of course, ideas & additions to the software are always welcome."
+        },
+        "values": {
+            "header": {
+                "title": "Our Values",
+                "text": "As QuantTrade, there are a number of things we try to work on as hard as possible every day."
+            },
+            "1": {
+                "title": "Fast, faster, fastest,",
+                "text": "as an exchange trader it is important that the platform and the orders are lightning fast."
+            },
+            "2": {
+                "title": "Support, as best as possible,",
+                "text": "Nothing is more annoying than lack of clarity, which is why we strive for a fast response time."
+            },
+            "3": {
+                "title": "Safety Above All,",
+                "text": "Sensitive data and data should never fall into the wrong hands."
+            },
+            "4": {
+                "title": "Keep Learning,",
+                "text": "to get better as an individual, but also as a QuantTrade, it is important that we keep learning."
+            },
+            "5": {
+                "title": "OpenSource,",
+                "text": "since everyone has the right to know what goes on behind the scenes, as transparently as possible."
+            },
+            "6": {
+                "title": "Grow Your Wealth,",
+                "text": "Ultimately we do all this with a purpose, the wealth that we have grown, we are working on that together."
+            }
+        }
     },
     "pricing": {
-        "pricing": "Pricing"
+        "payment": "Payment",
+        "monthly": "Monthly",
+        "annually": "Annually",
+        "hero_leading_text": "Grow as a Trader or Investor.",
+        "hero_helper_text": "Pick the plan that suits you best, cancel at any time.",
+        "buy_plan": "Pick this plan",
+        "tier_trader": {
+            "name": "Trader",
+            "backtesting": "Backtester",
+            "optimizer": "Optimalisator",
+            "unlimited": "Unlimited usage",
+            "code_editor": "Code Editor",
+            "workflow": "Workflow"
+        },
+        "tier_trader_investor": {
+            "name": "Trader & Investor",
+            "combined": "Both plans combined",
+            "trader": "Traders",
+            "investor": "Investor"
+        },
+        "tier_investor": {
+            "name": "Investor",
+            "active_management": "Active mangement",
+            "advisor": "Investment Advisor",
+            "portfolio_management": "Portfolio management",
+            "risk_management": "Risk management",
+            "invest": "Investing"
+        }
     },
     "login": {
-        "login": "login"
+        "up_to_date": "Stay up-to-date!",
+        "keep_me_posted": "Keep me Posted!",
+        "home": "Home"
     },
     "register": {
-        "get_started": "Get Started"
+        "up_to_date": "Stay up-to-date!",
+        "keep_me_posted": "Keep me Posted!",
+        "home": "Home"
     },
     "welcome": "welcome"
 }

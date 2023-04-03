@@ -15,19 +15,12 @@
 import HeaderDesktop from "./locals/HeaderDesktop.vue"
 import HeaderContainer from "./locals/HeaderContainer.vue"
 
-import { PropsHeaderLinks } from "~/types/PropsHeaderLinks";
+import { PropsHeaderLink } from "~/types/PropsHeaderLink";
 
-const links: PropsHeaderLinks[] = [
+const links: PropsHeaderLink[] = [
     // Text comes from Translations
     { text: 'global.header.links.features', to: '/features' },
     { text: 'global.header.links.about', to: '/about' },
     { text: 'global.header.links.pricing', to: '/pricing' },
 ]
-
-// const links: PropsHeaderActions[] = [
-//     // Text comes from Translations
-//     { text: 'global.header.links.features', to: '/features' },
-//     { text: 'global.header.links.about', to: '/about' },
-//     { text: 'global.header.links.pricing', to: '/pricing' },
-// ]
 </script>

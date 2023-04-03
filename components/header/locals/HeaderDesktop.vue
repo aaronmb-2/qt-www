@@ -10,14 +10,14 @@
 
 
 <script setup lang="ts">
-    import { PropsHeaderLinks } from "~/types/PropsHeaderLinks";
+    import { PropsHeaderLink } from "~/types/PropsHeaderLink";
 
     import HeaderDesktopActions from "./HeaderDesktopActions.vue"
     import HeaderDesktopLinks from "./HeaderDesktopLinks.vue"
     import HeaderDesktopLogo from "./HeaderDesktopLogo.vue";
 
     interface Props {
-      links: PropsHeaderLinks[];
+      links: PropsHeaderLink[];
     }
 
     defineProps<Props>();

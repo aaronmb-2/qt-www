@@ -1,5 +1,7 @@
 {
     "global": {
+        "get_started": "Aan de slag",
+        "learn_more": "Leer meer",
         "header": {
             "links": {
                 "features": "Functionaliteit",
@@ -7,30 +9,248 @@
                 "pricing": "Prijs",
                 "theme_selector": "Thema selecteren",
                 "login": "Log in",
-                "get_started": "Aan de slag"
+                "switch_language": "Wissel taal",
+                "switch_theme": "Wissel thema"
             }
         },
         "footer": {
-
+            "links": {
+                "home": "Thuis",
+                "features": "Functionaliteit",
+                "about": "Over",
+                "pricing": "Prijs",
+                "theme_selector": "Thema selecteren",
+                "login": "Log in",
+                "register": "Registreren",
+                "switch_language": "Wissel taal",
+                "switch_theme": "Wissel thema"
+            }
         }
     },
     "home": {
-        "home": "Thuis"
+        "home": "Thuis",
+        "hero_leading_text": "Wereld leider in cross-platform handel in aandelen, valuta & cryptocurrencies",
+        "hero_helper_text": "Meerdere accounts hebben via verschillende handelsplatformen, kan lastig te beheren zijn. Wij bieden een enkel platform aan, waarop u uw Quantitative handelmethode kunt toepassen op alle gewenste accounts.",
+        "brokers_connected": "Gekoppeld met swerelds bekendste handelsplatformen.",
+        "image_leading_text": "Draai jouw strategie met vertrouwen in de Cloud",
+        "image_helper_text": "Maak, test and draai jouw Quantitative Trading strategie middels onze Cloud Oplossing. Jij bedenkt het idee, wij helpen met de uitvoering!",
+        "cta_text": "Klaar om aan de slag te gaan?",
+        "faq": {
+            "1": {
+                "q": "Wat is het idee achter QuantTrade?",
+                "a": "Het idee achter QuantTrade, is dat individele handelaren de mogelijkheid en de toegang hebben tot krachtige handelsmodelen. De modellen varieren van mean-reverting pair trading tot active portfolio management, welke volledig aan te passen zijn naar jouw wensen. Twijfel je nog? Maak dan gebruik van onze built-in backtesting oplossing, waarmee je jouw strategie kunt testen op historische data, mocht dat nou nog steeds niet overtuigend genoeg zijn voor jou, dan is er altijd nog de mogelijkheid om gebruik te maken van onze optimalizator software, deze gaat middels Machine Learning en historische data opzoek naar de perfecte parameters voor jouw strategie, zodat de winst wordt wordt gemaximaliseerd tegenover het risico."
+            },
+            "2": {
+                "q": "Hoe kan ik gebruik maken van QuantTrade?",
+                "a": "QuantTrade is momenteel alleen beschikbaar voor de browser, maar zal zo spoedig mogelijk ook in de App stores verschijnen. Op deze manier heb jij altijd en overal toegang tot jouw account(s) en de handels methoden die jij hebt draaien."
+            },
+            "3": {
+                "q": "Hoe kan ik mijn broker verbinden met QuantTrade?",
+                "a": "De meeste brokers waarmee wij werken bieden een zogehete API-Token aan, dit is een token die jij bij je broker kunt opvragen, waarmee je toegang krijgt tot (bijna) alle mogelijkheden die jouw broker ook levert. Deze API-Token hebben wij nodig, om de handelingen die jij normaliter via jouw broker uit voert, uit te voeren. Voor iedere broker hebben wij een handleiding waarmee wij laten zien hoe dat deze API-Token gegenereerd kan worden. Helaas geven niet alle brokers een API-Token af, in dat geval zit er niet veel anders op dan gebruik te maken van gebruikersnaam/wachtwoord."
+            },
+            "4": {
+                "q": "Hoe zit het met de veiligheid van mijn account(s)?",
+                "a": "Uiteraard is spannend om gebruik te maken van API-Tokens of om je gebruikersnaam/wachtwoord af te geven, het is dan ook van groots belang dat hier zeer zorgvuldig mee omgegaan wordt. Alle gegevens die wij hebben/ontvangen worden discreet opgeslagen volgens alle normen en waarden die vereist zijn voor het opslaan van wachtwoorden, maar dan beter. De gegevens worden nog voordat deze naar ons worden verstuurd versleuteld, de gegevens zullen dus al veilig over het internet verplaats worden, op het moment dat deze bij ons aankomen, zullen deze nogmaals versleuteld worden om vervolgens opgeslagen te worden in de database. De database zelf is vervolgens ook nog eens volledig versleuteld en is volledig afgesloten van het publieke internet, hierdoor zullen de gegevens voor niemand inzichtelelijk zijn. Mocht u hier nog vragen of zorgen over hebben, voelt u zich dan vrij om met onze support afdeling contact op te nemen om extra vragen te stellen."
+            },
+            "5": {
+                "q": "Hoe kan ik mijn eigen strategie maken via QuantTrade?",
+                "a": "QuantTrade levert drie unieke manieren om je eigen strategie te maken, de eerste is door gebruik te maken van de pre-built templates. Dit zijn strategieen die veelal bekend zijn onder bestaande handelaren, welke wij tot in de puntjes hebben uitgewerkt. Jij past de stategie toe op een door jouw gewenst aandeel, met de parameters zoals als jij hem wilt. De tweede mogelijkheid is onze Workflow, dit is een visuele editor waarbij je alle stappen die doorlopen moeten worden zelf in elkaar kunt zetten, dit vereist geen enkele programeer kennis, maar geeft je daarbij wel volledige controle over hoe dat een strategie moet werken. Als laatst bieden wij nog de code editor aan in de browser, dit geeft je nog net dat aller laatste stukje controle over je idee & strategie en hiermee kan jij ons platform tot het uiterste drijven met mogelijkheden."
+            },
+            "6": {
+                "q": "Hoe kan ik mijn strategieën testen op QuantTrade?",
+                "a": "Wij bieden een zogehete backtesting software aan, hierin stop de strategy zoals als jij hem live wilt gaan gebruiken, en wordt dan gestest op historische data. Hiermee kan je controleren of dat hetgeen jij zou willen doen, al eens winstgevens is geweest. Uiteraard biden resultaten uit het verleden geen garantie voor de toekomst, maar toch zal dit een grote factor zijn in het bepalen of dat een strategie wel of niet zou kunnen werken. Daarnaast zijn wij erg druk bezig om de mogelijkheid te bieden om strategieën in Sandbox modus te kunnen draaien, dit houdt in dat de strategie wordt gereflecteerd tegen echte, live data, maar de orders zullen niet officieel worden uitgevoerd."
+            },
+            "7": {
+                "q": "Wat als ik een strategie wil stoppen of (her)starten?",
+                "a": "strategieën kunnen op ieder gewenst moment aan of uit worden gezet. In het geval van een strategie stoppen, bestaat er de mogelijkheid dat er orders klaar staan om aandelen te kopen of verkopen, u wordt hier direct van op de hoogte gebracht met de mogelijkheid om ook deze orders nog te cancelen. strategieën die u heeft ontwikkeld, behoren tot uw account, het is dus ten alle tijden mogelijk om een strategie weer aan te zetten of aan te passen naar nieuwe inzichten."
+            },
+            "8": {
+                "q": "Wat als ik wil stoppen met QuantTrade?",
+                "a": "Jammer dat u hier moet kijken, en wij zijn uiteraard enorm benieuwd wat uw beweegredenen zijn om te stoppen. Mocht het dan toch zo ver zijn, dan kunt u uw account met meerdere opties stoppen. De eerste is een volledige delete, dit houdt in dat eerst alle openstaande orders vanuit ons worden gestopt, daarna worden de strategieën gestopt, vervolgens zal uw account verwijderd worden waardoor van QuantTrade (alle gegevens zijn hiermee verwijderd). De tweede optie is een zachte delete, hierbij heeft u de mogelijkheid om te kiezen dat er een aantal gegevens wel blijven bestaan op het platform. Deze optie kost u $1 per maand voor de opslag kosten van deze gegevens, u heeft hierbij de keuze om de volgende zaken te behouden/verwijderen voor potentieel toekomstig gebruik; strategieën, backtests, optimalisaties, API-Tokens en gebruikersnaam & wachtwoord(en)."
+            }
+        }
     },
     "features": {
-        "features": "Functionaliteit"
+        "cto": {
+            "title_first": "Geef een boost aan je beurs handel,",
+            "title_second": "start met QuantTrade."
+        },
+        "strategies": {
+            "pre_title": "All-in-one",
+            "title": "Alles wat jij nodig hebt op een plek",
+            "help_text": "Of het nou gaat om een bestaande strategie uit te breiden, een nieuwe wilt bedenken of een oude wilt hergebruiken. Alles is mogelijk binnen QuantTrade."
+        },
+        "features": {
+            "1": {
+                "title": "Pre-built strategieën",
+                "text": "Met een groot aantal vooraf gecreeerde strategieën, zou je binnen een paar klikken klaar moeten zijn."
+            },
+            "2": {
+                "title": "Backtesten",
+                "text": "Ben je niet zeker van je ideeën? Backtest, backtest & backtest totdat u zich op uw gemak voelt."
+            },
+            "3": {
+                "title": "Optimalisator",
+                "text": "Met de optimizer kunt u uw strategie echt tot het uiterste drijven."
+            },
+            "4": {
+                "title": "Veiligheid",
+                "text": "Veiligheid staat voorop binnen QuantTrade, we werken met zeer vertrouwelijke en gevoelige gegevens, wat een hoge verantwoordelijkheid met zich meebrengt."
+            },
+            "5": {
+                "title": "Brokers",
+                "text": "We doen ons uiterste best om met zoveel mogelijk brokers verbinding te maken en te integreren, zie je die van jou niet? Laat het ons weten en we zullen ons best doen."
+            },
+            "6": {
+                "title": "Workflow",
+                "text": "Niet helemaal tevreden met de vooraf gebouwde strategieën? Maak je geen zorgen, je kunt zonder programmeerkennis precies toevoegen en aanpassen zoals jij dat wilt middels onze Workflow editor."
+            },
+            "7": {
+                "title": "Code Editor",
+                "text": "Kun je programmeren en wil je ons platform echt tot het uiterste drijven? We hebben je gedekt met een ingebouwde code-editor die je alle vrijheid geeft die er is."
+            },
+            "8": {
+                "title": "Community",
+                "text": "Momenteel werken we aan de oprichting van een community gedeelte op ons platform, waar u transacties, ideeën en strategieën kunt delen met andere gelijkgestemde individuen."
+            }
+        },
+        "hero": {
+            "pre_title": "Precies wat jij nodig hebt",
+            "title": "All-in-one platform",
+            "help_text": "Een platform dat is gemaakt voor en door handelaren, die het uiterste willen halen uit zichzelf en de financiele markten."
+        },
+        "learn": {
+            "title": "Wat is...",
+            "help_text": "Geen zorgen als sommige concepten nog niet bekend, wij zullen ons best doen om zo veel mogelijk kennnis te delen middels wekelijkse artiekelen en videos.",
+            "learn": {
+                "1": {
+                    "title": "Backtesting",
+                    "text": "Backtesten is een manier om de prestaties van jouw strategie te meten, dit wordt gedaan op een set van historische data. Er wordt dus middels een soort van simulator gekeken hoe dat jouw strategie zou hebben gewerkt in het verleden, uiteraard bied dit geen garanties voor de toekomst, maar geeft het wel een goed beeld over het risico profiel en het mogelijk potentieel."
+                },
+                "2": {
+                    "title": "Source Code",
+                    "text": "QuantTrade is software dat geschreven wordt met code, deze code wordt op een centrale plek opgeslagen. Normaliter wordt deze code door grote bedrijven afgeschermd, aangezien de code hun verdienmodel is. Bij ons is dat net even anders, wij vinden namelijk dat gebruikers ten alle tijden moeten kunnen zien wat er met hun orders gedaan wordt, dit houdt dus in dat alle code die er geschreven is om QuantTrade te laten werken, online in te zien valt."
+                },
+                "3": {
+                    "title": "Optimalisation",
+                    "text": "Waarbij Backtesten kijkt naar historische data om je strategie te meten, wordt bij Optimalisatie historische data gebruikt om de parameters van jou strategie te optimaliseren. Middels Machine Learning wordt de historische data geanalyseerd en kan de computer bepalen of dat de parameters van jouw strategie optimaal zijn of toch een kleine aanpassing kunnen gebruiken."
+                },
+                "4": {
+                    "title": "Quantitative Trading",
+                    "text": "Quantitative Trading, dit in een soort overkoepelende term voor algoritmisch en automatisch handelen op financiele markten. Het draait hierbij allemaal om wiskundige of statische modellen welke worden overspoeld met (historische) data."
+                },
+                "5": {
+                    "title": "Paper Trading",
+                    "text": "Mocht je nou niet helemaal zeker zijn van je zaak, dan bestaat er altijd nog de mogelijkheid om te Paper Traden. Dit is een manier van handelen waarbij de koop en verkoop orders niet officieel worden verstuurd, maar fictief plaats vinden. Hierdoor krijg je inzicht in hoe een bepaalde strategie nu zou presteren."
+                },
+                "6": {
+                    "title": "Workflow",
+                    "text": "Soms is het handig om net even iets meer controle te hebben over wanneer je nou precies wil kopen of verkopen. Door middel van de Workflow, kan er zonder enige programmeer kennis, een structuur worden opgezet dat aangeeft wanneer, welke stappen moeten worden uitgevoerd (of niet)."
+                }
+            }
+        },
+        "strategy": {
+            "1": {
+                "title": "Cloud gebaseerd",
+                "text": "Alle code en software draait volledig in de Cloud, en zal dus altijd en overal beschikbaar zijn."
+            },
+            "2": {
+                "title": "Veiligheid",
+                "text": "De gegevens waarmee wij werken zijn vertrouwelijk, veiligheid staat daarom voorop."
+            },
+            "3": {
+                "title": "Hergebruik",
+                "text": "Dezelfde strategie, maar dan net wat anders? Hergebruik hem zoals jij het wil."
+            },
+            "4": {
+                "title": "Persoonlijk",
+                "text": "Alle strategieën zijn aan te passen naar persoonlijke behoeften en inzichten. Wil jij het allemaal net wat anders? Geen enkel punt."
+            }
+        }
     },
     "about": {
-        "about": "Over"
+        "header": {
+            "title": "Wij houden van handelaars",
+            "text": "Handelaren op de financiele markten zijn uniek, allemaal zien zij een stukje inefficientie in de markt waaruit zij hun voordeel halen."
+        },
+        "content": {
+            "1": "Als individueel handelaar kan het soms lastig zijn om winstgevend te opereren. Veel van de doorsnee strategien die worden uitgelegd op het internet zijn niet meer dan een simpele moving average cross-over.",
+            "2": "Om mee te kunnen met de grotere partijen zou je en een goede kennis moeten hebben van software development en van de financiele markten. Om uiteindelijk deze twee samen te kunnen combineren tot winstegevende strategien vergt enorm veel tijd en moeite.",
+            "3": "Uit die gedachte is QuantTrade dan ook ontstaan, het helpen van het individu op de financiele markt, door middel van Quantitatieve handelsmodellen, welke deels voorgeprogrammeerd zijn.",
+            "4": "Toch is alles volledig in te stellen naar persoonlijk inzicht en behoefte, waardoor een strategie ook daadwerkelijk uniek is en alleen van jou. Jij hebt de ideeen, wij helpen jou met het opzetten & de uitvoering hiervan.",
+            "5": "Omdat vertrouwen hierbij ontzettend belangrijk is, hebben wij er voor gekozen om alle code die geschreven is om QuantTrade te maken tot hetgeen wat het nu is, openbaar te maken.",
+            "6": "Het is dus voor iedereen (met programeer vaardigheden) in te zien wat er allemaal gebeurd met jouw strategie of order. Met de gedachte dat als er iets gebeurd wat niet deugt, dit ten alle tijden gemeld kan worden. Uiteraard zijn ideeen & aanvulllingen op de software ook altijd welkom."
+        },
+        "values": {
+            "header": {
+                "title": "Onze waarden",
+                "text": "Als QuantTrade zijnde zijn er een aantal zaken waaraan wij zo hard mogelijk proberen te werken, iedere dag weer."
+            },
+            "1": {
+                "title": "Snel, sneller, snelst,",
+                "text": "als beurshandelaar is het van belang dat het platform en de orders vliegens vlug zijn."
+            },
+            "2": {
+                "title": "Support, zo goed mogelijk,",
+                "text": "aangezine niets vervelender is dan onduidelijkheid, daarom streven wij naar een snelle reactie tijd."
+            },
+            "3": {
+                "title": "Veiligheid boven alles,",
+                "text": "gevoelige gegevens en data mogen nooit in verkeerde handen komen."
+            },
+            "4": {
+                "title": "Blijf leren,",
+                "text": "om beter te worden als individu, maar ook als QuantTrade zijnde, is het van belang dat we blijven leren."
+            },
+            "5": {
+                "title": "Open Source,",
+                "text": "aangezien iedereen recht heeft om te weten wat er allemaal achter de schermen gebeurd, zo transparant mogelijk."
+            },
+            "6": {
+                "title": "Laat je vermogen groeien,",
+                "text": "uiteindelijk doen wij dit alles met een doel, het vermogen dat we hebben laten groeien, daar werken we samen aan."
+            }
+        }
     },
     "pricing": {
-        "pricing": "Prijs"
+        "payment": "Betaling",
+        "monthly": "Maandelijks",
+        "annually": "Jaarlijks",
+        "hero_leading_text": "Groei als investeerder of handelaar.",
+        "hero_helper_text": "Kies het plan dat past bij jou en stop wanneer jij wil.",
+        "buy_plan": "Neem dit plan",
+        "tier_trader": {
+            "name": "Handelaar",
+            "backtesting": "Backtesten",
+            "optimizer": "Optimalisator",
+            "unlimited": "Onbeperkt",
+            "code_editor": "Code Editor",
+            "workflow": "Workflow"
+        },
+        "tier_trader_investor": {
+            "name": "Handelaar & Investeerder",
+            "combined": "Alles van beide",
+            "trader": "Handelaar",
+            "investor": "Investeerder"
+        },
+        "tier_investor": {
+            "name": "Investeerder",
+            "active_management": "Actief beheer",
+            "advisor": "Investerings Adviseur",
+            "portfolio_management": "Portfolio management",
+            "risk_management": "Risico management",
+            "invest": "Investeren"
+        }
     },
     "login": {
-        "login": "Log in"
+        "up_to_date": "Blijf up-to-date!",
+        "keep_me_posted": "Hou me op de hoogte!",
+        "home": "Thuis"
     },
     "register": {
-        "get_started": "Aan de slag"
+        "up_to_date": "Blijf up-to-date!",
+        "keep_me_posted": "Hou me op de hoogte!!",
+        "home": "Thuis"
     },
     "welcome": "Welkom"
 }

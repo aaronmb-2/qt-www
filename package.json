@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
+    "@tailwindcss/forms": "^0.5.3",
     "@vueuse/core": "^9.9.0",
     "@vueuse/nuxt": "^9.9.0",
     "autoprefixer": "^10.4.13",
