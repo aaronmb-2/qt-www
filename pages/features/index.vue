@@ -1,13 +1,13 @@
 <template>
     <FeaturesHero />
-    <FeaturesCTO />
+    <FeaturesLearn/>
+    <FeaturesCTA />
     <FeaturesStrategy />
-    <FeaturesSecurity />
 </template>
 
 <script setup lang="ts">
 import FeaturesHero from "./components/FeaturesHero.vue"
-import FeaturesCTO from "./components/FeaturesCTO.vue"
-import FeaturesSecurity from "./components/FeaturesSecurity.vue"
+import FeaturesCTA from "./components/FeaturesCTA.vue"
+import FeaturesLearn from "./components/FeaturesLearn.vue"
 import FeaturesStrategy from "./components/FeaturesStrategy.vue"
 </script>

@@ -7,7 +7,7 @@
                 <span>{{ $t('global.get_started') }}</span>
               </BaseButton>
             </NuxtLink>
-            <NuxtLink :to="localePath('/about')">
+            <NuxtLink :to="localePath('/features')">
               <BaseButton :button-theme="themeButtonService.getThemeButtonById(4)" class="font-bold">
                 {{ $t('global.learn_more') }} <span aria-hidden="true">→</span>
               </BaseButton>

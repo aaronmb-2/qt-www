@@ -21,6 +21,7 @@
 import { PropsHeaderLink } from "~/types/PropsHeaderLink";
 import { themeButtonService } from "~/services/theme/ThemeButtonService";
 import HeaderMobileLogo from "./HeaderMobileLogo.vue"
+import { linkSync } from "fs";
 
 const localePath = useLocalePath()
 
