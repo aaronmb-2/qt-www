@@ -1,5 +1,5 @@
 export interface ConnectedBroker {
-    broker: string;
-    image: string;
-    link: string;
+  broker: string;
+  image: string;
+  link: string;
 }

@@ -5,17 +5,28 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint:js": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint": "npm run lint:js && npm run lint:prettier",
+    "lintfix": "prettier --write --list-different . && npm run lint:js --fix"
   },
   "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
     "@tailwindcss/forms": "^0.5.3",
+    "@typescript-eslint/parser": "^5.57.1",
     "@vueuse/core": "^9.9.0",
     "@vueuse/nuxt": "^9.9.0",
     "autoprefixer": "^10.4.13",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "nuxt": "3.0.0",
     "postcss": "^8.4.19",
-    "tailwindcss": "^3.2.4"
+    "prettier": "^2.8.7",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^5.0.3"
   },
   "dependencies": {
     "@funken-studio/sitemap-nuxt-3": "^4.0.4",
