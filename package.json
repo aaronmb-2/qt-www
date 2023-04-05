@@ -12,6 +12,7 @@
     "lintfix": "prettier --write --list-different . && npm run lint:js --fix"
   },
   "devDependencies": {
+    "@nuxt/test-utils": "^3.3.3",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
     "@tailwindcss/forms": "^0.5.3",
@@ -26,7 +27,8 @@
     "postcss": "^8.4.19",
     "prettier": "^2.8.7",
     "tailwindcss": "^3.2.4",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.3",
+    "vitest": "^0.29.8"
   },
   "dependencies": {
     "@funken-studio/sitemap-nuxt-3": "^4.0.4",
