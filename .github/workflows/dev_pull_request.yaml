@@ -23,8 +23,8 @@ jobs:
           key: npm-deps-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm ci
-      - name: Run Prettier && Linter
-        run: make lintfix
+      # - name: Run Prettier && Linter
+      #   run: make lintfix
       - name: Check unhandeld code issues
         run: make lint
       - name: Push potential changes
