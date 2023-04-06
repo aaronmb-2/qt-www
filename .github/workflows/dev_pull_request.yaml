@@ -35,7 +35,7 @@ jobs:
           commit_user_name: My GitHub Actions Bot
   test:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node18.12.0-chrome87-107
+    container: cypress/browsers:node18.12.0-chrome107
     needs: [code]
     steps:
       - name: Get code
