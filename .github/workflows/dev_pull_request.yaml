@@ -41,7 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [1, 2, 3, 4]
+        # containers: [1, 2, 3, 4]
         screen: [desktop, mobile]
         browser: [chrome, firefox ]
     needs: [code]
@@ -56,8 +56,6 @@ jobs:
           start: npm run dev
           config: ${{ matrix.screen == 'mobile' && 'viewportWidth=375,viewportHeight=667' }}
           browser: ${{ matrix.browser }}
-          parallel: true
-          group: 'UI - ${{ matrix.screen }} | ${{ matrix.browser }}'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # terraform:
   #   runs-on: ubuntu-latest
