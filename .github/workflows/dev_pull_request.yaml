@@ -72,7 +72,7 @@ jobs:
         uses: cypress-io/github-action@v5.6.1
         with:
           # Specify Browser since container image is compile with Firefox
-          browser: firefox
+          browser: chrome
           build: npm run build
   # terraform:
   #   runs-on: ubuntu-latest
