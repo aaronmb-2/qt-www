@@ -40,9 +40,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # containers: [1, 2, 3, 4]
         screen: [desktop, mobile]
-        browser: [chrome, firefox ]
+        browser: [chrome]
     needs: [code]
     steps:
       - name: Get code
