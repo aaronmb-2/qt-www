@@ -36,14 +36,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     continue-on-error: true
-    # container: cypress/browsers:node18.12.0-chrome107
     container:
       image: cypress/browsers:node18.6.0-chrome105-ff104
-      strategy:
-        matrix:
-          containers: [1, 2]
-          screen: [desktop, mobile]
-          browser: [chrome, firefox ]
+    strategy:
+      matrix:
+        containers: [1, 2]
+        screen: [desktop, mobile]
+        browser: [chrome, firefox ]
     needs: [code]
     steps:
       - name: Get code
