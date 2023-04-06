@@ -53,7 +53,7 @@ jobs:
         uses: cypress-io/github-action@v5.6.1
         with:
           start: npm run dev
-          config: ${{ matrix.screen == mobile && 'viewportWidth=375,viewportHeight=667' }}
+          config: ${{ matrix.screen == 'mobile' && 'viewportWidth=375,viewportHeight=667' }}
           browser: ${{ matrix.browser }}
           record: true
           parallel: true
