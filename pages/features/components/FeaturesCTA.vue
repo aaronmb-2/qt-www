@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-slate-200 dark:bg-slate-700">
+  <div class="bg-slate-200 dark:bg-slate-700" id="features-cta">
     <div class="mx-auto max-w-7xl py-24 px-6 sm:py-32 lg:px-8">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
         {{ $t("features.cto.title_first") }}<br />
