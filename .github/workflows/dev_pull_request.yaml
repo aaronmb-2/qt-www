@@ -53,6 +53,7 @@ jobs:
         uses: cypress-io/github-action@v5.6.1
         with:
           start: npm run dev
+          wait-on: http://localhost:3000/
           config: ${{ matrix.screen == 'mobile' && 'viewportWidth=375,viewportHeight=667' }}
           browser: ${{ matrix.browser }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
