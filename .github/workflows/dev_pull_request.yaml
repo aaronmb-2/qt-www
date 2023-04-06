@@ -35,7 +35,6 @@ jobs:
           commit_user_name: My GitHub Actions Bot
   test:
     runs-on: ubuntu-latest
-    continue-on-error: true
     container:
       image: cypress/browsers:node18.6.0-chrome105-ff104
     strategy:
