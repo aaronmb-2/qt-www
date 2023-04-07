@@ -1,0 +1,39 @@
+name: "Format, Validate & Apply Terraform"
+description: "Custom Action for formatting, validating and applying the Terraform code. If the action is triggered by a PR we'll only Format and Validate, if it concerns a Merge we'll also Apply."
+runs:
+  using: "composite"
+  steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ env.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      - name: TF Format
+        shell: bash
+        run: |
+          make tf_fmt
+      - name: TF Validate
+        shell: bash
+        run: |
+          make tf_init env=$ENV
+          make tf_validate env=$ENV
+      - name: Push potential changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Format Terraform files
+          commit_user_name: My GitHub Actions Bot
+      - name: TF plan
+        shell: bash
+        run: |
+          make tf_init env=$ENV
+          make tf_plan env=$ENV
+      - name: TF apply
+        # Only apply changes to the AWS infrastructure on PUSH
+        if: ${{ github.event_name == 'push' }}
+        shell: bash
+        run: |
+          make tf_init env=$ENV
+          terraform apply -auto-approve

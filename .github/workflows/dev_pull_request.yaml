@@ -1,0 +1,75 @@
+name: Pull-Request Develop
+on:
+  pull_request:
+    # Workflow that should run on every PR except TST and PRD
+    branches-ignore:
+      - tst
+      - prd
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Prettier && Linter
+        run: make lintfix
+      - name: Check unhandeld code issues
+        run: make lint
+      - name: Push potential changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply Prettier && isort
+          commit_user_name: My GitHub Actions Bot
+  test:
+    runs-on: ubuntu-latest
+    needs: [code]
+    container:
+      image: cypress/browsers:node18.6.0-chrome105-ff104
+    strategy:
+      fail-fast: false
+      matrix:
+        screen: [desktop, mobile]
+        browser: [chrome]
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.6.1
+        with:
+          start: npm run dev
+          wait-on: http://localhost:3000/
+          # If we have a Mobile screen, set the width & height of the screen
+          config: ${{ matrix.screen == 'mobile' && 'viewportWidth=375,viewportHeight=667' }}
+          browser: ${{ matrix.browser }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  terraform:
+    runs-on: ubuntu-latest
+    needs: [test]
+    environment: dev
+    env:
+      # This is either the develop or production secrets, depending on the environment specified above
+      QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
+      QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
+      ENV: dev
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Format, Validate, Plan & Apply Terraform
+        uses: ./.github/actions/terraform_actions

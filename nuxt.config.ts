@@ -147,7 +147,7 @@ export default defineNuxtConfig({
   },
   // config for sitemap-module
   sitemap: {
-    hostname: process.env.MAIN_URL,
+    hostname: "https://quanttrade.io",
   },
   // config for robots-module
   robots: {
