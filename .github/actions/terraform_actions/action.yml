@@ -1,5 +1,5 @@
 name: "Format, Validate & Apply Terraform"
-description: 'Custom Action for formatting, validating and applying the Terraform code. If the action is triggered by a PR we'll only Format and Validate, if it concerns a Merge we'll also Apply.'
+description: "Custom Action for formatting, validating and applying the Terraform code. If the action is triggered by a PR we'll only Format and Validate, if it concerns a Merge we'll also Apply."
 runs:
   using: "composite"
   steps:
