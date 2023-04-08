@@ -36,4 +36,4 @@ runs:
         shell: bash
         run: |
           make tf_init env=$ENV
-          terraform apply -auto-approve
+          make tf_apply env=$ENV

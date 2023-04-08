@@ -19,4 +19,4 @@ tf_plan:
 	terraform -chdir=./.tf/composition/www/eu-central-1/$(env)/ plan
 
 tf_apply:
-	terraform -chdir=./.tf/composition/www/eu-central-1/$(env)/ apply
+	terraform -chdir=./.tf/composition/www/eu-central-1/$(env)/ apply --auto-approve
