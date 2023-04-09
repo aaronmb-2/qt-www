@@ -53,7 +53,7 @@ resource "aws_cloudfront_origin_access_identity" "main" {
 }
 
 data "template_file" "cloud_front_s3_access_policy" {
-  template = templatefile("./templates/cloud_front/cloud-front-access-s3-policy.json")
+  template = file("./templates/cloud_front/cloud-front-access-s3-policy.json")
 
   vars = {
     CLOUD_FRONT_ACCESS_IDENTITY = aws_cloudfront_origin_access_identity.main.iam_arn

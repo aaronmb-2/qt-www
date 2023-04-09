@@ -3,8 +3,11 @@
   "Id": "CloudFrontAccessS3PrivateContentPolicy",
   "Statement": [
     {
+      "Sid": "1",
       "Effect": "Allow",
-      "Principal": "${CLOUD_FRONT_ACCESS_IDENTITY}",
+      "Principal": {
+        "AWS": "${CLOUD_FRONT_ACCESS_IDENTITY}"
+      },
       "Action": "s3:GetObject",
       "Resource": "${S3_BUCKET_ARN_ACCESS_PATH}"
     }
