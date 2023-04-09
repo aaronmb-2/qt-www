@@ -11,40 +11,40 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     }
   }
 
-  enabled = true
+  enabled = local.distribution_enabled
 
-  default_root_object = "index.html"
+  default_root_object = local.distribution_default_root_object
 
   # aliases = ["dev.quanttrade.io", "www.dev.quanttrade.io"]
 
   default_cache_behavior {
-    allowed_methods  = ["GET", "HEAD"]
-    cached_methods   = ["GET", "HEAD"]
+    allowed_methods  = local.distribution_allowed_methods
+    cached_methods   = local.distribution_allowed_methods
     target_origin_id = var.s3_bucket_bucket_name
 
     forwarded_values {
-      query_string = false
+      query_string = local.forward_query_string
 
       cookies {
-        forward = "none"
+        forward = local.cookie_forward
       }
     }
 
-    viewer_protocol_policy = "redirect-to-https"
-    min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
+    viewer_protocol_policy = local.viewer_protocol_policy
+    min_ttl                = local.min_ttl
+    default_ttl            = local.default_ttl
+    max_ttl                = local.max_ttl
   }
 
   restrictions {
     geo_restriction {
-      restriction_type = "whitelist"
-      locations        = ["US", "CA", "GB", "DE", "NL"]
+      restriction_type = local.geo_restriction_type
+      locations        = local.geo_restriction_locations
     }
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    cloudfront_default_certificate = local.certificate_default
   }
 }
 
