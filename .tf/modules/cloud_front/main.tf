@@ -60,3 +60,8 @@ data "template_file" "cloud_front_s3_access_policy" {
     S3_BUCKET_ARN_ACCESS_PATH   = var.s3_bucket_arn_access_path
   }
 }
+
+resource "aws_s3_bucket_policy" "allow_access_from_cloud_front" {
+  bucket = var.s3_bucket_bucket_name
+  policy = data.template_file.cloud_front_s3_access_policy.rendered
+}
