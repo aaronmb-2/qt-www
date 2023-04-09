@@ -56,7 +56,7 @@ data "template_file" "cloud_front_s3_access_policy" {
   template = file("./templates/cloud_front/cloud-front-access-s3-policy.json")
 
   vars = {
-    CLOUD_FRONT_ACCESS_IDENTITY = aws_cloudfront_origin_access_identity.main.id
+    CLOUD_FRONT_ACCESS_IDENTITY = aws_cloudfront_origin_access_identity.main.iam_arn
     S3_BUCKET_ARN_ACCESS_PATH   = var.s3_bucket_arn_access_path
   }
 }
