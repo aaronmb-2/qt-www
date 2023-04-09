@@ -38,3 +38,8 @@ variable "s3_bucket_region" {
   description = "Region of the S3 bucket"
   type        = string
 }
+
+variable "s3_bucket_arn_access_path" {
+  description = "ARN of the S3 bucket that is created"
+  type        = string
+}

@@ -1,0 +1,12 @@
+{
+  "Version": "2012-10-17",
+  "Id": "CloudFrontAccessS3PrivateContentPolicy",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "${CLOUD_FRONT_ACCESS_IDENTITY}",
+      "Action": "s3:GetObject",
+      "Resource": "${S3_BUCKET_ARN_ACCESS_PATH}"
+    }
+  ]
+}

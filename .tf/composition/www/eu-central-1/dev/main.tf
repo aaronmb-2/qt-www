@@ -40,4 +40,5 @@ module "cloud_front_distribution" {
   s3_bucket_bucket_regional_domain_name = module.s3_bucket_static_hosting.s3_bucket_bucket_regional_domain_name
   s3_bucket_bucket_name                 = module.s3_bucket_static_hosting.s3_bucket_bucket_name
   s3_bucket_region                      = module.s3_bucket_static_hosting.s3_bucket_region
+  s3_bucket_arn_access_path             = module.s3_bucket_static_hosting.s3_bucket_arn_access_path
 }
