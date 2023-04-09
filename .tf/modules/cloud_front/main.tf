@@ -3,11 +3,11 @@
 ########################################
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name              = var.s3_bucket_bucket_regional_domain_name
-    origin_id                = var.s3_bucket_bucket_name
+    domain_name = var.s3_bucket_bucket_regional_domain_name
+    origin_id   = var.s3_bucket_bucket_name
   }
 
-  enabled              = true
+  enabled = true
 
   default_root_object = "index.html"
 
