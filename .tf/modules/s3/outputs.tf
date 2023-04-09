@@ -16,3 +16,8 @@ output "s3_bucket_region" {
   description = "Name of the S3 bucket that is created"
   value       = aws_s3_bucket.main.region
 }
+
+output "s3_bucket_arn_access_path" {
+  description = "ARN of the S3 bucket that is created"
+  value       = "${aws_s3_bucket.main.arn}/*"
+}

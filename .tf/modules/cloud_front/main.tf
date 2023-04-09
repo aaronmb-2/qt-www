@@ -43,3 +43,16 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     cloudfront_default_certificate = true
   }
 }
+
+resource "aws_cloudfront_origin_access_identity" "main" {
+  comment = local.cf_oai_comment
+}
+
+data "template_file" "cloud_front_s3_access_policy" {
+  template = file("./templates/cloud_front/cloud-front-access-s3-policy.json")
+
+  vars = {
+    CLOUD_FRONT_ACCESS_IDENTITY = aws_cloudfront_origin_access_identity.main.id
+    S3_BUCKET_ARN_ACCESS_PATH   = var.s3_bucket_arn_access_path
+  }
+}
