@@ -11,7 +11,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   default_root_object = "index.html"
 
-  aliases = ["dev.quanttrade.io", "www.dev.quanttrade.io"]
+  # aliases = ["dev.quanttrade.io", "www.dev.quanttrade.io"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
