@@ -11,7 +11,7 @@ app_name         = "quanttrade-www"
 ## S3 bucket - Static Hosting ##
 s3_bucket_static_hosting_name                    = "static-hosting"
 s3_bucket_static_hosting_force_destroy           = false
-s3_bucket_static_hosting_versioning_enabled      = "Disabled"
+s3_bucket_static_hosting_versioning_enabled      = "Enabled"
 s3_bucket_static_hosting_block_public_policy     = false
 s3_bucket_static_hosting_block_public_acls       = false
 s3_bucket_static_hosting_ignore_public_acls      = false

@@ -22,7 +22,7 @@ variable "tags" {
 }
 
 ########################################
-# S3 Bucket - variables
+# Module S3 Bucket - variables
 ########################################
 variable "bucket_name" {
   description = "Suffix for the S3 bucket name"
