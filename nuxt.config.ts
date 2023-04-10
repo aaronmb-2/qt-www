@@ -2,6 +2,7 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
+  ssr: false,
   runtimeConfig: {
     // secret: process.env.SECRET,
     public: {
@@ -104,6 +105,8 @@ export default defineNuxtConfig({
   ],
   // config for i18n
   i18n: {
+    defaultLocale: "en",
+    strategy: "prefix",
     baseUrl: process.env.MAIN_URL,
     locales: [
       {
@@ -120,9 +123,7 @@ export default defineNuxtConfig({
       },
     ],
     lazy: true,
-    langDir: "public/i18n/",
-    defaultLocale: "en",
-    strategy: "prefix",
+    langDir: "locales/",
     // Enable browser language detection to automatically redirect user
     // to their preferred language as they visit your app for the first time
     detectBrowserLanguage: {
@@ -135,7 +136,7 @@ export default defineNuxtConfig({
       // the language detection is only attempted when the user visits the root path (/) of the site.
       redirectOn: "root",
       // Set to always redirect to value stored in the cookie, not just once
-      alwaysRedirect: false,
+      alwaysRedirect: true,
       // If no locale for the browsers locale is a match, use this one as a fallback
       fallbackLocale: "en",
     },

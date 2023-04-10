@@ -1,9 +1,11 @@
 <template>
-  <BaseSwitch
+  <ClientOnly>
+    <BaseSwitch
     :item-current="currentLocale"
     :item-list="locales"
     @item-clicked="setLanguage"
   />
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
@@ -23,6 +25,6 @@ function setLanguage(localeCode: IBaseSwitchItem) {
 }
 
 const currentLocale = computed(() => {
-  return locales.value.find((i) => i.code === locale.value);
+  return locales.value.find((i: any) => i.code === locale.value);
 });
 </script>

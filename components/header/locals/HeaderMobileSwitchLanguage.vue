@@ -36,7 +36,7 @@ function setLanguage(localeCode: IBaseSwitchItem) {
 }
 
 const currentLocale = computed(() => {
-  return locales.value.find((i) => i.code === locale.value);
+  return locales.value.find((i: any) => i.code === locale.value);
 });
 
 defineEmits<{

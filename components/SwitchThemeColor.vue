@@ -1,9 +1,11 @@
 <template>
-  <BaseSwitch
+  <ClientOnly>
+    <BaseSwitch
     :item-current="themeColorService.getTheme()"
     :item-list="themeColorService.themes"
     @item-clicked="setTheme"
   />
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">

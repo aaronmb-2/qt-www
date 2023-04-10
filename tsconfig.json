@@ -2,6 +2,10 @@
   // https://nuxt.com/docs/guide/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "types": [
+      "@nuxt/types",
+      "@nuxtjs/i18n"
+    ]
   }
 }
