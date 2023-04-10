@@ -51,7 +51,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     error_caching_min_ttl = 0
     error_code            = 403
     response_code         = 200
-    response_page_path    = local.distribution_default_root_object
+    response_page_path    = "/home/index.html"
   }
 }
 
