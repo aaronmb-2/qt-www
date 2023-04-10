@@ -2,7 +2,7 @@
 
 describe("Visit Home Page", () => {
   it("Should redirect to /en/home", () => {
-    cy.visit("localhost:3000");
+    cy.visit("localhost:3000/home");
     cy.url().should("eq", "http://localhost:3000/en/home");
   });
 });
