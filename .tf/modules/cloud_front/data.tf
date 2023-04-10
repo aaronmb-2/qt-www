@@ -4,7 +4,7 @@
 
 locals {
   distribution_enabled             = true
-  distribution_default_root_object = "/home/index.html"
+  distribution_default_root_object = "index.html"
   distribution_allowed_methods     = ["GET", "HEAD"]
 
   forward_query_string = false

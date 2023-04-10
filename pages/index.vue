@@ -1,5 +1,9 @@
+<template>
+</template>
+
 <script setup lang="ts">
-definePageMeta({
-  middleware: ["redirect"],
-});
+const localePath = useLocalePath();
+onMounted(() => {
+	navigateTo(localePath('/home'))
+})
 </script>

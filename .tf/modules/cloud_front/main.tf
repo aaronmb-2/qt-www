@@ -46,6 +46,13 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   viewer_certificate {
     cloudfront_default_certificate = local.certificate_default
   }
+
+  custom_error_response {
+    error_caching_min_ttl = 0
+    error_code            = 403
+    response_code         = 200
+    response_page_path    = "index.html"
+  }
 }
 
 resource "aws_cloudfront_origin_access_identity" "main" {
