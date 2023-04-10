@@ -3,9 +3,6 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "experimentalDecorators": true,
-    "types": [
-      "@nuxt/types",
-      "@nuxtjs/i18n"
-    ]
+    "types": ["@nuxt/types", "@nuxtjs/i18n"]
   }
 }

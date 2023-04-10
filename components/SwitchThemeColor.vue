@@ -1,10 +1,10 @@
 <template>
   <ClientOnly>
     <BaseSwitch
-    :item-current="themeColorService.getTheme()"
-    :item-list="themeColorService.themes"
-    @item-clicked="setTheme"
-  />
+      :item-current="themeColorService.getTheme()"
+      :item-list="themeColorService.themes"
+      @item-clicked="setTheme"
+    />
   </ClientOnly>
 </template>
 

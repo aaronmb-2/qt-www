@@ -1,10 +1,10 @@
 <template>
   <ClientOnly>
     <BaseSwitch
-    :item-current="currentLocale"
-    :item-list="locales"
-    @item-clicked="setLanguage"
-  />
+      :item-current="currentLocale"
+      :item-list="locales"
+      @item-clicked="setLanguage"
+    />
   </ClientOnly>
 </template>
 
