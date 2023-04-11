@@ -17,10 +17,13 @@ runs:
           path: ~/.npm
           key: npm-deps-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
+        shell: bash
         run: npm ci
       - name: Run Prettier && Linter
+        shell: bash
         run: make lintfix
       - name: Check unhandeld code issues
+        shell: bash
         run: make lint
       - name: Push potential changes
         uses: stefanzweifel/git-auto-commit-action@v4

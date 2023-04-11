@@ -7,6 +7,9 @@ inputs:
   aws_secret_access_key:
     description: "AWS Secret Access Key in order to Login to AWS"
     required: true
+  aws_region:
+    description: "AWS Region which should be used during this Action"
+    reguired: true
   environment:
     description: "Specify which environment should be tested"
     required: true
@@ -18,7 +21,7 @@ runs:
         with:
           aws-access-key-id: inputs.aws_access_key_id
           aws-secret-access-key: inputs.aws_secret_access_key
-          aws-region: eu-central-1
+          aws-region: inputs.aws_region
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
       - name: TF Format

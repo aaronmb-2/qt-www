@@ -54,4 +54,5 @@ jobs:
         with:
           aws_access_key_id: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
+          aws_region: eu-central-1
           environment: dev
