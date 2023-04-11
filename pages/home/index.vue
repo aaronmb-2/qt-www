@@ -1,7 +1,6 @@
 <template>
   <div>
     <HomeHero />
-    <p>WE DID IT YA'LL</p>
     <HomeBrokers />
     <HomeImage />
     <HomeCTA />

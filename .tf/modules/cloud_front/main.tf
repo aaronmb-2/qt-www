@@ -39,13 +39,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   restrictions {
     geo_restriction {
       restriction_type = local.geo_restriction_type
-    }
-  }
-
-  restrictions {
-    geo_restriction {
-      restriction_type = local.geo_restriction_type
-      locations = local.geo_restriction_locations
+      locations        = local.geo_restriction_locations
     }
   }
 
