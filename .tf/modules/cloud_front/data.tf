@@ -16,6 +16,7 @@ locals {
   max_ttl                = 86400
 
   geo_restriction_type = "none"
+  geo_restriction_locations = []
 
   error_code_403            = 403
   response_code_403         = 200

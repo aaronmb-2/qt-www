@@ -42,6 +42,13 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     }
   }
 
+  restrictions {
+    geo_restriction {
+      restriction_type = local.geo_restriction_type
+      locations = local.geo_restriction_locations
+    }
+  }
+
   viewer_certificate {
     cloudfront_default_certificate = local.certificate_default
   }
