@@ -10,7 +10,7 @@ runs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: inputs.node_version
+          node-version: ${{ inputs.node_version }}
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
