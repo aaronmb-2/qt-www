@@ -1,0 +1,51 @@
+name: "Build Nuxt project, Push to S3 & Invalidate CloudFront Cache"
+description: "Custom action for formatting, linting and sorting import for a Vue based codebase"
+inputs:
+  aws_access_key_id:
+    description: "AWS Access Key in order to Login to AWS"
+    required: true
+  aws_secret_access_key:
+    description: "AWS Secret Access Key in order to Login to AWS"
+    required: true
+  aws_region:
+    description: "AWS Region which should be used during this Action"
+    reguired: true
+  node_version:
+    description: "The Node version that needs to be installed"
+    required: true
+  s3_bucket:
+    description: "The Node version that needs to be installed"
+    required: true
+  cloudfront_distribution_id:
+    description: "The Node version that needs to be installed"
+    required: true
+runs:
+  using: "composite"
+  steps:
+      - name: Login to AWS (S3)
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ inputs.aws_access_key_id }}
+          aws-secret-access-key: ${{ inputs.aws_secret_access_key }}
+          aws-region: ${{ inputs.aws_region}}
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node_version}}
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        shell: bash
+        run: npm ci
+      - name: Generate Nuxt SPA project
+        shell: bash
+        run: npm run generate
+      - name: Push .output/public to S3 bucket
+        shell: bash
+        run: aws s3 sync .output/public s3://${{ inputs.s3_bucket}} --delete
+      - name: Invalidate CloudFront Cache
+        shell: bash
+        run: aws cloudfront create-invalidation --distribution-id ${{ inputs.cloudfront_distribution_id }} --paths "/*"

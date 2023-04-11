@@ -41,7 +41,7 @@ runs:
       - name: TF plan
         shell: bash
         run: |
-          make tf_init env= ${{ inputs.environment }}
+          make tf_init env=${{ inputs.environment }}
           make tf_plan env=${{ inputs.environment }}
       - name: TF apply
         # Only apply changes to the AWS infrastructure on PUSH
