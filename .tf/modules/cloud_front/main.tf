@@ -39,7 +39,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   restrictions {
     geo_restriction {
       restriction_type = local.geo_restriction_type
-      locations        = local.geo_restriction_locations
     }
   }
 
@@ -48,10 +47,10 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   custom_error_response {
-    error_caching_min_ttl = 0
-    error_code            = 403
-    response_code         = 200
-    response_page_path    = "/home/index.html"
+    error_caching_min_ttl = local.error_caching_min_ttl_403
+    error_code            = local.error_code_403
+    response_code         = local.response_code_403
+    response_page_path    = local.distribution_default_root_object
   }
 }
 

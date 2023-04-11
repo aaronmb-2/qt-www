@@ -4,7 +4,7 @@
 
 locals {
   distribution_enabled             = true
-  distribution_default_root_object = "home/index.html"
+  distribution_default_root_object = "/home/index.html"
   distribution_allowed_methods     = ["GET", "HEAD"]
 
   forward_query_string = false
@@ -15,8 +15,11 @@ locals {
   default_ttl            = 3600
   max_ttl                = 86400
 
-  geo_restriction_type      = "whitelist"
-  geo_restriction_locations = ["US", "CA", "GB", "DE", "NL"]
+  geo_restriction_type      = "none"
+
+  error_code_403           = 403
+  response_code_403         = 200
+  error_caching_min_ttl_403 = 3600
 
   certificate_default = true
 
