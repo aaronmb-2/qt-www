@@ -19,9 +19,9 @@ runs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: inputs.aws_access_key_id
-          aws-secret-access-key: inputs.aws_secret_access_key
-          aws-region: inputs.aws_region
+          aws-access-key-id: ${{ inputs.aws_access_key_id }}
+          aws-secret-access-key: ${{ inputs.aws_secret_access_key }}
+          aws-region: ${{ inputs.aws_region }}
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
       - name: TF Format
@@ -31,8 +31,8 @@ runs:
       - name: TF Validate
         shell: bash
         run: |
-          make tf_init env=inputs.environment
-          make tf_validate env=inputs.environment
+          make tf_init env=${{ inputs.environment }}
+          make tf_validate env=${{ inputs.environment }}
       - name: Push potential changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -41,12 +41,12 @@ runs:
       - name: TF plan
         shell: bash
         run: |
-          make tf_init env=inputs.environment
-          make tf_plan env=inputs.environment
+          make tf_init env= ${{ inputs.environment }}
+          make tf_plan env=${{ inputs.environment }}
       - name: TF apply
         # Only apply changes to the AWS infrastructure on PUSH
         if: ${{ github.event_name == 'push' }}
         shell: bash
         run: |
-          make tf_init env=inputs.environment
-          make tf_apply env=inputs.environment
+          make tf_init env=${{ inputs.environment }}
+          make tf_apply env=${{ inputs.environment }}
