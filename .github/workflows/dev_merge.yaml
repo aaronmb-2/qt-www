@@ -90,7 +90,7 @@ jobs:
       - name: Generate Nuxt SPA project
         run: npm run generate
       - name: Push .output/public to S3 bucket
-        run: aws s3 sync ./output/public s3://${{ env.QUANTTRADE_WWW_STATIC_HOSTING_BUCKET_ARN }} --delete
+        run: aws s3 sync .output/public s3://${{ env.QUANTTRADE_WWW_STATIC_HOSTING_BUCKET_ARN }} --delete
       - name: Invalidate CloudFront Cache
         run: aws cloudfront create-invalidation --distribution-id ${{ env.QUANTTRADE_WWW_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
   terraform:
