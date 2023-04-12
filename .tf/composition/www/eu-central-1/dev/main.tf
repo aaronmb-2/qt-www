@@ -56,9 +56,9 @@ module "route53_dns_routing" {
   region   = var.region
 
   ## S3 variables ##
-  hosted_zone_name = var.route53_hosted_zone_name
+  hosted_zone_name    = var.route53_hosted_zone_name
   hosted_zone_private = var.route53_hosted_zone_private
 
   cloud_front_dns_name = module.cloud_front_distribution.cloud_front_dns_name
-  cloud_front_zone_id = module.cloud_front_distribution.cloud_front_zone_id
+  cloud_front_zone_id  = module.cloud_front_distribution.cloud_front_zone_id
 }
