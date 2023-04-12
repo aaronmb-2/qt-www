@@ -25,6 +25,8 @@ locals {
 
   certificate_default = true
 
+  viewer_certificate_ssl_support_method = "sni-only"
+
   cf_oai_comment = "${lower(var.app_name)}-${var.env}"
   tags = merge(
     var.tags

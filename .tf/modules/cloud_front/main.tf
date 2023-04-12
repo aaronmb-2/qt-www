@@ -45,12 +45,8 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   viewer_certificate {
     acm_certificate_arn = var.aws_acm_certificate_arn
-    ssl_support_method  = "sni-only"
+    ssl_support_method  = local.viewer_certificate_ssl_support_method
   }
-
-  # viewer_certificate {
-  #   cloudfront_default_certificate = local.certificate_default
-  # }
 
   custom_error_response {
     error_caching_min_ttl = local.error_caching_min_ttl_403
