@@ -4,7 +4,7 @@
 
 locals {
   distribution_enabled             = true
-  distribution_default_root_object = "/home/index.html"
+  distribution_default_root_object = "home/index.html"
   distribution_allowed_methods     = ["GET", "HEAD"]
 
   forward_query_string = false
@@ -21,6 +21,7 @@ locals {
   error_code_403            = 403
   response_code_403         = 200
   error_caching_min_ttl_403 = 3600
+  error_response_page_path  = "/home/index.html"
 
   certificate_default = true
 

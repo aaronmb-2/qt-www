@@ -7,9 +7,9 @@ data "aws_route53_zone" "main" {
   private_zone = var.hosted_zone_private
 }
 
-resource "aws_route53_record" "dev" {
+resource "aws_route53_record" "env" {
   zone_id = data.aws_route53_zone.main.zone_id
-  name    = local.route53_record_dev
+  name    = local.route53_record_env
   type    = local.route53_record_type
 
   alias {
@@ -19,9 +19,9 @@ resource "aws_route53_record" "dev" {
   }
 }
 
-resource "aws_route53_record" "www_dev" {
+resource "aws_route53_record" "www_env" {
   zone_id = data.aws_route53_zone.main.zone_id
-  name    = local.route53_record_www_dev
+  name    = local.route53_record_www_env
   type    = local.route53_record_type
 
   alias {
