@@ -15,7 +15,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   default_root_object = local.distribution_default_root_object
 
-  # aliases = ["dev.quanttrade.io", "www.dev.quanttrade.io"]
+  aliases = [var.url_route53_record_env, var.url_route53_record_www_env]
 
   default_cache_behavior {
     allowed_methods  = local.distribution_allowed_methods
@@ -51,7 +51,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     error_caching_min_ttl = local.error_caching_min_ttl_403
     error_code            = local.error_code_403
     response_code         = local.response_code_403
-    response_page_path    = local.distribution_default_root_object
+    response_page_path    = local.error_response_page_path
   }
 }
 

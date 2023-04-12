@@ -3,8 +3,8 @@
 ########################################
 
 locals {
-  route53_record_dev     = "${var.env}.${var.hosted_zone_name}"
-  route53_record_www_dev = "www.${var.env}.${var.hosted_zone_name}"
+  route53_record_env     = "${var.env}.${var.hosted_zone_name}"
+  route53_record_www_env = "www.${var.env}.${var.hosted_zone_name}"
   route53_record_type    = "A"
   route53_record_ttl     = 300
 

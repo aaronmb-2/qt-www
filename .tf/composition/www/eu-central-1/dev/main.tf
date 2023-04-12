@@ -41,6 +41,10 @@ module "cloud_front_distribution" {
   s3_bucket_bucket_name                 = module.s3_bucket_static_hosting.s3_bucket_bucket_name
   s3_bucket_region                      = module.s3_bucket_static_hosting.s3_bucket_region
   s3_bucket_arn_access_path             = module.s3_bucket_static_hosting.s3_bucket_arn_access_path
+
+  ## Route53 variables ##
+  url_route53_record_env     = module.route53_dns_routing.url_route53_record_env
+  url_route53_record_www_env = module.route53_dns_routing.url_route53_record_www_env
 }
 
 ###############################################
@@ -56,9 +60,9 @@ module "route53_dns_routing" {
   region   = var.region
 
   ## S3 variables ##
-  hosted_zone_name = var.route53_hosted_zone_name
+  hosted_zone_name    = var.route53_hosted_zone_name
   hosted_zone_private = var.route53_hosted_zone_private
 
   cloud_front_dns_name = module.cloud_front_distribution.cloud_front_dns_name
-  cloud_front_zone_id = module.cloud_front_distribution.cloud_front_zone_id
+  cloud_front_zone_id  = module.cloud_front_distribution.cloud_front_zone_id
 }

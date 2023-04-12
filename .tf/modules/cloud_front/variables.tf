@@ -43,3 +43,13 @@ variable "s3_bucket_arn_access_path" {
   description = "ARN of the S3 bucket that is created"
   type        = string
 }
+
+variable "url_route53_record_env" {
+  description = "URL with environment prefix"
+  type        = string
+}
+
+variable "url_route53_record_www_env" {
+  description = "URL with environment and www prefix"
+  type        = string
+}
