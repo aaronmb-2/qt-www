@@ -1,0 +1,32 @@
+########################################
+# Module Route53 - main
+########################################
+
+data "aws_route53_zone" "main" {
+  name         = var.hosted_zone_name
+  private_zone = var.hosted_zone_private
+}
+
+resource "aws_route53_record" "dev" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = local.route53_record_dev
+  type    = local.route53_record_type
+
+  alias {
+    name                   = var.cloud_front_dns_name
+    zone_id                = var.cloud_front_zone_id
+    evaluate_target_health = local.route53_evaluate_target_heatlh
+  }
+}
+
+resource "aws_route53_record" "www_dev" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = local.route53_record_www_dev
+  type    = local.route53_record_type
+
+  alias {
+    name                   = var.cloud_front_dns_name
+    zone_id                = var.cloud_front_zone_id
+    evaluate_target_health = local.route53_evaluate_target_heatlh
+  }
+}
