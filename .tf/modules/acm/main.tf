@@ -55,10 +55,10 @@ resource "aws_route53_record" "www_env" {
 
 resource "aws_acm_certificate_validation" "env" {
   certificate_arn         = aws_acm_certificate.env.arn
-  validation_record_fqdns = [var.route53_record_env_fqdn]
+  validation_record_fqdns = [aws_route53_record.env.fqdn]
 }
 
 resource "aws_acm_certificate_validation" "www_env" {
   certificate_arn         = aws_acm_certificate.www_env.arn
-  validation_record_fqdns = [var.route53_record_www_env_fqdn]
+  validation_record_fqdns = [aws_route53_record.www_env.fqdn]
 }
