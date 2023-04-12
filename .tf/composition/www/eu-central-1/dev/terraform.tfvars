@@ -16,3 +16,7 @@ s3_bucket_static_hosting_block_public_policy     = true
 s3_bucket_static_hosting_block_public_acls       = true
 s3_bucket_static_hosting_ignore_public_acls      = true
 s3_bucket_static_hosting_restrict_public_buckets = true
+
+## Route53 - DNS && Routing ##
+route53_hosted_zone_name    = "quanttrade.io"
+route53_hosted_zone_private = false

@@ -68,3 +68,16 @@ variable "s3_bucket_static_hosting_restrict_public_buckets" {
   description = "Whether Amazon S3 should restrict public bucket policies for this bucket."
   type        = bool
 }
+
+########################################
+## Terraform Route53 - DNS && Routing
+########################################
+variable "route53_hosted_zone_name" {
+  description = "Name of the hosted zone we want to retrieve"
+  type        = string
+}
+
+variable "route53_hosted_zone_private" {
+  description = "If the hosted zone we want to retrieve is private"
+  type        = string
+}
