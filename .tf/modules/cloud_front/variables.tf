@@ -53,3 +53,8 @@ variable "url_route53_record_www_env" {
   description = "URL with environment and www prefix"
   type        = string
 }
+
+variable "aws_acm_certificate_arn" {
+  description = "ARN of the ACM Certificate"
+  type        = string
+}

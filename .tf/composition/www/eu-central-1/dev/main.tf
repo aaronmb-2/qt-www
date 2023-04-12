@@ -45,6 +45,9 @@ module "cloud_front_distribution" {
   ## Route53 variables ##
   url_route53_record_env     = module.route53_dns_routing.url_route53_record_env
   url_route53_record_www_env = module.route53_dns_routing.url_route53_record_www_env
+
+  ## ACM Certificate variables ##
+  aws_acm_certificate_arn = module.acm_certificates.aws_acm_certificate_arn
 }
 
 ###############################################
