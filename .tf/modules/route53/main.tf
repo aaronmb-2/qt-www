@@ -3,8 +3,7 @@
 ########################################
 
 data "aws_route53_zone" "main" {
-  name         = var.hosted_zone_name
-  private_zone = var.hosted_zone_private
+  zone_id = "Z08089993NO0S6W7Z3GAV"
 }
 
 resource "aws_route53_record" "env" {
