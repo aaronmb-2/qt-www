@@ -15,7 +15,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   default_root_object = local.distribution_default_root_object
 
-  # aliases = [var.url_route53_record_env, var.url_route53_record_www_env]
+  aliases = [var.url_route53_record_env, var.url_route53_record_www_env]
 
   default_cache_behavior {
     allowed_methods  = local.distribution_allowed_methods

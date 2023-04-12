@@ -70,20 +70,20 @@ module "route53_dns_routing" {
 ###############################################
 ## Terraform ACM - Certificates
 ###############################################
-# module "acm_certificates" {
-#   source = "../../../../modules/acm"
+module "acm_certificates" {
+  source = "../../../../modules/acm"
 
-#   ## Common Meta Data ##
-#   env      = var.env
-#   app_name = var.app_name
-#   tags     = local.tags
-#   region   = var.region
+  ## Common Meta Data ##
+  env      = var.env
+  app_name = var.app_name
+  tags     = local.tags
+  region   = var.region
 
-#   ## Route53 variables ##
-#   hosted_zone_name            = var.route53_hosted_zone_name
-#   route53_zone_id             = module.route53_dns_routing.route53_zone_id
-#   url_route53_record_env      = module.route53_dns_routing.url_route53_record_env
-#   url_route53_record_www_env  = module.route53_dns_routing.url_route53_record_www_env
-#   route53_record_env_fqdn     = module.route53_dns_routing.route53_record_env_fqdn
-#   route53_record_www_env_fqdn = module.route53_dns_routing.route53_record_www_env_fqdn
-# }
+  ## Route53 variables ##
+  hosted_zone_name            = var.route53_hosted_zone_name
+  route53_zone_id             = module.route53_dns_routing.route53_zone_id
+  url_route53_record_env      = module.route53_dns_routing.url_route53_record_env
+  url_route53_record_www_env  = module.route53_dns_routing.url_route53_record_www_env
+  route53_record_env_fqdn     = module.route53_dns_routing.route53_record_env_fqdn
+  route53_record_www_env_fqdn = module.route53_dns_routing.route53_record_www_env_fqdn
+}
