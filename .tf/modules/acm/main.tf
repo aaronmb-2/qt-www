@@ -2,8 +2,8 @@
 # Module ACM - main
 ########################################
 provider "aws" {
-  alias  = local.aws_provider_alias
-  region = local.aws_provider_region
+  alias  = "virginia"
+  region = "us-east-1"
 }
 
 resource "aws_acm_certificate" "www_and_env" {
