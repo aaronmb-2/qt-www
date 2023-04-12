@@ -1,0 +1,32 @@
+name: "Format, Lint & Sort code Vue codebase"
+description: "Custom action for formatting, linting and sorting import for a Vue based codebase"
+inputs:
+  node_version:
+    description: "The Node version that needs to be installed"
+    required: true
+runs:
+  using: "composite"
+  steps:
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node_version }}
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        shell: bash
+        run: npm ci
+      - name: Run Prettier && Linter
+        shell: bash
+        run: make lintfix
+      - name: Check unhandeld code issues
+        shell: bash
+        run: make lint
+      - name: Push potential changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply Prettier && isort
+          commit_user_name: My GitHub Actions Bot

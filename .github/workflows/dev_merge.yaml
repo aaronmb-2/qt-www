@@ -11,26 +11,10 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - name: Format, Lint & Sort code
+        uses: ./.github/actions/code_actions
         with:
-          node-version: 19
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies
-        run: npm ci
-      - name: Run Prettier && Linter
-        run: make lintfix
-      - name: Check unhandeld code issues
-        run: make lint
-      - name: Push potential changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Apply Prettier && isort
-          commit_user_name: My GitHub Actions Bot
+          node_version: 19
   test:
     runs-on: ubuntu-latest
     needs: [code]
@@ -55,53 +39,28 @@ jobs:
           config: ${{ matrix.screen == 'mobile' && 'viewportWidth=375,viewportHeight=667' }}
           browser: ${{ matrix.browser }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  build_and_push:
+  deploy:
     runs-on: ubuntu-latest
     needs: [test]
     environment: dev
-    env:
-      # This is either the develop or production secrets, depending on the environment specified above
-      QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
-      QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
-      QUANTTRADE_WWW_STATIC_HOSTING_BUCKET_ARN: ${{ vars.QUANTTRADE_WWW_STATIC_HOSTING_BUCKET_ARN }}
-      QUANTTRADE_WWW_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.QUANTTRADE_WWW_CLOUDFRONT_DISTRIBUTION_ID }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
-      - name: Login to AWS (S3)
-        uses: aws-actions/configure-aws-credentials@v2
+      - name: Build && Deploy
+        uses: ./.github/actions/deploy_actions
         with:
-          aws-access-key-id: ${{ env.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ env.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-central-1
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 19
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies
-        run: npm ci
-      - name: Generate Nuxt SPA project
-        run: npm run generate
-      - name: Push .output/public to S3 bucket
-        run: aws s3 sync .output/public s3://quanttrade-www-static-hosting-dev --delete
-      - name: Invalidate CloudFront Cache
-        run: aws cloudfront create-invalidation --distribution-id ${{ env.QUANTTRADE_WWW_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          aws_access_key_id: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
+          aws_region: eu-central-1
+          node_version: 19
+          s3_bucket: ${{ secrets.QUANTTRADE_WWW_STATIC_HOSTING_BUCKET }}
+          cloudfront_distribution_id: ${{ secrets.QUANTTRADE_WWW_CLOUDFRONT_DISTRIBUTION_ID }}
   terraform:
     runs-on: ubuntu-latest
-    needs: [build_and_push]
+    needs: [deploy]
     environment: dev
-    env:
-      # This is either the develop or production secrets, depending on the environment specified above
-      QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
-      QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
-      ENV: dev
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -109,3 +68,8 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Format, Validate, Plan & Apply Terraform
         uses: ./.github/actions/terraform_actions
+        with:
+          aws_access_key_id: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
+          aws_region: eu-central-1
+          environment: dev
