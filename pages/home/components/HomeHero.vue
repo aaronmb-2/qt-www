@@ -10,7 +10,7 @@
           {{ $t("home.hero_helper_text") }}
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
-          <NuxtLink :to="localePath('/auth/register')">
+          <NuxtLink :to="localePath('/newsletter')">
             <BaseButton
               :button-theme="themeButtonService.getThemeButtonById(5)"
             >

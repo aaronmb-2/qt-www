@@ -6,9 +6,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // secret: process.env.SECRET,
     public: {
-      environment: process.env.BASE_URL,
+      apiUrl: process.env.API_URL,
+      // apiToken: process.env.API_TOKEN,
       baseUrl: process.env.BASE_URL,
-      mainUrl: process.env.BASE_URL,
     },
   },
   app: {
@@ -102,7 +102,9 @@ export default defineNuxtConfig({
     "@funken-studio/sitemap-nuxt-3",
     // https://github.com/nuxt-community/robots-module
     "@nuxtjs/robots",
-  ],
+    // https://vee-validate.logaretm.com/v4/
+    "@vee-validate/nuxt"
+,  ],
   // config for i18n
   i18n: {
     defaultLocale: "en",

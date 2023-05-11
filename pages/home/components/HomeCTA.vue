@@ -4,7 +4,7 @@
   >
     <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
       <div class="mt-10 flex items-center justify-center gap-x-6">
-        <NuxtLink :to="localePath('/auth/register')">
+        <NuxtLink :to="localePath('/newsletter')">
           <BaseButton :button-theme="themeButtonService.getThemeButtonById(5)">
             <span>{{ $t("global.get_started") }}</span>
           </BaseButton>

@@ -4,13 +4,13 @@
     <SwitchThemeColor />
     <SwitchLanguage />
     <!-- Header Login button -->
-    <NuxtLink :to="localePath('/auth/login')">
+    <NuxtLink :to="localePath('/newsletter')">
       <BaseButton :button-theme="themeButtonService.getThemeButtonById(1)">
         {{ $t("global.header.links.login") }}
       </BaseButton>
     </NuxtLink>
     <!-- Header Get started button -->
-    <NuxtLink :to="localePath('/auth/register')">
+    <NuxtLink :to="localePath('/newsletter')">
       <BaseButton :button-theme="themeButtonService.getThemeButtonById(2)">
         <span>{{ $t("global.get_started") }}</span>
       </BaseButton>
