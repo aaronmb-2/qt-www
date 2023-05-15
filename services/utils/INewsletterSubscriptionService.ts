@@ -1,7 +1,6 @@
-import type { FetchError } from 'ofetch';
-import { _AsyncData } from "nuxt/dist/app/composables/asyncData";
-import { NewsletterApiParams } from '../types/NewsletterAPITypes';
+import { ParamsNewsletterApi } from './TypesNewsletterSuscription';
+import { TypePromiseApiResponse } from '../response/TypesApiResponseHandler';
 
 export interface INewsletterSubscriptionService {
-    subscribe(data: NewsletterApiParams): Promise<_AsyncData<unknown, FetchError<any> | null>>;
+    subscribe(data: ParamsNewsletterApi): TypePromiseApiResponse;
   }

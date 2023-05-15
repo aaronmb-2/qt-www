@@ -8,7 +8,6 @@ import {
 } from "@heroicons/vue/20/solid";
 import { IThemeColorService } from "./IThemeColorService";
 import { BaseSwitchItem } from "~/models/base/BaseSwitchItem";
-import { IBaseSwitchItem } from "~/models/base/IBaseSwitchItem";
 
 export class ThemeColorService implements IThemeColorService {
   /**
@@ -25,16 +24,19 @@ export class ThemeColorService implements IThemeColorService {
     // 1: use the setTheme method, the mode can only be changed with this type of argument
     // 2: filter with getItem, the values compared should be of the same type
     new BaseSwitchItem({
+      id: 1,
       name: "Light",
       icon: SunIcon,
       mode: "light",
     }),
     new BaseSwitchItem({
+      id: 2,
       name: "Dark",
       icon: MoonIcon,
       mode: "dark",
     }),
     new BaseSwitchItem({
+      id: 3,
       name: "Auto",
       icon: ComputerDesktopIcon,
       mode: "auto",
@@ -45,7 +47,7 @@ export class ThemeColorService implements IThemeColorService {
     emitAuto: true,
   });
 
-  getTheme(): IBaseSwitchItem {
+  getTheme(): BaseSwitchItem {
     const theme = this.themes.find((i) => i.mode === this.mode.value);
 
     if (!theme) {

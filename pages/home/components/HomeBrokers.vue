@@ -33,9 +33,10 @@ import ib from "@/assets/images/ib.png";
 import cryptocom from "@/assets/images/cryptocom.png";
 import robinhood from "@/assets/images/robinhood.png";
 
-import { ConnectedBroker } from "~/types/ConnectedBroker";
+import { ConnectedBrokerModel } from "~/components/types/ConnectedBrokerModel";
 
-const connectedBrokers: ConnectedBroker[] = [
+
+const connectedBrokers: ConnectedBrokerModel[] = [
   { broker: "binance", image: binance, link: "https://binance.com/" },
   { broker: "DeGiro", image: degiro, link: "https://www.degiro.com/" },
   { broker: "Coinbase", image: coinbase, link: "https://www.coinbase.com/" },

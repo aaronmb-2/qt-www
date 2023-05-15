@@ -1,10 +1,10 @@
-import { IBaseData } from "../base/IBaseData";
-import { ButtonColor, ButtonRounding, ButtonSize } from "./EThemeButton";
+import { IBaseModel } from "../base/IBaseModel";
+import { EButtonColor, EButtonRounding, EButtonSize } from "./EThemeButton";
 
-export interface IThemeButton extends IBaseData<IThemeButton> {
-  rounding: ButtonRounding;
-  size: ButtonSize;
-  color: ButtonColor;
+export interface IThemeButton extends IBaseModel<IThemeButton> {
+  rounding: EButtonRounding;
+  size: EButtonSize;
+  color: EButtonColor;
 
   getTailwindClass(): string;
 }

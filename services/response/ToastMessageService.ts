@@ -8,7 +8,7 @@ export class ToastMessageService implements IToastMessageService {
    *
    * @remarks
    * This class is a so-called 'service', which (in this case), provides ToastMessages to the client.
-   * The TierService implements the IToastMessageService
+   * The ToastMessageService implements the IToastMessageService
    *
    */
   static NUMBER_OF_CONSECUTIVE_TOASTS = 2
@@ -43,7 +43,7 @@ export class ToastMessageService implements IToastMessageService {
   }
 
   @action.bound
-  removeToast(toastMessageId: number) {
+  removeToast(toastMessageId: number | string) {
     this.toastMessagesQueue = this.toastMessagesQueue.filter(
       (toastMessage) => toastMessage.id !== toastMessageId
     );

@@ -4,11 +4,11 @@
       <div class="flow-root pb-16 pt-24 sm:pt-32 lg:pb-0 mb-36 lg:mb-96">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <PricingHero
-            :item-current="tierService.getCurrentFrequency()"
-            :frequencies="tierService.frequencies"
-            @toggle-frequency="toggleFrequency"
+            :intervals="productsService.intervals"
+            :selected-interval="productsService.getInterval()"
+            @toggle-interval="toggleInterval"
           />
-          <PricingCards />
+          <PricingCards :products="productsService.products" :selected-interval="productsService.getInterval()"/>
         </div>
       </div>
     </div>
@@ -16,15 +16,20 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import { Observer } from "mobx-vue-lite";
 
 import PricingCards from "./components/PricingCards.vue";
 import PricingHero from "./components/PricingHero.vue";
 
-import { tierService } from "~/services/pricing/TierService";
-import { Frequency } from "~/models/pricing/Frequency";
+import { productsService } from "~/services/subscription/ProductsService";
+import { Interval } from "~/models/subscription/Interval";
 
-function toggleFrequency(frequency: Frequency) {
-  tierService.setCurrentFrequency(frequency);
+function toggleInterval(interval: Interval) {
+  productsService.setInterval(interval);
 }
+
+await onMounted(() => {
+  productsService.fetchProducts()
+});
 </script>

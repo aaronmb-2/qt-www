@@ -1,6 +1,6 @@
-export enum ToastStyling {
+export enum EToastStyling {
     /**
-     * This is the ToastStyling Enum.
+     * This is the EToastStyling Enum.
      *
      * @remarks
      * This Enum takes care over all the possible stylings you can use for the Toast.

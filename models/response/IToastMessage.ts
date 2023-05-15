@@ -1,15 +1,15 @@
-import { IBaseData } from "../base/IBaseData";
 import {
   FunctionalComponent,
   HTMLAttributes,
   VNodeProps,
 } from "nuxt/dist/app/compat/capi";
-import { ToastStyling } from "./EToastMessage";
+import { EToastStyling } from "./EToastMessage";
+import { IBaseModel } from "../base/IBaseModel";
 
-export interface IToastMessage extends IBaseData<IToastMessage> {
+export interface IToastMessage extends IBaseModel<IToastMessage> {
   title: string;
   message: string;
   timeout: number;
   icon: FunctionalComponent<HTMLAttributes & VNodeProps, {}>;
-  styling: ToastStyling
+  styling: EToastStyling
 }

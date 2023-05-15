@@ -1,5 +1,3 @@
-import { TypeToastMessage } from "~/types/TypeToastMessage";
-import { BaseData } from "../base/BaseData";
 import { IToastMessage } from "./IToastMessage";
 
 import {
@@ -7,11 +5,13 @@ import {
   HTMLAttributes,
   VNodeProps,
 } from "nuxt/dist/app/compat/capi";
-import { ToastStyling } from "./EToastMessage";
+import { EToastStyling } from "./EToastMessage";
+import { DataToastMessage } from "./DataToastMessage";
+import { BaseModel } from "../base/BaseModel";
 
 // eslint-disable-next-line no-use-before-define
 export class ToastMessage
-  extends BaseData<ToastMessage>
+  extends BaseModel<ToastMessage>
   implements IToastMessage
 {
   /**
@@ -19,9 +19,9 @@ export class ToastMessage
    *
    * @remarks
    * This class is a so-called 'model', which purpose is to represent the toast styling and text withing the application.
-   * The ToastMessage extends the BaseData model and implements an interface called IToastMessage.
+   * The ToastMessage extends the BaseModel model and implements an interface called IToastMessage.
    *
-   * @param TypeToastMessage - That contains the following information: title, message, timeout, icon & styling 
+   * @param DataToastMessage - That contains the following information: title, message, timeout, icon & styling 
    * @returns The implemented model of a ToastMessage which can be used within the ToastMessageService for displaying information to the user.
    *
    */
@@ -29,9 +29,9 @@ export class ToastMessage
   message: string;
   timeout: number;
   icon: FunctionalComponent<HTMLAttributes & VNodeProps, {}>;
-  styling: ToastStyling;
+  styling: EToastStyling;
 
-  constructor(data: TypeToastMessage) {
+  constructor(data: DataToastMessage) {
     super(data);
     this.title = data.title;
     this.message = data.message;

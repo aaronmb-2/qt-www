@@ -8,26 +8,26 @@
     </p>
     <div class="mt-16 flex justify-center">
       <RadioGroup
-        :v-model="itemCurrent"
+        :v-model="selectedInterval"
         class="grid grid-cols-2 gap-x-1 rounded-full bg-gray-100 dark:bg-white/5 p-1 text-center text-xs font-semibold leading-5"
       >
-        <RadioGroupLabel class="sr-only">Payment frequency</RadioGroupLabel>
+        <RadioGroupLabel class="sr-only">Payment Interval</RadioGroupLabel>
         <RadioGroupOption
-          v-for="option in frequencies"
-          :key="option.value"
-          :value="option"
+          v-for="interval in intervals"
+          :key="interval.value"
+          :value="interval"
           as="template"
         >
           <div
             :class="[
-              itemCurrent.label === option.label
+              selectedInterval.label === interval.label
                 ? 'bg-blue-900 dark:bg-blue-700 text-white'
                 : '',
               'cursor-pointer rounded-full px-2.5 py-1',
             ]"
-            @click="$emit('toggleFrequency', option)"
+            @click="$emit('toggleInterval', interval)"
           >
-            <span>{{ $t(option.label) }}</span>
+            <span>{{ $t(interval.label) }}</span>
           </div>
         </RadioGroupOption>
       </RadioGroup>
@@ -37,16 +37,18 @@
 
 <script setup lang="ts">
 import { RadioGroup, RadioGroupLabel, RadioGroupOption } from "@headlessui/vue";
-import { TypeFrequencie } from "~/types/pricing/TypeFrequency";
+
+import { Interval } from "@/models/subscription/Interval"
+
 
 interface Props {
-  itemCurrent: TypeFrequencie;
-  frequencies: TypeFrequencie[];
+  selectedInterval: Interval;
+  intervals: Interval[];
 }
 
 defineProps<Props>();
 
 defineEmits<{
-  (e: "toggleFrequency", option: TypeFrequencie): void;
+  (e: "toggleInterval", option: Interval): void;
 }>();
 </script>

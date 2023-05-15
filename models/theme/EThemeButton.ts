@@ -1,4 +1,4 @@
-export enum ButtonRounding {
+export enum EButtonRounding {
   /**
    * This is the ButtonRounding Enum.
    *
@@ -15,7 +15,7 @@ export enum ButtonRounding {
   full = "rounded-full",
 }
 
-export enum ButtonSize {
+export enum EButtonSize {
   /**
    * This is the ButtonSize Enum.
    *
@@ -43,7 +43,7 @@ export enum ButtonSize {
   full = "w-full p-2",
 }
 
-export enum ButtonColor {
+export enum EButtonColor {
   /**
    * This is the ButtonColor Enum.
    *

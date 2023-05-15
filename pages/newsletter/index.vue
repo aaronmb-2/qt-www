@@ -61,7 +61,7 @@ import { object, string } from "yup";
 import { Field, useForm, ErrorMessage } from "vee-validate";
 import { themeButtonService } from "~/services/theme/ThemeButtonService";
 import { newsletterSubscriptionService } from "~/services/utils/NewsletterSubscriptionService";
-import { apiResponseHandlingService } from "~/services/response/ApiResponseHandlingService";
+import { apiResponseHandlerService } from "~/services/response/ApiResponseHandlerService";
 
 import BaseLogo from "~/components/base/BaseLogo.vue";
 
@@ -82,7 +82,7 @@ const onSubmit = handleSubmit(async (values) => {
   if (response.error.value) {
     setErrors(response.error.value.data);
   }
-  const message = apiResponseHandlingService.handleResponse(response)
+  const message = apiResponseHandlerService.handleResponse(response)
   if (message?.isSuccess) {
     resetForm()
   }

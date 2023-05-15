@@ -4,9 +4,9 @@ import {
   HTMLAttributes,
   VNodeProps,
 } from "nuxt/dist/app/compat/capi";
-import { IBaseModel } from "./IBaseModel";
+import { DataBaseModel } from "./DataBaseModel";
 
-export interface IBaseSwitchItem extends IBaseModel<IBaseSwitchItem> {
+export interface DataBaseSwitchItem extends DataBaseModel{
   name: string;
   code?: string;
   icon?: FunctionalComponent<HTMLAttributes & VNodeProps, {}>;

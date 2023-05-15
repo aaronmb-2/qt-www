@@ -35,11 +35,11 @@
 
 <script setup lang="ts">
 import { defineComponent, h } from "vue";
+import { FooterLinkModel } from "../types/FooterLinkModel";
+import { FooterSocialModel } from "../types/FooterSocialModel";
 
-import { FooterLink } from "~/types/FooterLink";
-import { FooterSocial } from "~/types/FooterSocial";
 
-const footerLinks: FooterLink[] = [
+const footerLinks: FooterLinkModel[] = [
   // Text comes from Translations
   { text: "global.footer.links.home", to: "/home" },
   { text: "global.footer.links.features", to: "/features" },
@@ -49,7 +49,7 @@ const footerLinks: FooterLink[] = [
   { text: "global.footer.links.register", to: "/auth/register" },
 ];
 
-const footerSocials: FooterSocial[] = [
+const footerSocials: FooterSocialModel[] = [
   // Text comes from Translations
   {
     text: "Facebook",
