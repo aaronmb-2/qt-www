@@ -22,6 +22,7 @@
           :key="message.id"
           class="dark:bg-slate-700 pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white ring-1 ring-black ring-opacity-5 drop-shadow-2xl shadow-lg"
         >
+        <Observer>
           <div class="p-4">
             <div class="flex items-start">
               <div class="flex-shrink-0">
@@ -36,10 +37,10 @@
               </div>
               <div class="ml-3 w-0 flex-1 pt-0.5">
                 <p class="text-sm font-medium dark:text-slate-300 text-slate-900">
-                  {{ message.title }}
+                  {{ $t(message.title) }}
                 </p>
                 <p class="mt-1 text-sm dark:text-slate-500 text-slate-700">
-                  {{ message.message }}
+                  {{ $t(message.message) }}
                 </p>
               </div>
               <div class="ml-4 flex flex-shrink-0">
@@ -54,6 +55,7 @@
               </div>
             </div>
           </div>
+        </Observer>
         </div>
       </TransitionGroup>
     </div>

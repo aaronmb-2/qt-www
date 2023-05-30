@@ -14,25 +14,14 @@ class NewsletterSubscriptionService implements INewsletterSubscriptionService{
   static NEWSLETTER_SUBSCRIBE_URL = `/v1/utils/newsletter-subscribers/`;
 
   async subscribe(data: ParamsNewsletterApi): TypePromiseApiResponse {
-    const config = useRuntimeConfig()
-    const { locale }: { locale: any;} = useI18n();
-
-    const response = await useFetch(
-      NewsletterSubscriptionService.NEWSLETTER_SUBSCRIBE_URL,
-      {
-        baseURL: config.public.apiUrl,
-        method: "POST",
-        headers: {
-          "Accept-Language": locale.value
-          // Access a private variable (only available on the server)
-          // Authorization: `Api-Key ${config.public.apiToken}`
-        },
-        body: {
-          email: data.email,
-        },
-      }
-    );
-    return response;
+    const fetch = useCustomFetch()
+    
+    return fetch.request({
+      url: NewsletterSubscriptionService.NEWSLETTER_SUBSCRIBE_URL,
+      method: "POST",
+      locale: data.locale,
+      body: data.body,
+    })
   }
 }
 

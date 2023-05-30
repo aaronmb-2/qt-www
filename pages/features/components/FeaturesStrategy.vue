@@ -33,7 +33,9 @@
                   aria-hidden="true"
                 />
               </div>
-              {{ $t(feature.title) }}
+              <p class="dark:text-pink-200 text-pink-400">
+                {{ $t(feature.title) }}
+              </p>
             </dt>
             <dd class="mt-2 text-base leading-7">{{ $t(feature.text) }}</dd>
           </div>

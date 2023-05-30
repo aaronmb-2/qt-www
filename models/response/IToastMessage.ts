@@ -5,6 +5,7 @@ import {
 } from "nuxt/dist/app/compat/capi";
 import { EToastStyling } from "./EToastMessage";
 import { IBaseModel } from "../base/IBaseModel";
+import { EApiResponseStatus } from "~/services/response/EApiResponseHandler";
 
 export interface IToastMessage extends IBaseModel<IToastMessage> {
   title: string;

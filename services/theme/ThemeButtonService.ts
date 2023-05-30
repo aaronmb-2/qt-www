@@ -62,6 +62,12 @@ export class ThemeButtonService implements IThemeButtonService {
       size: EButtonSize.full,
       color: EButtonColor.border,
     }),
+    new ThemeButton({
+      id: 8,
+      rounding: EButtonRounding.half,
+      size: EButtonSize.m,
+      color: EButtonColor.pink,
+    }),
   ];
 
   @observable

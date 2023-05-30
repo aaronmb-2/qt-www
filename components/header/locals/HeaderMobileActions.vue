@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col text-center main-content ml-2">
-    <NuxtLink :to="localePath('/newsletter')" @click="$emit('close')">
+    <NuxtLink :to="localePath('/auth/login')" @click="$emit('close')">
       <BaseButton :button-theme="themeButtonService.getThemeButtonById(7)">
         <span>{{ $t("global.header.links.login") }}</span>
       </BaseButton>
     </NuxtLink>
     <NuxtLink
-      :to="localePath('/newsletter')"
+      :to="localePath('/auth/register')"
       class="mt-2"
       @click="$emit('close')"
     >

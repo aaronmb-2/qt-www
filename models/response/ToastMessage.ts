@@ -1,5 +1,5 @@
 import { IToastMessage } from "./IToastMessage";
-
+import { CheckCircleIcon, XCircleIcon, InformationCircleIcon } from "@heroicons/vue/24/outline";
 import {
   FunctionalComponent,
   HTMLAttributes,
@@ -8,6 +8,7 @@ import {
 import { EToastStyling } from "./EToastMessage";
 import { DataToastMessage } from "./DataToastMessage";
 import { BaseModel } from "../base/BaseModel";
+import { EApiResponseStatus } from "~/services/response/EApiResponseHandler";
 
 // eslint-disable-next-line no-use-before-define
 export class ToastMessage
@@ -28,15 +29,32 @@ export class ToastMessage
   title: string;
   message: string;
   timeout: number;
-  icon: FunctionalComponent<HTMLAttributes & VNodeProps, {}>;
-  styling: EToastStyling;
+  icon!: FunctionalComponent<HTMLAttributes & VNodeProps, {}>;
+  styling!: EToastStyling;
 
   constructor(data: DataToastMessage) {
     super(data);
-    this.title = data.title;
-    this.message = data.message;
-    this.timeout = data.timeout;
-    this.icon = data.icon;
-    this.styling = data.styling
+    const { title, message, status, timeout = 5000 } = data;
+    this.title = title;
+    this.message = message;
+    this.setStyling(status)
+    this.timeout = timeout;
+  }
+
+  private setStyling(status: EApiResponseStatus): void {
+    switch (status) {
+      case EApiResponseStatus.success:
+        this.icon = CheckCircleIcon
+        this.styling = EToastStyling.success
+        break;
+      case EApiResponseStatus.error:
+        this.icon = XCircleIcon
+        this.styling = EToastStyling.error
+        break;
+      case EApiResponseStatus.info:
+        this.icon = InformationCircleIcon
+        this.styling = EToastStyling.info
+        break;
+    }
   }
 }

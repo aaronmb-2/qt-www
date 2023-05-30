@@ -1,15 +1,9 @@
-import { EToastStyling } from "~/models/response/EToastMessage";
-import {
-  FunctionalComponent,
-  HTMLAttributes,
-  VNodeProps,
-} from "nuxt/dist/app/compat/capi";
 import { DataBaseModel } from "../base/DataBaseModel";
+import { EApiResponseStatus } from "~/services/response/EApiResponseHandler";
 
 export interface DataToastMessage extends DataBaseModel {
     title: string;
     message: string;
-    timeout: number;
-    icon: FunctionalComponent<HTMLAttributes & VNodeProps, {}>;
-    styling: EToastStyling;
+    status: EApiResponseStatus;
+    timeout?: number;
   }

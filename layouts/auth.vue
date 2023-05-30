@@ -1,6 +1,7 @@
 <template>
   <div>
     <slot></slot>
+    <ModalMessage />
     <ToastMessage />
   </div>
 </template>
@@ -10,5 +11,6 @@
 // when reloading one of the Auth pages
 import { themeColorService } from "~/services/theme/ThemeColorService";
 import ToastMessage from "~/components/response/ToastMessage.vue";
+import ModalMessage from "~/components/response/ModalMessage.vue";
 themeColorService.getTheme();
 </script>

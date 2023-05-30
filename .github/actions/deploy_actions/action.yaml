@@ -40,6 +40,14 @@ runs:
       - name: Install dependencies
         shell: bash
         run: npm ci
+      - name: Create .env file
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          envkey_API_URL: "https://api.dev.clefer.com"
+          envkey_BASE_URL: "https://dev.clefer.com"
+          directory: .
+          file_name: .env
+          fail_on_empty: true
       - name: Generate Nuxt SPA project
         shell: bash
         run: npm run generate

@@ -6,7 +6,7 @@
     </div>
     <div class="flex items-center gap-x-4 align-middle">
       <!-- Header Get started button -->
-      <NuxtLink :to="localePath('/newsletter')">
+      <NuxtLink :to="localePath('/auth/register')">
         <BaseButton :button-theme="themeButtonService.getThemeButtonById(3)">
           <span>{{ $t("global.get_started") }}</span>
         </BaseButton>

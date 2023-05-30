@@ -1,9 +1,14 @@
-import { action, computed, observable, makeAutoObservable } from "mobx";
+import { computed, makeAutoObservable } from "mobx";
 import { _AsyncData } from "nuxt/dist/app/composables/asyncData";
 import { IProductsService } from "./IProductsService";
 import { Interval } from "~/models/subscription/Interval";
 import { Product } from "~/models/subscription/Product";
 import { TypeProduct } from "~/types/subscription/TypeProduct";
+import { ParamsBaseApi } from "../base/TypesBaseService";
+import { TypePromiseApiResponse } from "../response/TypesApiResponseHandler";
+import { userService } from "../user/UserService";
+import { ParamsGetStripeCheckoutApi } from "./TypeProductsService";
+
 
 export class ProductsService implements IProductsService {
   /**
@@ -15,84 +20,100 @@ export class ProductsService implements IProductsService {
    *
    */
   static PRODUCTS_URL = `/v1/billing/products/`;
+  static CREATE_STRIPE_CHECKOUT_SESSION = `/v1/billing/checkout-session/`;
 
-  @observable
   products: Product[] = []
 
-  @observable
-  intervals: Interval[] = [
-    new Interval({ id: 1, value: "month", label: "pricing.monthly" }),
-    new Interval({ id: 2, value: "year", label: "pricing.annually" }),
-  ];
+  intervals: Interval[] = [];
 
-  @observable
-  interval = this.intervals[0];
+  interval: Interval = this.intervals[0];
 
-  @action.bound
-  async fetchProducts(): Promise<void> {
-    const config = useRuntimeConfig()
-    const { locale }: { locale: any;} = useI18n();
-
-    const response = await useFetch<TypeProduct[]>(
-      ProductsService.PRODUCTS_URL,
-      {
-        baseURL: config.public.apiUrl,
-        method: "GET",
-        headers: {
-          "Accept-Language": locale.value
-        },
-      }
-    );
-    if (response.error.value) {
-      // handle error
-      // return ...
-    }
-    if (response.data.value) {
-      const featuredProducts: Product[] = [];
-      const otherProducts: Product[] = [];
-  
-      response.data.value.forEach((product: TypeProduct) => {
-        const newProduct = new Product({
-          id: product.id,
-          name: product.name,
-          featured: product.featured,
-          prices: product.prices,
-          uniqueSellingPoints: product.unique_selling_points,
-        });
-  
-        if (newProduct.featured) {
-          featuredProducts.push(newProduct);
-        } else {
-          otherProducts.push(newProduct);
-        }
-      });
-  
-      const sortedProducts = [
-        ...otherProducts.slice(0, Math.ceil(otherProducts.length / 2)),
-        ...featuredProducts,
-        ...otherProducts.slice(Math.ceil(otherProducts.length / 2)),
-      ];
-  
-      this.clearProducts();
-      this.products = sortedProducts;
-    }
+  constructor() {
+    makeAutoObservable(this, {}, { autoBind: true });
   }
 
-  @action.bound
+  async fetchProducts(data: ParamsBaseApi): TypePromiseApiResponse {
+    const fetch = useCustomFetch()
+
+    const url = ProductsService.PRODUCTS_URL
+  
+    return fetch.request({
+      url: url,
+      method: "GET",
+      locale: data.locale,
+  })
+  }
+
+  async getStripeCheckout(data: ParamsGetStripeCheckoutApi): TypePromiseApiResponse {
+    const fetch = useCustomFetch()
+
+    const url = `${ProductsService.CREATE_STRIPE_CHECKOUT_SESSION}${data.paramPriceId}/`
+
+    return fetch.request({
+      url: url,
+      method: "GET",
+      locale: data.locale,
+      accessToken: userService.loggedInUserAccessToken,
+      refreshToken: userService.loggedInUserRefreshToken,
+    })
+  }
+
+  setProductsAndInterval(responseData: any) {
+    const featuredProducts: Product[] = [];
+    const otherProducts: Product[] = [];
+    const intervals: Interval[] = [];
+
+    responseData["products"].forEach((product: TypeProduct) => {
+      const newProduct = new Product({
+        id: product.id,
+        name: product.name,
+        featured: product.featured,
+        prices: product.prices,
+        uniqueSellingPoints: product.unique_selling_points,
+      });
+
+      if (newProduct.featured) {
+        featuredProducts.push(newProduct);
+      } else {
+        otherProducts.push(newProduct);
+      }
+    });
+
+    const sortedProducts = [
+      ...otherProducts.slice(0, Math.ceil(otherProducts.length / 2)),
+      ...featuredProducts,
+      ...otherProducts.slice(Math.ceil(otherProducts.length / 2)),
+    ];
+
+    responseData["intervals"].forEach((interval: string) => {
+      intervals.push(
+        new Interval({ id: Math.random(), value: interval, label: `pricing.${interval}` })
+      );
+    })
+
+    this.clearProducts();
+    this.clearIntervals();
+    this.products = sortedProducts;
+    this.intervals = intervals;
+    this.interval = intervals[0];
+  }
+
   clearProducts(): void {
     this.products = [];
   }
 
-  @computed
+  clearIntervals(): void {
+    this.intervals = [];
+  }
+
   getInterval(): Interval {
     return this.interval;
   }
 
-  @action.bound
+  @computed
   setInterval(interval: Interval): void {
     this.interval = interval;
   }
 }
 
-export const productsService = new ProductsService();
-makeAutoObservable(productsService, {}, { autoBind: true });
+export const productsService = new ProductsService();;

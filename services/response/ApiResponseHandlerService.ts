@@ -1,10 +1,7 @@
 import type { FetchError } from 'ofetch';
-import { toastMessageService } from "~/services/response/ToastMessageService";
-import { ToastMessage } from '~/models/response/ToastMessage';
-import { CheckCircleIcon, XCircleIcon } from "@heroicons/vue/24/outline";
-import { EToastStyling } from '~/models/response/EToastMessage';
 import { IApiResponseHandlerService } from './IApiResponseHandlerService';
-import { TypeApiResponse } from './TypesApiResponseHandler';
+import { ReturnHandleResponse, TypeApiResponse } from './TypesApiResponseHandler';
+import { EApiResponseStatus } from './EApiResponseHandler';
 
 class ApiResponseHandlerService implements IApiResponseHandlerService {
   /**
@@ -15,21 +12,32 @@ class ApiResponseHandlerService implements IApiResponseHandlerService {
    * The ApiResponseHandlingService implements the IApiResponseHandlingService
    *
    */
-  handleResponse(data: TypeApiResponse) {
+  handleResponse(data: TypeApiResponse): ReturnHandleResponse {
     if (data.error.value) {
       return this.handleError(data.error.value)
     }
     if (data.data.value) {
       return this.handleSuccess(data.data.value)
     }
+    return this.handleUnhandled()
+  }
+
+  handleUnhandled() {
+    return {
+      title: "global.messages.unhandled_response",
+      message: "global.messages.unhandled_error",
+      status: EApiResponseStatus.info,
+      isUnhandled: true,
+      isSuccess: false,
+    }
   }
 
   handleError(errorResponse: FetchError) {
-    let title = "Something went wrong";
+    let title = "global.messages.something_went_wrong";
     let message;
     let isUnhandled = false;
     let isSuccess = false;
-
+    
     if (errorResponse.data) {
       // Http response outside the 2xx range
       const responseBody = errorResponse.data;
@@ -58,17 +66,16 @@ class ApiResponseHandlerService implements IApiResponseHandlerService {
 
       if (!message) {
         // Default to status codes
-        const status = errorResponse.response?.status;
+        const status = errorResponse.status;
 
-        if (status === 403) {
-          message = "You are not allowed to do this.";
-        } else if (status === 420) {
-          message =
-            "Too many requests. Please wait a couple minutes until trying again";
-        } else if (status === 400) {
-          message = "The request was invalid.";
+        if (status === 400) {
+          message = "global.messages.status_400";
+        } else if (status === 403) {
+          message ="global.messages.status_403";
         } else if (status === 404) {
-          message = "Not found";
+          message ="global.messages.status_404";
+        } else if (status === 420) {
+          message ="global.messages.status_420";
         }
       }
     }
@@ -79,23 +86,20 @@ class ApiResponseHandlerService implements IApiResponseHandlerService {
     }
 
     if (!message) {
-      message = "😭 Unhandled error:";
+      message = "global.messages.unhandled_error";
     }
 
-    toastMessageService.addToast(
-      new ToastMessage({ id: Math.random(), title: title, message: message, timeout: 5000, icon: XCircleIcon, styling: EToastStyling.error })
-    );
-
     return {
-      message,
+      title: title,
+      message: message,
+      status: EApiResponseStatus.error,
       isUnhandled,
-      errorResponse,
       isSuccess,
     };
   }
 
   handleSuccess(successResponse: any) {
-    let title = "Success";
+    let title = "global.messages.success";
     let message;
     let isUnhandled = false;
     let isSuccess = true;
@@ -104,33 +108,30 @@ class ApiResponseHandlerService implements IApiResponseHandlerService {
       message = successResponse.message
     }
 
-    if (!message) {
+    if (!message) {    
       // Default to status codes
-      const status = successResponse.response.status;
+      const status = successResponse.status;
 
       if (status === 200) {
-        message = "OK";
+        message = "global.messages.status_200";
       } else if (status === 201) {
         message =
-          "Created";
+          "global.messages.status_201";
       } else if (status === 202) {
-        message = "In progress";
+        message = "global.messages.status_202";
       }
     }
 
     if (!message) {
       isUnhandled = true;
-      message = "Unhandled response:";
+      message = "global.messages.unhandled_response";
     }
 
-    toastMessageService.addToast(
-      new ToastMessage({ id: Math.random(), title: title, message: message, timeout: 5000, icon: CheckCircleIcon, styling: EToastStyling.success})
-    );
-
     return {
-      message,
+      title: title,
+      message: message,
+      status: EApiResponseStatus.success,
       isUnhandled,
-      successResponse,
       isSuccess,
     };
   }

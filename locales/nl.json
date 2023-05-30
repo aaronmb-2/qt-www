@@ -1,5 +1,8 @@
 {
   "global": {
+    "util": {
+      "or": "Of"
+    },
     "get_started": "Aan de slag",
     "learn_more": "Leer meer",
     "header": {
@@ -25,6 +28,38 @@
         "switch_language": "Wissel taal",
         "switch_theme": "Wissel thema"
       }
+    },
+    "messages": {
+      "loading": "Laden",
+      "success": "Success",
+      "something_went_wrong": "Er ging iets fout",
+      "unhandeled_error": "Onbehandelde fout",
+      "unhandeled_response": "Onbehandeld antwoord",
+      "status_200": "Ok",
+      "status_201": "Aangemaakt",
+      "status_202": "In behandeling",
+      "status_400": "Ongeldig verzoek",
+      "status_403": "Niet toegestaan om deze actie uit te voeren",
+      "status_404": "Niet gevonden",
+      "status_420": "Te veel requests, probeer het later nog een keertje",
+      "field_email_required": "Email is verplicht",
+      "field_email_invalid": "Ongeldig email",
+      "field_first_name_required": "Voornaam is verplicht",
+      "field_last_name_required": "Achternaam is verplicht",
+      "field_password_required": "Wachtwoord is verplicht",
+      "field_password_too_short": "Wachtwoord is te kort (minimaal 10 karakters)",
+      "field_terms_of_service": "Servicevoorwaarden moeten geaccepteerd worden",
+      "registered": "Email is nog niet geverifiëerd",
+      "change_email_requested": "Email veranderen is reeds aangevraagd, volg de stappen in je email",
+      "change_password_requested": "Wachtwoord verandered is reeds aangevraagd, volg de stappen in je email"
+    },
+    "fields": {
+      "email_address": "E-mailadres",
+      "first_name": "Voornaam",
+      "last_name": "Achternaam",
+      "password": "Wachtwoord",
+      "accepts_terms": "Accepteer algemene voorwaarden",
+      "download_terms": "Download algemene voorwaarden"
     }
   },
   "home": {
@@ -32,6 +67,12 @@
     "hero_leading_text": "Wereld leider in cross-platform handel in aandelen, valuta & cryptocurrencies",
     "hero_helper_text": "Meerdere accounts hebben via verschillende handelsplatformen, kan lastig te beheren zijn. Wij bieden een enkel platform aan, waarop u uw Quantitative handelmethode kunt toepassen op alle gewenste accounts.",
     "brokers_connected": "Gekoppeld met swerelds bekendste handelsplatformen.",
+    "newsletter_leading_text": "Aanmelden voor onze nieuwsbrief",
+    "newsletter_helper_text": "Hierin delen we updates, ideeën, aanpassingen en inzichten",
+    "newsletter_leading_text_weekly": "Weekelijkse artikelen",
+    "newsletter_helper_text_weekly": "Elke week delen wij een artikel gerelateerd aan (quantitative) beurs handelen",
+    "newsletter_leading_text_spam": "Geen spam",
+    "newsletter_helper_text_spam": "Geen sales gerelateerde zaken, gewoon een weekelijkse update omtrent QT",
     "image_leading_text": "Draai jouw strategie met vertrouwen in de Cloud",
     "image_helper_text": "Maak, test and draai jouw Quantitative Trading strategie middels onze Cloud Oplossing. Jij bedenkt het idee, wij helpen met de uitvoering!",
     "cta_text": "Klaar om aan de slag te gaan?",
@@ -214,8 +255,8 @@
   },
   "pricing": {
     "payment": "Betaling",
-    "monthly": "Maandelijks",
-    "annually": "Jaarlijks",
+    "month": "Maandelijks",
+    "year": "Jaarlijks",
     "hero_leading_text": "Groei als investeerder of handelaar.",
     "hero_helper_text": "Kies het plan dat past bij jou en stop wanneer jij wil.",
     "buy_plan": "Neem dit plan",
@@ -243,14 +284,35 @@
     }
   },
   "login": {
+    "login": "Login",
+    "logging_in": "Inloggen",
+    "non_existing_user": "No geen account?",
     "up_to_date": "Blijf up-to-date!",
     "keep_me_posted": "Hou me op de hoogte!",
-    "home": "Thuis"
+    "home": "Thuis",
+    "not_a_member": "Nog geen lid?",
+    "register_here": "Registreer hier"
   },
   "register": {
+    "create_new_account": "Nieuwe gebruiker",
+    "existing_user": "Al een bestaande gebruiker?",
+    "login_here": "Login hier",
     "up_to_date": "Blijf up-to-date!",
     "keep_me_posted": "Hou me op de hoogte!!",
-    "home": "Thuis"
+    "home": "Thuis",
+    "register": "Registreer",
+    "reset_password": "Wachtwoord vergeten",
+    "reset_email": "Verander email",
+    "verify_email": "Email verifiëren"
   },
-  "welcome": "Welkom"
+  "newsletter": {
+    "subscribing": "Aanmelden",
+    "keep_me_posted": "Hou me op de hoogte"
+  },
+  "platform": {
+    "billing": {
+      "logout": "Uitloggen",
+      "platform": "Platform"
+    }
+  }
 }

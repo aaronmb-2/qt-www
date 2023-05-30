@@ -5,7 +5,7 @@
   >
     <PricingBackground />
     <div
-      v-for="product in products"
+      v-for="product in productsService.products"
       :key="product.id"
       :class="[
         product.featured
@@ -35,7 +35,7 @@
             >
               {{
                 product.getPriceForInterval(
-                  selectedInterval.value
+                  productsService.getInterval().value
                 )
               }}
             </p>
@@ -45,13 +45,13 @@
                 {{
                   $t("pricing.payment") +
                   " " +
-                  $t(selectedInterval.label)
+                  $t(productsService.getInterval().label)
                 }}
               </p>
             </div>
           </div>
           <NuxtLink
-            :to="localePath('/newsletter')"
+            :to="localePath('/auth/register')"
             :class="[
               product.featured
                 ? 'bg-blue-900 dark:bg-blue-700 shadow-sm hover:bg-pink-500 dark:hover:bg-pink-400 focus-visible:outline-indigo-600'
@@ -100,15 +100,7 @@ import { CheckIcon } from "@heroicons/vue/20/solid";
 import { Observer } from "mobx-vue-lite";
 
 import PricingBackground from "./PricingBackground.vue";
-import { Product } from "~/models/subscription/Product";
-import { Interval } from "@/models/subscription/Interval"
-
-interface Props {
-  selectedInterval: Interval;
-  products: Product[];
-}
-
-defineProps<Props>();
+import { productsService } from "~/services/subscription/ProductsService";
 
 const localePath = useLocalePath();
 </script>

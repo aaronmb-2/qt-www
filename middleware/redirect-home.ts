@@ -1,5 +1,7 @@
 export default defineNuxtRouteMiddleware((_, __) => {
+  const localePath = useLocalePath();
+
   return navigateTo({
-    path: "/home",
+    path: localePath('/home'),
   });
 });
