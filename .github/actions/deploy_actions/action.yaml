@@ -49,8 +49,8 @@ runs:
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1.3
         with:
-          envkey_API_URL: ${{ inputs.api_url }}
-          envkey_WEB_URL: ${{ inputs.web_url }}
+          envkey_API_URL: "https://www.api.dev.quanttrade.io"
+          envkey_WEB_URL: "https://www.quanttrade.io"
           directory: .
           file_name: .env
       - name: Generate Nuxt SPA project
