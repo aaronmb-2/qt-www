@@ -58,7 +58,7 @@ jobs:
           s3_bucket: ${{ secrets.QUANTTRADE_WWW_STATIC_HOSTING_BUCKET }}
           cloudfront_distribution_id: ${{ secrets.QUANTTRADE_WWW_CLOUDFRONT_DISTRIBUTION_ID }}
           api_url: https://www.api.dev.quanttrade.io
-          web_url: https://www.quanttrade.io
+          web_url: ${{ vars.WEB_URL }}
   terraform:
     runs-on: ubuntu-latest
     needs: [deploy]
