@@ -30,23 +30,28 @@ import { ToastMessage } from "~/models/response/ToastMessage";
 
 const { localeProperties } = useI18n();
 
-const dataLoaded = ref(false)
+const dataLoaded = ref(false);
 
 await onMounted(async () => {
   const response = await productsService.fetchProducts({
-    locale: localeProperties.value.iso!
+    locale: localeProperties.value.iso!,
   });
 
-  const message = apiResponseHandlerService.handleResponse(response)
-  
+  const message = apiResponseHandlerService.handleResponse(response);
+
   if (message.status !== EApiResponseStatus.success) {
     toastMessageService.addToast(
-      new ToastMessage({ id: Math.random(), title: message.title, message: message.message, status: message.status})
+      new ToastMessage({
+        id: Math.random(),
+        title: message.title,
+        message: message.message,
+        status: message.status,
+      })
     );
     return;
   }
 
-  productsService.setProductsAndInterval(response.data.value)
+  productsService.setProductsAndInterval(response.data.value);
   dataLoaded.value = true;
 });
 </script>

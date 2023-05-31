@@ -35,7 +35,6 @@ import robinhood from "@/assets/images/robinhood.png";
 
 import { ConnectedBrokerModel } from "~/components/types/ConnectedBrokerModel";
 
-
 const connectedBrokers: ConnectedBrokerModel[] = [
   { broker: "binance", image: binance, link: "https://binance.com/" },
   { broker: "DeGiro", image: degiro, link: "https://www.degiro.com/" },

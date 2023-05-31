@@ -1,7 +1,10 @@
-import type { FetchError } from 'ofetch';
-import { IApiResponseHandlerService } from './IApiResponseHandlerService';
-import { ReturnHandleResponse, TypeApiResponse } from './TypesApiResponseHandler';
-import { EApiResponseStatus } from './EApiResponseHandler';
+import type { FetchError } from "ofetch";
+import { IApiResponseHandlerService } from "./IApiResponseHandlerService";
+import {
+  ReturnHandleResponse,
+  TypeApiResponse,
+} from "./TypesApiResponseHandler";
+import { EApiResponseStatus } from "./EApiResponseHandler";
 
 class ApiResponseHandlerService implements IApiResponseHandlerService {
   /**
@@ -14,12 +17,12 @@ class ApiResponseHandlerService implements IApiResponseHandlerService {
    */
   handleResponse(data: TypeApiResponse): ReturnHandleResponse {
     if (data.error.value) {
-      return this.handleError(data.error.value)
+      return this.handleError(data.error.value);
     }
     if (data.data.value) {
-      return this.handleSuccess(data.data.value)
+      return this.handleSuccess(data.data.value);
     }
-    return this.handleUnhandled()
+    return this.handleUnhandled();
   }
 
   handleUnhandled() {
@@ -29,15 +32,15 @@ class ApiResponseHandlerService implements IApiResponseHandlerService {
       status: EApiResponseStatus.info,
       isUnhandled: true,
       isSuccess: false,
-    }
+    };
   }
 
   handleError(errorResponse: FetchError) {
-    let title = "global.messages.something_went_wrong";
+    const title = "global.messages.something_went_wrong";
     let message;
     let isUnhandled = false;
-    let isSuccess = false;
-    
+    const isSuccess = false;
+
     if (errorResponse.data) {
       // Http response outside the 2xx range
       const responseBody = errorResponse.data;
@@ -71,11 +74,11 @@ class ApiResponseHandlerService implements IApiResponseHandlerService {
         if (status === 400) {
           message = "global.messages.status_400";
         } else if (status === 403) {
-          message ="global.messages.status_403";
+          message = "global.messages.status_403";
         } else if (status === 404) {
-          message ="global.messages.status_404";
+          message = "global.messages.status_404";
         } else if (status === 420) {
-          message ="global.messages.status_420";
+          message = "global.messages.status_420";
         }
       }
     }
@@ -90,8 +93,8 @@ class ApiResponseHandlerService implements IApiResponseHandlerService {
     }
 
     return {
-      title: title,
-      message: message,
+      title,
+      message,
       status: EApiResponseStatus.error,
       isUnhandled,
       isSuccess,
@@ -99,24 +102,23 @@ class ApiResponseHandlerService implements IApiResponseHandlerService {
   }
 
   handleSuccess(successResponse: any) {
-    let title = "global.messages.success";
+    const title = "global.messages.success";
     let message;
     let isUnhandled = false;
-    let isSuccess = true;
+    const isSuccess = true;
 
     if (successResponse.message) {
-      message = successResponse.message
+      message = successResponse.message;
     }
 
-    if (!message) {    
+    if (!message) {
       // Default to status codes
       const status = successResponse.status;
 
       if (status === 200) {
         message = "global.messages.status_200";
       } else if (status === 201) {
-        message =
-          "global.messages.status_201";
+        message = "global.messages.status_201";
       } else if (status === 202) {
         message = "global.messages.status_202";
       }
@@ -128,8 +130,8 @@ class ApiResponseHandlerService implements IApiResponseHandlerService {
     }
 
     return {
-      title: title,
-      message: message,
+      title,
+      message,
       status: EApiResponseStatus.success,
       isUnhandled,
       isSuccess,

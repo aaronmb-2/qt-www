@@ -1,11 +1,11 @@
 import { ModalMessage } from "~/models/response/ModalMessage";
 
 export interface IModalMessageService {
-    modalMessagesQueue: ModalMessage[];
+  modalMessagesQueue: ModalMessage[];
 
-    displayModelMessage: ModalMessage;
-    showModalMessage: boolean;
+  displayModelMessage: ModalMessage;
+  showModalMessage: boolean;
 
-    addModal(toastMessage: ModalMessage): void;
-    removeModal(toastMessageId: number): void;
-  }
+  addModal(toastMessage: ModalMessage): void;
+  removeModal(toastMessageId: number): void;
+}

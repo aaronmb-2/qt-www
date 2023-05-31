@@ -38,7 +38,6 @@ import { defineComponent, h } from "vue";
 import { FooterLinkModel } from "../types/FooterLinkModel";
 import { FooterSocialModel } from "../types/FooterSocialModel";
 
-
 const footerLinks: FooterLinkModel[] = [
   // Text comes from Translations
   { text: "global.footer.links.home", to: "/home" },

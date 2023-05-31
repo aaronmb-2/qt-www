@@ -1,6 +1,6 @@
 import { action, observable, computed, makeAutoObservable } from "mobx";
-import { ModalMessage } from "~/models/response/ModalMessage";
 import { IModalMessageService } from "./IModalMessageService";
+import { ModalMessage } from "~/models/response/ModalMessage";
 import { DataModalMessage } from "~/models/response/DataModalMessage";
 
 export class ModalMessageService implements IModalMessageService {
@@ -18,7 +18,7 @@ export class ModalMessageService implements IModalMessageService {
 
   @computed
   get displayModelMessage(): ModalMessage {
-    return this.modalMessagesQueue[0]
+    return this.modalMessagesQueue[0];
   }
 
   @computed
@@ -28,7 +28,7 @@ export class ModalMessageService implements IModalMessageService {
 
   @action.bound
   addModal(addToastMessage: ModalMessage | DataModalMessage) {
-    var toastMessage = addToastMessage
+    let toastMessage = addToastMessage;
     if (!(toastMessage instanceof ModalMessage)) {
       toastMessage = new ModalMessage({
         id: toastMessage.id,
@@ -37,9 +37,9 @@ export class ModalMessageService implements IModalMessageService {
         message: toastMessage.message,
         status: toastMessage.status,
         buttons: toastMessage.buttons,
-    })
+      });
     }
-    this.modalMessagesQueue.push(toastMessage)
+    this.modalMessagesQueue.push(toastMessage);
   }
 
   @action.bound

@@ -1,7 +1,11 @@
 <template>
-    <div class="flex h-screen">
+  <div class="flex h-screen">
     <div class="flex flex-1 flex-col overflow-auto">
-        <NuxtLink :to="localePath('/platform/home')" class="mt-2 ml-2" aria-label="Home">
+      <NuxtLink
+        :to="localePath('/platform/home')"
+        class="mt-2 ml-2"
+        aria-label="Home"
+      >
         ← {{ $t("platform.billing.platform") }}
       </NuxtLink>
     </div>
@@ -13,51 +17,51 @@
       />
     </div>
   </div>
-  </template>
-  
+</template>
+
 <script setup lang="ts">
-  import { modalMessageService } from "~/services/response/ModalMessageService"
-  import { EApiResponseStatus } from '~/services/response/EApiResponseHandler';
+import { modalMessageService } from "~/services/response/ModalMessageService";
+import { EApiResponseStatus } from "~/services/response/EApiResponseHandler";
 
-  definePageMeta({
-    layout: "auth",
-    });
+definePageMeta({
+  layout: "auth",
+});
 
-const sessionId = useRoute().query["session_id"]
-setTimeout(() => 2000)
+const sessionId = useRoute().query.session_id;
+setTimeout(() => 2000);
 // If no sessionId -> return error response
 if (!sessionId) {
-    modalMessageService.addModal({
-        id: Math.random(),
-        title: "Unable to verify payment",
-        message: "No session information provided, unable to verify payment",
-        status: EApiResponseStatus.error,
-        buttons: [
-          {
-            id: 1,
-            to: "/auth/login",
-            themeId: 8,
-            label: "Login"
-          }
-        ],
-    })
+  modalMessageService.addModal({
+    id: Math.random(),
+    title: "Unable to verify payment",
+    message: "No session information provided, unable to verify payment",
+    status: EApiResponseStatus.error,
+    buttons: [
+      {
+        id: 1,
+        to: "/auth/login",
+        themeId: 8,
+        label: "Login",
+      },
+    ],
+  });
 }
 
 // If success response -> handle
 modalMessageService.addModal({
-        id: Math.random(),
-        title: "Payment successfull",
-        message: "Payment information successfully received",
-        status: EApiResponseStatus.success,
-        buttons: [
-        {
-          id: 1,
-          to: "/auth/login",
-          themeId: 8,
-          label: "Login"
-        }
-        ],
-    })
+  id: Math.random(),
+  title: "Payment successfull",
+  message: "Payment information successfully received",
+  status: EApiResponseStatus.success,
+  buttons: [
+    {
+      id: 1,
+      to: "/auth/login",
+      themeId: 8,
+      label: "Login",
+    },
+  ],
+});
 
-  const localePath = useLocalePath();
-  </script>
+const localePath = useLocalePath();
+</script>

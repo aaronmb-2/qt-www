@@ -18,16 +18,14 @@
 </template>
 
 <script lang="ts" setup>
-import ButtonHome from "./../components/ButtonHome.vue"
-import FormActionsFooter from "./../components/FormActionsFooter.vue"
-import PageImage from "./../components/PageImage.vue"
-import FormActionsHeader from "./components/FormActionsHeader.vue"
+import ButtonHome from "./../components/ButtonHome.vue";
+import FormActionsFooter from "./../components/FormActionsFooter.vue";
+import PageImage from "./../components/PageImage.vue";
+import FormActionsHeader from "./components/FormActionsHeader.vue";
 
 import UserRegisterForm from "~/components/forms/UserRegisterForm.vue";
 
 definePageMeta({
   layout: "auth",
 });
-
-const localePath = useLocalePath();
 </script>

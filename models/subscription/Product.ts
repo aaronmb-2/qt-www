@@ -1,8 +1,8 @@
+import { BaseModel } from "../base/BaseModel";
 import { UniqueSellingPoint } from "./UniqueSellingPoint";
 import { Price } from "./Price";
 import { IProduct } from "./IProduct";
 import { DataProduct } from "./DataProduct";
-import { BaseModel } from "../base/BaseModel";
 
 // eslint-disable-next-line no-use-before-define
 export class Product extends BaseModel<Product> implements IProduct {
@@ -32,12 +32,12 @@ export class Product extends BaseModel<Product> implements IProduct {
   }
 
   getPriceForInterval(interval: string): number {
-    const price = this.prices.find((price) => price.interval === interval)
-    return price!.amount / 100
+    const price = this.prices.find((price) => price.interval === interval);
+    return price!.amount / 100;
   }
 
   getPriceIdForInterval(interval: string): string | number {
-    const price = this.prices.find((price) => price.interval === interval)
-    return price!.id
+    const price = this.prices.find((price) => price.interval === interval);
+    return price!.id;
   }
 }

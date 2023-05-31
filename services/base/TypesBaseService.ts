@@ -1,3 +1,3 @@
 export interface ParamsBaseApi {
-    locale: string;
+  locale: string;
 }

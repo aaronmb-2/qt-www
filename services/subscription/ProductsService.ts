@@ -1,14 +1,12 @@
 import { computed, makeAutoObservable } from "mobx";
-import { _AsyncData } from "nuxt/dist/app/composables/asyncData";
-import { IProductsService } from "./IProductsService";
-import { Interval } from "~/models/subscription/Interval";
-import { Product } from "~/models/subscription/Product";
-import { TypeProduct } from "~/types/subscription/TypeProduct";
 import { ParamsBaseApi } from "../base/TypesBaseService";
 import { TypePromiseApiResponse } from "../response/TypesApiResponseHandler";
 import { userService } from "../user/UserService";
+import { IProductsService } from "./IProductsService";
 import { ParamsGetStripeCheckoutApi } from "./TypeProductsService";
-
+import { Interval } from "~/models/subscription/Interval";
+import { Product } from "~/models/subscription/Product";
+import { TypeProduct } from "~/types/subscription/TypeProduct";
 
 export class ProductsService implements IProductsService {
   /**
@@ -22,7 +20,7 @@ export class ProductsService implements IProductsService {
   static PRODUCTS_URL = `/v1/billing/products/`;
   static CREATE_STRIPE_CHECKOUT_SESSION = `/v1/billing/checkout-session/`;
 
-  products: Product[] = []
+  products: Product[] = [];
 
   intervals: Interval[] = [];
 
@@ -33,29 +31,31 @@ export class ProductsService implements IProductsService {
   }
 
   async fetchProducts(data: ParamsBaseApi): TypePromiseApiResponse {
-    const fetch = useCustomFetch()
+    const fetch = useCustomFetch();
 
-    const url = ProductsService.PRODUCTS_URL
-  
-    return fetch.request({
-      url: url,
+    const url = ProductsService.PRODUCTS_URL;
+
+    return await fetch.request({
+      url,
       method: "GET",
       locale: data.locale,
-  })
+    });
   }
 
-  async getStripeCheckout(data: ParamsGetStripeCheckoutApi): TypePromiseApiResponse {
-    const fetch = useCustomFetch()
+  async getStripeCheckout(
+    data: ParamsGetStripeCheckoutApi
+  ): TypePromiseApiResponse {
+    const fetch = useCustomFetch();
 
-    const url = `${ProductsService.CREATE_STRIPE_CHECKOUT_SESSION}${data.paramPriceId}/`
+    const url = `${ProductsService.CREATE_STRIPE_CHECKOUT_SESSION}${data.paramPriceId}/`;
 
-    return fetch.request({
-      url: url,
+    return await fetch.request({
+      url,
       method: "GET",
       locale: data.locale,
       accessToken: userService.loggedInUserAccessToken,
       refreshToken: userService.loggedInUserRefreshToken,
-    })
+    });
   }
 
   setProductsAndInterval(responseData: any) {
@@ -63,7 +63,7 @@ export class ProductsService implements IProductsService {
     const otherProducts: Product[] = [];
     const intervals: Interval[] = [];
 
-    responseData["products"].forEach((product: TypeProduct) => {
+    responseData.products.forEach((product: TypeProduct) => {
       const newProduct = new Product({
         id: product.id,
         name: product.name,
@@ -85,11 +85,15 @@ export class ProductsService implements IProductsService {
       ...otherProducts.slice(Math.ceil(otherProducts.length / 2)),
     ];
 
-    responseData["intervals"].forEach((interval: string) => {
+    responseData.intervals.forEach((interval: string) => {
       intervals.push(
-        new Interval({ id: Math.random(), value: interval, label: `pricing.${interval}` })
+        new Interval({
+          id: Math.random(),
+          value: interval,
+          label: `pricing.${interval}`,
+        })
       );
-    })
+    });
 
     this.clearProducts();
     this.clearIntervals();
@@ -116,4 +120,4 @@ export class ProductsService implements IProductsService {
   }
 }
 
-export const productsService = new ProductsService();;
+export const productsService = new ProductsService();

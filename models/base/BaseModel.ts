@@ -1,8 +1,10 @@
 import { IBaseModel } from "./IBaseModel";
 import { DataBaseModel } from "./DataBaseModel";
 
-
-export abstract class BaseModel<T extends BaseModel<T>> implements IBaseModel<T> {
+// eslint-disable-next-line no-use-before-define
+export abstract class BaseModel<T extends BaseModel<T>>
+  implements IBaseModel<T>
+{
   /**
    * This is the BaseModel abstract class.
    *

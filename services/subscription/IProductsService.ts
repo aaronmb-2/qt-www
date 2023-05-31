@@ -1,6 +1,6 @@
+import { ParamsBaseApi } from "../base/TypesBaseService";
 import { IInterval } from "~/models/subscription/IInterval";
 import { IProduct } from "~/models/subscription/IProduct";
-import { ParamsBaseApi } from "../base/TypesBaseService";
 
 export interface IProductsService {
   products: IProduct[];

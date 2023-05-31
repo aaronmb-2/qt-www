@@ -6,7 +6,7 @@ import {
 } from "nuxt/dist/app/compat/capi";
 import { DataBaseModel } from "./DataBaseModel";
 
-export interface DataBaseSwitchItem extends DataBaseModel{
+export interface DataBaseSwitchItem extends DataBaseModel {
   name: string;
   code?: string;
   icon?: FunctionalComponent<HTMLAttributes & VNodeProps, {}>;

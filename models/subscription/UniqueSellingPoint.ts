@@ -1,9 +1,12 @@
+import { BaseModel } from "../base/BaseModel";
 import { IUniqueSellingPoint } from "./IUniqueSellingPoint";
 import { DataUniqueSellingPoint } from "./DataUniqueSellingPoint";
-import { BaseModel } from "../base/BaseModel";
 
-// eslint-disable-next-line no-use-before-define
-export class UniqueSellingPoint extends BaseModel<UniqueSellingPoint> implements IUniqueSellingPoint {
+export class UniqueSellingPoint
+  // eslint-disable-next-line no-use-before-define
+  extends BaseModel<UniqueSellingPoint>
+  implements IUniqueSellingPoint
+{
   /**
    * Class that acts like an object, which contains all the information regarding a Unique Selling Point (USP).
    *

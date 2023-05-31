@@ -1,3 +1,3 @@
 export interface DataBaseModel {
-    id: number | string;
-  }
+  id: number | string;
+}

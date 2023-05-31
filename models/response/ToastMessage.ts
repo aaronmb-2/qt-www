@@ -1,17 +1,21 @@
-import { IToastMessage } from "./IToastMessage";
-import { CheckCircleIcon, XCircleIcon, InformationCircleIcon } from "@heroicons/vue/24/outline";
+import {
+  CheckCircleIcon,
+  XCircleIcon,
+  InformationCircleIcon,
+} from "@heroicons/vue/24/outline";
 import {
   FunctionalComponent,
   HTMLAttributes,
   VNodeProps,
 } from "nuxt/dist/app/compat/capi";
+import { BaseModel } from "../base/BaseModel";
+import { IToastMessage } from "./IToastMessage";
 import { EToastStyling } from "./EToastMessage";
 import { DataToastMessage } from "./DataToastMessage";
-import { BaseModel } from "../base/BaseModel";
 import { EApiResponseStatus } from "~/services/response/EApiResponseHandler";
 
-// eslint-disable-next-line no-use-before-define
 export class ToastMessage
+  // eslint-disable-next-line no-use-before-define
   extends BaseModel<ToastMessage>
   implements IToastMessage
 {
@@ -22,7 +26,7 @@ export class ToastMessage
    * This class is a so-called 'model', which purpose is to represent the toast styling and text withing the application.
    * The ToastMessage extends the BaseModel model and implements an interface called IToastMessage.
    *
-   * @param DataToastMessage - That contains the following information: title, message, timeout, icon & styling 
+   * @param DataToastMessage - That contains the following information: title, message, timeout, icon & styling
    * @returns The implemented model of a ToastMessage which can be used within the ToastMessageService for displaying information to the user.
    *
    */
@@ -37,23 +41,23 @@ export class ToastMessage
     const { title, message, status, timeout = 5000 } = data;
     this.title = title;
     this.message = message;
-    this.setStyling(status)
+    this.setStyling(status);
     this.timeout = timeout;
   }
 
   private setStyling(status: EApiResponseStatus): void {
     switch (status) {
       case EApiResponseStatus.success:
-        this.icon = CheckCircleIcon
-        this.styling = EToastStyling.success
+        this.icon = CheckCircleIcon;
+        this.styling = EToastStyling.success;
         break;
       case EApiResponseStatus.error:
-        this.icon = XCircleIcon
-        this.styling = EToastStyling.error
+        this.icon = XCircleIcon;
+        this.styling = EToastStyling.error;
         break;
       case EApiResponseStatus.info:
-        this.icon = InformationCircleIcon
-        this.styling = EToastStyling.info
+        this.icon = InformationCircleIcon;
+        this.styling = EToastStyling.info;
         break;
     }
   }

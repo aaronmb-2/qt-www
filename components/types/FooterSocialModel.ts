@@ -1,5 +1,5 @@
 export interface FooterSocialModel {
-    text: string;
-    to: string;
-    icon: any;
-  }
+  text: string;
+  to: string;
+  icon: any;
+}

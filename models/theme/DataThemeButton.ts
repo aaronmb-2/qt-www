@@ -1,13 +1,12 @@
-
-import {
-  ButtonColor,
-  ButtonRounding,
-  ButtonSize,
-} from "~/models/theme/EThemeButton";
 import { DataBaseModel } from "../base/DataBaseModel";
+import {
+  EButtonColor,
+  EButtonRounding,
+  EButtonSize,
+} from "~/models/theme/EThemeButton";
 
 export interface DataThemeButton extends DataBaseModel {
-  rounding: ButtonRounding;
-  size: ButtonSize;
-  color: ButtonColor;
+  rounding: EButtonRounding;
+  size: EButtonSize;
+  color: EButtonColor;
 }

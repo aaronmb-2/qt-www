@@ -2,8 +2,6 @@ import { BaseModel } from "../base/BaseModel";
 import { DataPrice } from "./DataPrice";
 import { IPrice } from "./IPrice";
 
-import { TypePrice } from "~/types/subscription/TypePrice";
-
 // eslint-disable-next-line no-use-before-define
 export class Price extends BaseModel<Price> implements IPrice {
   /**

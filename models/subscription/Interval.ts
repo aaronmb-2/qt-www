@@ -2,9 +2,8 @@ import { BaseModel } from "../base/BaseModel";
 import { DataInterval } from "./DataInterval";
 import { IInterval } from "./IInterval";
 
-
 // eslint-disable-next-line no-use-before-define
-export class Interval extends BaseModel<Interval> implements IInterval{
+export class Interval extends BaseModel<Interval> implements IInterval {
   /**
    * Class that acts like an object, which contains all the information regarding an Interval.
    *

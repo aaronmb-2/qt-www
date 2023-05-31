@@ -8,9 +8,9 @@ export interface DataButtonInfo extends DataBaseModel {
 }
 
 export interface DataModalMessage extends DataBaseModel {
-    title: string;
-    message: string;
-    inProgress?: boolean;
-    status: EApiResponseStatus;
-    buttons: DataButtonInfo[];
-  }
+  title: string;
+  message: string;
+  inProgress?: boolean;
+  status: EApiResponseStatus;
+  buttons: DataButtonInfo[];
+}

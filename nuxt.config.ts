@@ -103,8 +103,8 @@ export default defineNuxtConfig({
     // https://github.com/nuxt-community/robots-module
     "@nuxtjs/robots",
     // https://vee-validate.logaretm.com/v4/
-    "@vee-validate/nuxt"
-,  ],
+    "@vee-validate/nuxt",
+  ],
   // config for i18n
   i18n: {
     defaultLocale: "en",

@@ -1,4 +1,4 @@
 export interface FooterLinkModel {
-    text: string;
-    to: string;
-  }
+  text: string;
+  to: string;
+}

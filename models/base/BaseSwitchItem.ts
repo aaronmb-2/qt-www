@@ -11,7 +11,11 @@ import { IBaseSwitchItem } from "./IBaseSwitchItem";
 import { DataBaseSwitchItem } from "./DataBaseSwitchItem";
 import { BaseModel } from "./BaseModel";
 
-export class BaseSwitchItem extends BaseModel<BaseSwitchItem> implements IBaseSwitchItem {
+export class BaseSwitchItem
+  // eslint-disable-next-line no-use-before-define
+  extends BaseModel<BaseSwitchItem>
+  implements IBaseSwitchItem
+{
   /**
    * Class that acts like an object, which contains information for rendering a Switch component.
    *

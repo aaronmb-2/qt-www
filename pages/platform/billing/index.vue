@@ -26,7 +26,7 @@ import { Observer } from "mobx-vue-lite";
 
 import LoadingPricingCards from "./components/LoadingPricingCards.vue";
 
-import ButtonLogout from "./components/ButtonLogout.vue"
+import ButtonLogout from "./components/ButtonLogout.vue";
 import PricingCards from "./components/PricingCards.vue";
 import PricingHero from "./components/PricingHero.vue";
 
@@ -43,28 +43,36 @@ definePageMeta({
   middleware: ["check-logged-in-user-tokens"],
 });
 
-const dataLoaded = ref(false)
+const dataLoaded = ref(false);
 
 await onMounted(async () => {
   const response = await productsService.fetchProducts({
-    locale: localeProperties.value.iso!
+    locale: localeProperties.value.iso!,
   });
 
-  const message = apiResponseHandlerService.handleResponse(response)
-  
+  const message = apiResponseHandlerService.handleResponse(response);
+
   if (message.status !== EApiResponseStatus.success) {
     toastMessageService.addToast(
-      new ToastMessage({ id: Math.random(), title: message.title, message: message.message, status: message.status})
+      new ToastMessage({
+        id: Math.random(),
+        title: message.title,
+        message: message.message,
+        status: message.status,
+      })
     );
-    if (response.error.value!.status === 401 || response.error.value!.status === 403 ) {
+    if (
+      response.error.value!.status === 401 ||
+      response.error.value!.status === 403
+    ) {
       return navigateTo({
-        path: localePath('/auth/login'),
+        path: localePath("/auth/login"),
       });
     }
     return;
   }
 
-  productsService.setProductsAndInterval(response.data.value)
+  productsService.setProductsAndInterval(response.data.value);
   dataLoaded.value = true;
 });
 

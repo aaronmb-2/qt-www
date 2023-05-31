@@ -1,11 +1,11 @@
 import { ToastMessage } from "~/models/response/ToastMessage";
 
 export interface IToastMessageService {
-    toastMessagesQueue: ToastMessage[];
+  toastMessagesQueue: ToastMessage[];
 
-    toastMessageQueueLength: number;
-    displayToastMessages: ToastMessage[];
+  toastMessageQueueLength: number;
+  displayToastMessages: ToastMessage[];
 
-    addToast(toastMessage: ToastMessage): void;
-    removeToast(toastMessageId: number): void;
-  }
+  addToast(toastMessage: ToastMessage): void;
+  removeToast(toastMessageId: number): void;
+}

@@ -1,17 +1,21 @@
 <template>
-    <div class="mt-6">
+  <div class="mt-6">
     <form class="space-y-6" @submit.prevent="onSubmit">
-        <EmailField/>
-        <div>
+      <EmailField />
+      <div>
         <BaseButton
-            :button-theme="themeButtonService.getThemeButtonById(6)"
-            class="font-bold"
+          :button-theme="themeButtonService.getThemeButtonById(6)"
+          class="font-bold"
         >
-          <BaseSpinnerSmall :submit-in-progress="submitInProgress" spinner-text="newsletter.subscribing" button-text="newsletter.keep_me_posted"/>
+          <BaseSpinnerSmall
+            :submit-in-progress="submitInProgress"
+            spinner-text="newsletter.subscribing"
+            button-text="newsletter.keep_me_posted"
+          />
         </BaseButton>
-        </div>
+      </div>
     </form>
-    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -21,7 +25,7 @@ import { themeButtonService } from "~/services/theme/ThemeButtonService";
 import { newsletterSubscriptionService } from "~/services/utils/NewsletterSubscriptionService";
 import { apiResponseHandlerService } from "~/services/response/ApiResponseHandlerService";
 import { toastMessageService } from "~/services/response/ToastMessageService";
-import EmailField from "~/components/forms/fields/EmailField.vue"
+import EmailField from "~/components/forms/fields/EmailField.vue";
 import { ToastMessage } from "~/models/response/ToastMessage";
 
 const { localeProperties } = useI18n();
@@ -30,32 +34,39 @@ definePageMeta({
   layout: "auth",
 });
 
-const submitInProgress = ref(false)
+const submitInProgress = ref(false);
 
 const schema = object().shape({
   email: string().required().email(),
 });
 
-const { handleSubmit, setErrors, resetForm } = useForm({ validationSchema: schema });
+const { handleSubmit, setErrors, resetForm } = useForm({
+  validationSchema: schema,
+});
 
 const onSubmit = handleSubmit(async (values) => {
-  submitInProgress.value = true
+  submitInProgress.value = true;
   const response = await newsletterSubscriptionService.subscribe({
     locale: localeProperties.value.iso!,
     body: {
-      email: values["email"],
-    }
+      email: values.email,
+    },
   });
-  submitInProgress.value = false
+  submitInProgress.value = false;
   if (response.error.value) {
     setErrors(response.error.value.data);
   }
-  const message = apiResponseHandlerService.handleResponse(response)
+  const message = apiResponseHandlerService.handleResponse(response);
   toastMessageService.addToast(
-      new ToastMessage({ id: Math.random(), title: message.title, message: message.message, status: message.status})
-    );
+    new ToastMessage({
+      id: Math.random(),
+      title: message.title,
+      message: message.message,
+      status: message.status,
+    })
+  );
   if (message?.isSuccess) {
-    resetForm()
+    resetForm();
   }
 });
 </script>

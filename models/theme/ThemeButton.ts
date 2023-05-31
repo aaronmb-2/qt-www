@@ -1,11 +1,14 @@
+import { BaseModel } from "../base/BaseModel";
 import { IThemeButton } from "./IThemeButton";
 import { EButtonColor, EButtonRounding, EButtonSize } from "./EThemeButton";
 
 import { DataThemeButton } from "./DataThemeButton";
-import { BaseModel } from "../base/BaseModel";
 
-// eslint-disable-next-line no-use-before-define
-export class ThemeButton extends BaseModel<ThemeButton> implements IThemeButton {
+export class ThemeButton
+  // eslint-disable-next-line no-use-before-define
+  extends BaseModel<ThemeButton>
+  implements IThemeButton
+{
   /**
    * Class that acts like an object, which contains styling semantics for a button.
    *

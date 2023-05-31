@@ -1,6 +1,6 @@
-import { ParamsNewsletterApi } from './TypesNewsletterSuscription';
-import { TypePromiseApiResponse } from '../response/TypesApiResponseHandler';
+import { TypePromiseApiResponse } from "../response/TypesApiResponseHandler";
+import { ParamsNewsletterApi } from "./TypesNewsletterSuscription";
 
 export interface INewsletterSubscriptionService {
-    subscribe(data: ParamsNewsletterApi): TypePromiseApiResponse;
-  }
+  subscribe(data: ParamsNewsletterApi): TypePromiseApiResponse;
+}
