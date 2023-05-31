@@ -24,7 +24,7 @@ useJsonld({
   employee: "Joris Jansen",
   founder: "Joris Jansen",
   legalName: "QuantTrade",
-  logo: config.public.baseUrl + "qt-logo-light.jpg",
+  logo: config.public.webUrl + "qt-logo-light.jpg",
   slogan: "Providing Alpha to the Public",
 });
 </script>

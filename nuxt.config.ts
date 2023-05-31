@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     public: {
       apiUrl: process.env.API_URL,
       // apiToken: process.env.API_TOKEN,
-      baseUrl: process.env.BASE_URL,
+      webUrl: process.env.WEB_URL,
     },
   },
   app: {
@@ -109,7 +109,7 @@ export default defineNuxtConfig({
   i18n: {
     defaultLocale: "en",
     strategy: "prefix",
-    baseUrl: process.env.MAIN_URL,
+    baseUrl: process.env.WEB_URL,
     locales: [
       {
         code: "nl",

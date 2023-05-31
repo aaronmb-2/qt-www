@@ -14,10 +14,16 @@ inputs:
     description: "The Node version that needs to be installed"
     required: true
   s3_bucket:
-    description: "The Node version that needs to be installed"
+    description: "Name of the S3 bucket for uploading the generated SPA project"
     required: true
   cloudfront_distribution_id:
-    description: "The Node version that needs to be installed"
+    description: "ID of the CloudFront distribution in order to invalidate all the cached content"
+    required: true
+  api_url:
+    description: "URL of the API endpoints"
+    required: true
+  web_url:
+    description: "URL of the website self"
     required: true
 runs:
   using: "composite"
@@ -43,8 +49,8 @@ runs:
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1.3
         with:
-          envkey_API_URL: "https://api.dev.clefer.com"
-          envkey_BASE_URL: "https://dev.clefer.com"
+          envkey_API_URL: ${{ inputs.api_url }}
+          envkey_WEB_URL: ${{ inputs.web_url }}
           directory: .
           file_name: .env
           fail_on_empty: true
