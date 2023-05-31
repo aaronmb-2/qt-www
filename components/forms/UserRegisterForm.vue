@@ -83,7 +83,7 @@ const onSubmit = handleSubmit(async (values) => {
     },
   });
   submitInProgress.value = false;
-  if (response.error.value) {
+  if (response.error.value.data) {
     setErrors(response.error.value.data);
   }
   const message = apiResponseHandlerService.handleResponse(response);
