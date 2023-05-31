@@ -1,4 +1,4 @@
-export enum ButtonRounding {
+export enum EButtonRounding {
   /**
    * This is the ButtonRounding Enum.
    *
@@ -15,7 +15,7 @@ export enum ButtonRounding {
   full = "rounded-full",
 }
 
-export enum ButtonSize {
+export enum EButtonSize {
   /**
    * This is the ButtonSize Enum.
    *
@@ -40,10 +40,10 @@ export enum ButtonSize {
   l = "px-4 py-2 text-base",
   xl = "px-6 py-3 text-base",
   cirkel = "p-2 text-sm",
-  full = "w-full p-2",
+  full = "w-full p-2 text-xs lg:text-sm",
 }
 
-export enum ButtonColor {
+export enum EButtonColor {
   /**
    * This is the ButtonColor Enum.
    *

@@ -3,12 +3,11 @@ import { makePersistable } from "mobx-persist-store";
 
 import { IThemeButtonService } from "./IThemeButtonService";
 
-import { IThemeButton } from "~/models/theme/IThemeButton";
 import { ThemeButton } from "~/models/theme/ThemeButton";
 import {
-  ButtonColor,
-  ButtonRounding,
-  ButtonSize,
+  EButtonColor,
+  EButtonRounding,
+  EButtonSize,
 } from "~/models/theme/EThemeButton";
 
 export class ThemeButtonService implements IThemeButtonService {
@@ -23,52 +22,58 @@ export class ThemeButtonService implements IThemeButtonService {
   static themes = [
     new ThemeButton({
       id: 1,
-      rounding: ButtonRounding.half,
-      size: ButtonSize.xxs,
-      color: ButtonColor.transparent,
+      rounding: EButtonRounding.half,
+      size: EButtonSize.xxs,
+      color: EButtonColor.transparent,
     }),
     new ThemeButton({
       id: 2,
-      rounding: ButtonRounding.full,
-      size: ButtonSize.m,
-      color: ButtonColor.mblue,
+      rounding: EButtonRounding.full,
+      size: EButtonSize.m,
+      color: EButtonColor.mblue,
     }),
     new ThemeButton({
       id: 3,
-      rounding: ButtonRounding.full,
-      size: ButtonSize.xxs,
-      color: ButtonColor.mblue,
+      rounding: EButtonRounding.full,
+      size: EButtonSize.xxs,
+      color: EButtonColor.mblue,
     }),
     new ThemeButton({
       id: 4,
-      rounding: ButtonRounding.half,
-      size: ButtonSize.m,
-      color: ButtonColor.transparent,
+      rounding: EButtonRounding.half,
+      size: EButtonSize.m,
+      color: EButtonColor.transparent,
     }),
     new ThemeButton({
       id: 5,
-      rounding: ButtonRounding.half,
-      size: ButtonSize.m,
-      color: ButtonColor.mblue,
+      rounding: EButtonRounding.half,
+      size: EButtonSize.m,
+      color: EButtonColor.mblue,
     }),
     new ThemeButton({
       id: 6,
-      rounding: ButtonRounding.half,
-      size: ButtonSize.full,
-      color: ButtonColor.mblue,
+      rounding: EButtonRounding.half,
+      size: EButtonSize.full,
+      color: EButtonColor.mblue,
     }),
     new ThemeButton({
       id: 7,
-      rounding: ButtonRounding.half,
-      size: ButtonSize.full,
-      color: ButtonColor.border,
+      rounding: EButtonRounding.half,
+      size: EButtonSize.full,
+      color: EButtonColor.border,
+    }),
+    new ThemeButton({
+      id: 8,
+      rounding: EButtonRounding.half,
+      size: EButtonSize.m,
+      color: EButtonColor.pink,
     }),
   ];
 
   @observable
   defaultTheme = 1;
 
-  getThemeButtonById(id: number): IThemeButton {
+  getThemeButtonById(id: number | string): ThemeButton {
     const themeButton = ThemeButtonService.themes.find(
       (button) => button.id === id
     );

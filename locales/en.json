@@ -1,5 +1,8 @@
 {
   "global": {
+    "util": {
+      "or": "Or"
+    },
     "get_started": "Get Started",
     "learn_more": "Learn more",
     "header": {
@@ -25,6 +28,38 @@
         "switch_language": "Switch language",
         "switch_theme": "Switch theme"
       }
+    },
+    "messages": {
+      "loading": "Loading",
+      "success": "Success",
+      "something_went_wrong": "Something went wrong",
+      "unhandeled_error": "Unhandled error",
+      "unhandeled_response": "Unhandled error",
+      "status_200": "Ok",
+      "status_201": "Created",
+      "status_202": "In progress",
+      "status_400": "The request was invalid",
+      "status_403": "You are not allowed to do this",
+      "status_404": "Not found",
+      "status_420": "Too many requests. Please wait a couple minutes until trying again",
+      "field_email_required": "Email is required",
+      "field_email_invalid": "Must be a valid Email",
+      "field_first_name_required": "First name is required",
+      "field_last_name_required": "Last name is required",
+      "field_password_required": "Password is required",
+      "field_password_too_short": "Password too short (minimum of 10 characters",
+      "field_terms_of_service": "Terms of Service must be accepted",
+      "registered": "Email is not verified",
+      "change_email_requested": "Change email was requested, please follow the steps in the email.",
+      "change_password_requested": "Change password was requested, please follow the steps in the email"
+    },
+    "fields": {
+      "email_address": "Email address",
+      "first_name": "Fist Name",
+      "last_name": "Last Name",
+      "password": "Password",
+      "accepts_terms": "Accepts Terms & conditions",
+      "download_terms": "Download Terms & Conditions"
     }
   },
   "home": {
@@ -32,6 +67,12 @@
     "hero_leading_text": "World leader in cross-platform stocks, currencies en crypto's trading",
     "hero_helper_text": "Having multiple acccounts accross different brokers, can be hard to manage. We deliver a single platform for running and managin your quantitative trading strategies on those acccounts, accross different brokers.",
     "brokers_connected": "Connected with Worlds most famous trading platforms.",
+    "newsletter_leading_text": "Subscribe to our newsletter",
+    "newsletter_helper_text": "Sharing updates, new features, bug fixes, ideas and knowledge with you",
+    "newsletter_leading_text_weekly": "Weekly articles",
+    "newsletter_helper_text_weekly": "Writing an article every week related to (quantitative) trading with our subscribers",
+    "newsletter_leading_text_spam": "No spam",
+    "newsletter_helper_text_spam": "No sales related stuff, just a one weekly updated about anything related to QT",
     "image_leading_text": "Run your strategy with confidence in the Cloud",
     "image_helper_text": "Create, backtest and run your Quantitative Trading strategy through our Cloud solution. You come up with an idea, we help you with the rest!",
     "cta_text": "Ready to dive in?",
@@ -214,8 +255,8 @@
   },
   "pricing": {
     "payment": "Payment",
-    "monthly": "Monthly",
-    "annually": "Annually",
+    "month": "Monthly",
+    "year": "Annually",
     "hero_leading_text": "Grow as a Trader or Investor.",
     "hero_helper_text": "Pick the plan that suits you best, cancel at any time.",
     "buy_plan": "Pick this plan",
@@ -243,14 +284,35 @@
     }
   },
   "login": {
+    "login": "Login",
+    "logging_in": "Logging in",
+    "non_existing_user": "No account yet?",
     "up_to_date": "Stay up-to-date!",
     "keep_me_posted": "Keep me Posted!",
-    "home": "Home"
+    "home": "Home",
+    "not_a_member": "Not a Member?",
+    "register_here": "Register here"
   },
   "register": {
+    "create_new_account": "Create a new Account",
+    "existing_user": "Already an Account?",
+    "login_here": "Login here",
     "up_to_date": "Stay up-to-date!",
     "keep_me_posted": "Keep me Posted!",
-    "home": "Home"
+    "home": "Home",
+    "register": "Register",
+    "reset_password": "Forgot Password",
+    "reset_email": "Reset Email",
+    "verify_email": "Verify Email"
   },
-  "welcome": "welcome"
+  "newsletter": {
+    "subscribing": "Subscribing",
+    "keep_me_posted": "Keep me posted"
+  },
+  "platform": {
+    "billing": {
+      "logout": "Logout",
+      "platform": "Platform"
+    }
+  }
 }

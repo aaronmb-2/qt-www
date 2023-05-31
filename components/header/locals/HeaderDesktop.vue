@@ -1,5 +1,5 @@
 <template>
-  <div class="relative z-50 relative flex justify-between items-center">
+  <div class="relative z-40 relative flex justify-between items-center">
     <div class="flex items-center space-x-6">
       <HeaderDesktopLogo />
       <HeaderDesktopLinks :links="links" />
