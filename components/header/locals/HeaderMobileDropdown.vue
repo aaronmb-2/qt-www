@@ -27,28 +27,22 @@
       leave-to-class="opacity-0 scale-95"
     >
       <PopoverPanel
-        v-slot="{ close }"
         class="text-xs md:text-base absolute inset-x-0 top-full mt-4 origin-top rounded-2xl bg-white text-slate-700 dark:bg-slate-700 dark:text-slate-300 p-4 text-lg tracking-tight shadow-xl ring-1 ring-slate-700/5"
       >
         <div v-if="languageSwitchOpen">
           <HeaderMobileSwitchLanguage
             @toggle-switch-language="toggleSwitchLanguage"
-            @close="close()"
           />
         </div>
         <div v-else-if="themeSwitchOpen">
-          <HeaderMobileSwitchTheme
-            @toggle-switch-theme="toggleSwitchTheme"
-            @close="close()"
-          />
+          <HeaderMobileSwitchTheme @toggle-switch-theme="toggleSwitchTheme" />
         </div>
         <div v-else class="flex flex-col">
-          <HeaderMobileLinks :links="links" @close="close()" />
+          <HeaderMobileLinks :links="links" />
           <BaseLine />
           <HeaderMobileActions
             @toggle-switch-language="toggleSwitchLanguage"
             @toggle-switch-theme="toggleSwitchTheme"
-            @close="close()"
           />
         </div>
       </PopoverPanel>
@@ -72,7 +66,7 @@ import HeaderMobileSwitchTheme from "./HeaderMobileSwitchTheme.vue";
 import HeaderMobileLinks from "./HeaderMobileLinks.vue";
 import HeaderMobileActions from "./HeaderMobileActions.vue";
 
-import { PropsHeaderLink } from "~/types/PropsHeaderLink";
+import { PropsHeaderLink } from "~/components/types/PropsHeaderLink";
 
 interface Props {
   links: PropsHeaderLink[];

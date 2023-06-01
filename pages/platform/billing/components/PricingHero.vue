@@ -1,6 +1,11 @@
 <template>
   <Observer>
     <div class="relative z-10">
+      <h2
+        class="mx-auto max-w-4xl text-center text-5xl font-bold tracking-tight"
+      >
+        {{ $t("platform.billing.hero_leading_text") }}
+      </h2>
       <div class="mt-16 flex justify-center">
         <RadioGroup
           :v-model="productsService.getInterval()"

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex h-screen">
     <div class="flex flex-1 flex-col">
       <ButtonLogout />
       <div class=""></div>
@@ -17,7 +17,6 @@
         </div>
       </Observer>
     </div>
-    <PageImage />
   </div>
 </template>
 

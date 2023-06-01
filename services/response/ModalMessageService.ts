@@ -17,7 +17,7 @@ export class ModalMessageService implements IModalMessageService {
   modalMessagesQueue: ModalMessage[] = [];
 
   @computed
-  get displayModelMessage(): ModalMessage {
+  get displayModalMessage(): ModalMessage {
     return this.modalMessagesQueue[0];
   }
 

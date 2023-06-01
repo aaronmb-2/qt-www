@@ -311,6 +311,7 @@
   },
   "platform": {
     "billing": {
+      "hero_leading_text": "Finish Registration",
       "logout": "Logout",
       "platform": "Platform"
     }
