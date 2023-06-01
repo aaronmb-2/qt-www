@@ -21,7 +21,7 @@
               'text-sm font-semibold leading-6',
             ]"
           >
-            {{ $t(product.name) }}
+            {{ product.name }}
           </h3>
           <div
             class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:flex-col lg:items-stretch"

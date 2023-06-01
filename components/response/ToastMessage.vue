@@ -5,10 +5,9 @@
       aria-live="assertive"
       class="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6 z-50"
     >
-      <div class="flex w-full flex-col items-center space-y-4 sm:items-end">
+      <div class="flex w-full flex-col items-center space-y-4 sm:items-end" v-if="toastMessageService.toastMessageQueueLength">
         <!-- Notification panel, dynamically insert this into the live region when it needs to be displayed -->
         <TransitionGroup
-          v-if="toastMessageService.toastMessageQueueLength"
           key="toast-messages"
           enter-active-class="transform ease-out duration-300 transition"
           enter-from-class="translate-x-full opacity-0"
@@ -19,10 +18,9 @@
         >
           <div
             v-for="message in toastMessageService.displayToastMessages"
-            :key="message.id"
+            :key="message.title"
             class="dark:bg-slate-700 pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white ring-1 ring-black ring-opacity-5 drop-shadow-2xl shadow-lg"
           >
-            <Observer>
               <div class="p-4">
                 <div class="flex items-start">
                   <div class="flex-shrink-0">
@@ -57,7 +55,6 @@
                   </div>
                 </div>
               </div>
-            </Observer>
           </div>
         </TransitionGroup>
       </div>

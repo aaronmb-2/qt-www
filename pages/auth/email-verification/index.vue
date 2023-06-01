@@ -41,7 +41,7 @@ onBeforeMount(async () => {
   const token = useRoute().query.token;
   // If no token -> return error response
   if (!token) {
-    modalMessageService.removeModal(modalMessageService.displayModelMessage.id);
+    modalMessageService.removeModal(modalMessageService.displayModalMessage.id);
     modalMessageService.addModal({
       id: Math.random(),
       title: "No token provided",
@@ -72,7 +72,7 @@ onBeforeMount(async () => {
     },
   });
   // Remove loading modal
-  modalMessageService.removeModal(modalMessageService.displayModelMessage.id);
+  modalMessageService.removeModal(modalMessageService.displayModalMessage.id);
   // Parse response
   const message = apiResponseHandlerService.handleResponse(response);
   // If not success response -> handle
