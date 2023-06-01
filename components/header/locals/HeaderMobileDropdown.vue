@@ -27,7 +27,6 @@
       leave-to-class="opacity-0 scale-95"
     >
       <PopoverPanel
-        v-slot="{ close }"
         class="text-xs md:text-base absolute inset-x-0 top-full mt-4 origin-top rounded-2xl bg-white text-slate-700 dark:bg-slate-700 dark:text-slate-300 p-4 text-lg tracking-tight shadow-xl ring-1 ring-slate-700/5"
       >
         <div v-if="languageSwitchOpen">
@@ -36,9 +35,7 @@
           />
         </div>
         <div v-else-if="themeSwitchOpen">
-          <HeaderMobileSwitchTheme
-            @toggle-switch-theme="toggleSwitchTheme"
-          />
+          <HeaderMobileSwitchTheme @toggle-switch-theme="toggleSwitchTheme" />
         </div>
         <div v-else class="flex flex-col">
           <HeaderMobileLinks :links="links" />
