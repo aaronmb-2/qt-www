@@ -42,8 +42,6 @@ const useCustomFetch = () => {
       if (accessToken) {
         headers.Authorization = `Bearer ${accessToken}`;
       }
-      console.log(config.public.apiUrl);
-      console.log(config.public.webUrl);
       const response = await useFetch(url, {
         baseURL: config.public.apiUrl,
         method,
