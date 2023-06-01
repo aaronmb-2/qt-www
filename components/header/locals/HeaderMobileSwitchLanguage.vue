@@ -12,7 +12,7 @@
       :key="item.name"
       :value="item"
       :class="[
-        locale.name === currentLocale.name
+        item.name === currentLocale.name
           ? 'bg-pink-100 text-pink-900'
           : 'text-slate-700 dark:text-slate-300',
         'pl-4 my-1 py-1 cursor-pointer relative select-none hover:bg-slate-300 hover:dark:bg-slate-500 rounded-md',
